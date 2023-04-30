@@ -1,0 +1,501 @@
+Komenda Cisco Catalyst IOS przeprowadzaj¹ca konsolê z trybu nieuprzywilejowanego do trybu exec;enable;1
+Numery przewodów, które nale¿y zamieniæ miejscami aby otrzymaæ kabel z przeplotem;1<->3, 2<->6;1
+Protokó³ drugiej warstwy pracuj¹cy w prze³¹cznikach Ethernet i zabezpieczaj¹cy sieæ przed powstaniem pêtli;STP - Spanning Tree Protocol;1
+Nazwa portu prze³¹cznika Ethernet, który zgodnie z nomenkulatur¹ protoko³u STP prowadzi do Root Bridge;Root Port;1
+Adres sieci, w której znajduje siê host 120.121.1.1 przy masce 255.254.0.0;120.120.0.0 zamieniasz na binarne, potem przepisujesz te jedynki z hosta (IP), gdzie maska te¿ ma tam jedynke ;1
+Komenda CCIOS przeprowadzaj¹ca konsolê z trybu exec do trybu umo¿liwiaj¹cego konfiguracjê ustawieñ;configure terminal (conf t);1
+Liczba maksymalna hostów mo¿liwa do zdefiniowania w sieci 200.200.200.0 przy mascie 255.255.255.192;62 = 2^6 -2;1
+Nazwy kategorii linii komunikacyjnych (line) definiowanych w systemie CCIOS;vty/console;1
+Angielski odpowiednik s³owa: przepustowoœæ dla ³¹cza sieciowego;throughput;1
+Koncentrator Ethernet nie dokonuj¹cy analizy adresów MAC (zawsze rozg³aszaj¹cy);hub;1
+Nazwa pola/liczby identyfikuj¹cej format danych przenoszonych w ramce Ethernet II;Ethertype/d³ugoœæ;1
+Liczba bitów o wartoœci 0 w masce adresu IPv4 w notacji CIDR: 200.200.200.1 i masce 255.255.255.0;8;1
+MTU dla danych ramki Ethernet;1500 bajtów;1
+Nazwa protoko³u konfiguruj¹cego adresy IP hostów w sieci;DHCP;1
+Liczba bitów w adresie Ethernet MAC;48;1
+Tryb transmisji w medium dopuszczaj¹cy obydwa kierunki przep³ywu danych jednoczeœnie;duplex;1
+Liczba bitów w adresie Ethernet IP;32;1
+Nazwa pi¹tej warstwy modelu ISO OSI;sesji;1
+Adres IP Broadcast dla sieci IPv4: 10.0.0.0 przy masce 255.128.0.0;10.127.255.255 dla ipv4 ip to przepisanie 1 z adresu przy masce, broadcast to to samo ale 1 tam gdzie maska 0;1
+Angielski odpowiednik terminu: Szerokoœæ pasma;bandwidth;1
+Przyk³ad systemu kodowania serii bitów zapewniaj¹cego samo-synchronizacjê transmisji;Kodowanie Manchester;1
+Tryb transmisji umo¿liwiaj¹cy ruch tylko w jednym kierunku;simplex;1
+Minimalna d³ugoœæ ramki Ethernet IEEE 802.3 (w bajtach);64 bajty + 8 preambu³y i SFD;1
+Dwie techniki transmisji strumienia bitów rozró¿niane z uwagi na obecnoœæ (lub nie) przekazu informacji zegaruj¹cej;Komunikacja synchroniczna i asynchroniczna ///// ??????????????????????????????????;1
+Rozwiniêcie akronimu MTU jako cechy okreœlaj¹cej mo¿liwoœci techniczne technologii transmisji sieciowej;Maximum Transmission Unit;1
+Adres segmentu sieci IPv4, do której nale¿y host o adresie IPv4: 10.10.10.10 przy masce 255.255.192.0;10.10.0.0;1
+Maksymalna d³ugoœæ kabla TP Cat5 (skrêtki) pomiêdzy prze³¹cznikami w technologii Ethernet;100 metrów;1
+Nazwa pola/liczby identyfikuj¹cej format danych przenoszonych w ramce Ethernet II;Ethertype;1
+Adres IP broadcast dla sieci IPv4: 10.10.0.0 przy masce 255.255.0.0;10.10.255.255;1
+Rodzaje portów zapasowych w stanie discarding okreœlane przez protokó³ RSTP w prze³¹cznikach Ethernet (IEEE 802.1w);Alternate port,  backup port;1
+Jednostka, w której okreœlona jest szerokoœæ pasma dla danego medium transmisyjnego;bps (bits per second);1
+Liczba mo¿liwych stanów portu Ethernet w prze³¹czniku (bez uwzglêdniania definiowanych przez STP i jego warianty);4 - Listening, Learning, Forwarding, Blocking;1
+Funkcja protoko³u VTP usuwaj¹ca VLAN Trunks, gdy dany VLAN w zadanym prze³¹czniku nie ma ¿adnych portów;Pruning;2
+Wartoœæ identyfikatora(VID) domyœlnej sieci VLAN w prze³¹cznikach Cisco( przy ustawieniach fabrycznych);1, slajd 21 z drugiej prezentacji;2
+Minimalna d³ugoœæ ramki Ethernet IEEE 802.3(w bajtach);64;2
+Klasa adresu IPv4:200.200.200.1;Klasa C;2
+Komenda Cisco Catalyst iOS przeprowadzaj¹ca prze³¹cznik do trybu konfiguracji vlan numer 3;interface vlan 3;2
+Technologia Ethernet umo¿liwiaj¹ca tunelowanie wielu VLAN TRUNK w jednym ³¹czu;802.1QinQ;2
+Rodzaj œwiat³owodu umo¿liwiaj¹cego przesy³anie  jednoczeœnie tylko jednej wi¹zki œwiat³a danej czêstotliwoœci;jednomodowy;2
+Adres IP broadcast dla sieci IPv4: 10.10.0.0/16        ;10.10.255.255;2
+Maksymalna d³ugoœæ ramki IEEE 802.1Q;1522B ;2
+Komenda Cisco Catalyst definiuj¹ca tryb pracy prze³¹cznika jako trunk IEEE 802.1Q;Switch(config-if)#switchport mode trunk;2
+Tryb transmisji, umo¿liwiaj¹cy ruch tylko w jednym kierunku;Simplex;2
+Minimalna d³ugoœæ ramki Ethernet IEEE 802.3 (w bajtach);64  + 8 preambu³y i SFD;2
+Protokó³ umo¿liwiaj¹cy konwersjê adresu IP zdalnej stacji na jej adres MAC w Ethernet;ARP;2
+Nazwa drugiej warstwy ISO OSI;³¹cza danych;2
+Maksymalna d³ugoœæ kabla TP Cat 5 (skrêtki) pomiêdzy prze³¹cznikami w technologii Ethernet;100m;2
+Nazwa pola/liczby identyfikuj¹cej format danych przenoszonych w ramce Ethernet II;ethertype;2
+D³ugoœæ adresu MAC dla Ethernet (w bajtach);6;2
+Adres IP Broadcast dla sieci IPv4 10.10.0.0/16;10.10.255.255;2
+Tryb transmisji w medium dopuszczaj¹cym obydwa kierunki przep³ywu danych;Duplex;2
+MTU dla danych ramki Ethernet;1500;2
+Adres sieci IPv4, w której znajduje siê host 100.100.13.10/23;100.100.12.0;2
+Adres broadcast IPv4 dla sieci, w której znajduje siê host 120.134.12.10/16;120.134.255.255;2
+Teoretyczna liczba hostów mo¿liwych do umieszczenia w sieci IPv4 10.10.10.0/29;6;2
+Wartoœæ adresu rozg³oszeniowego MAC w Ethernet(hex);ff:ff:ff:ff:ff:ff;2
+Liczba bitów przeznaczona na VID w VLAN (IEEE 802.1Q);12;2
+Nazwa portu publicznego (do którego ka¿dy inny ma dostêp) definiowanego w Private VLANs prze³¹cznika Ethernet;Promiscuous;2
+Nazwa pierwszej warstwy modelu ISO OSI;Fizyczna;2
+Komenda CCIOS trybu config aktywuj¹ca tryb konfigurowania linii terminali wirtualnych o numerach 0-4;line vty 0 4;2
+Nazwy dwóch podwarstw 2 warstwy ISO OSI;LLC MAC;2
+Max wartoœæ VLAN ID;4096;2
+Liczba bitów w adresie IPv4;32;2
+Przynajmniej dwie kategorie kabla Twisted Pair;5/5e/6;2
+Adres sieci IPv4, w której znajduje siê host 100.100.12.10/16;100.100.0.0;2
+Adres broadcast IPv4 dla sieci, w której znajduje siê host 120.134.12.10/16;120.134.255.255;2
+Maksymalna liczba hostów przy masce 255.255.252.0;2^10 - 2 = 1022;2
+Topologia sieci Ethernet oparta o jeden koncentrator (prze³¹cznik);Gwiazdy;2
+Tryb transmisji umo¿liwiaj¹cy przekaz danych w obie strony ale nie jednoczeœnie;Half-duplex;2
+Nazwa portu wy³¹czonego z powodu wykrycia pêtli fizycznej przez proces STP w instalacji Ethernet opartej o prze³¹czniki;blocking port;2
+Znaczenie preambu³y wysy³anej przed ramk¹ Ethernet;Synchronizacja;2
+Z czego budowany jest identyfikator Bridge-ID przesy³any w ramkach BPDU definiowanych przez protokó³ STP (802.1d);bridge priority + MAC;2
+Teoretyczna liczba hostów mo¿liwych do pod³¹czenia do sieci IPv4 10.10.10.0/25;126 = 2^7 -2;2
+Wartoœæ najwy¿szego priorytetu Class of Service w IEEE 802.1p;7;2
+Tryb pracy VTP, w którym datagramy s¹ jedynie przekazywane dalej;Transparent;2
+Scalenie kilku ³¹cz TP pomiêdzy prze³¹cznikami Ethernet w jeden kana³ o zwielokrotnionej przepustowoœci;EtherChannel;2
+Dowolny przyk³ad notacji CIDR adresu IP;1.1.1.1/1;2
+Adres sieci IPv4, w której znajduje siê host 120.134.12.10/16;120.134.0.0;2
+Adres broadcast IPv4 dla sieci, w której znajduje siê host 120.134.12.10/8;120.255.255.255;2
+Maksymalna liczba hostów przy masce 255.255.224.0;2^9 -2;2
+Komenda CCIOS umo¿liwiaj¹ca zdefiniowanie rozpoznawalnej w sieci nazwy prze³¹cznika Cisco Catalyst;hostname?;2
+Informacja do³¹czona na koñcu pakietu/datagramu analogiczna znaczeniowo do nag³ówka;Trailer;2
+Adres broadcast IPv4 dla sieci, w której znajduje siê host 120.134.12.10/16;120.134.255.255;2
+Nazwa protoko³u zdalnie konfiguruj¹cego adresy IP hostów w sieci;DHCP - Dynamic Host Configuration Protocol;2
+W jakim rodzaju pamiêci wewnêtrznej prze³¹cznika Ethernet Cisco trzymany jest trwale obraz jego systemu operacyjnego;flash? (a nie NVRAM?);2
+Komenda CCIOS umo¿liwiaj¹ca przypisanie listy kontrolnej (ACL) numer 5 do portu lub linii prze³¹cznika;ip access-group 5 in;2
+Topologia sieci Ethernet oparta o jeden koncentrator(prze³¹cznik);Gwiazdy;2
+Nazwa wtyku stosowanego do ³¹czenia portów Ethernet w prze³¹cznikach z u¿yciem kabla TP;RJ45(8p8c);2
+Nazwa siódmej warstwy ISO OSI;Aplikacji;2
+Komenda CCIOS umo¿liwiaj¹ca wyœwietlenie danych zgromadzonych w ramach protoko³u STP;show spanning-tree;2
+W jakim rodzaju pamiêci prze³¹czniki Ethernet Cisco zapisuj¹ swoj¹ konfiguracjê;flash ;2
+Adres sieci IPv4, w której znajduje siê host 130.130.130.10/8;130.0.0.0 ;2
+Maksymalna liczba hostów w sieci o masce 255.255.255.255;1 - sieæ jednohostowa;2
+Podaæ maksymaln¹ d³ugoœæ pakietu IP. ;64kB;2
+Nazwa nieistniej¹cego fizycznie interfejsu IP zak³adanego w ruterze Cisco w celach diagnostycznych;loopback;2
+Wariant sieci Ethernet VLAN, gdzie po³¹czenie izolowane wielu VLAN w dwóch prze³¹cznikach wymaga wielu kabli TP;port based;3
+Co okreœla standard IEEE 802.1ad;Technikê tunelowania wielu VLAN Trunks w jednym ³¹czu fizycznym (Q-in-Q);3
+Nazwa portu Ethernet wybranego przez STP jako aktywny, gdy inne porty te¿ s¹ pod³¹czone do tego samego segmentu sieci;designated port;3
+Dwa podstawowe rodzaje sieci VLAN;tagged, port-based (untagged);3
+Zbiór wszystkich hostów z sieci 200.200.0.0/16 zapisany w notacji stosowanej przy definiowaniu ACL w Cisco IOS;200.200.0.1    0.0.255.254;3
+Proces polegaj¹cy na upakowaniu datagramu w innych datagramach - przenoszony w ni¿szej warstwie ISO OSI;enkapsulacja;3
+Zakres identyfikatorów standardowych list dostêpu (ACL) w Cisco IOS;1-99;3
+Tryb funkcjonowania ³¹cza HDLC anga¿uj¹cy jest jeden terminal primary i jeden lub wiêcej terminali secondary;unbalanced;3
+Skrót literowy okreœlaj¹cy listy kontroli dostêpu w routerach i prze³¹cznikach Cisco;ACL - Access Control List;3
+Nazwa portu Private VLAN umo¿liwiaj¹cego wy³¹cznie komunikowanie z portem Promiscuous;Isolated Port;3
+Rodzaje list kontrolnych (ACL) w Cisco IOS;Standardowe \ Rozszerzone \ Nazwane;3
+Nazwa komunikatu ICMP wysy³anego do nadawcy du¿ej liczby datagramów IP w celu chwilowego wstrzymania ich nadawania;Source Quench;3
+Przynajmniej dwa zmodyfikowane warianty STP stosowane w prze³¹cznikach Ethernet;RSTP, MSTP;3
+Rozszerzenie Cisco protoko³u iGRP;EiGRP;3
+Typ rutowania IP, w którym nast¹pi rozg³oszenie datagramu IP do œciœle okreœlonej puli zarejestrowanych odbiorców;Multicast;3
+Wartoœæ metryki Administrative Distance w tablicy rutowania IP wyznaczana dla sieci bezpoœrednio pod³¹czonych;0;3
+ Nazwa rutera wyprowadzaj¹cego ruch z domeny OSPF do innego Systemu Autonomicznego (AS);ASBR - Autonomous System Border Router;3
+Komenda Cisco IOS umo¿liwiaj¹ca sprawdzenie zawartoœci tablicy rutowania w ruterze Cisco;show ip route;3
+Wartoœæ Administrative Distance w tablicy rutowania routera Cisco dla iBGP;200;3
+Nazwa obszru (area) w rutowaniu dynamicznym IP OSPF, który nie otrzymuje informacji spoza domeny OSPF;Stub area;3
+Komenda umo¿liwiaj¹ca wy³¹czenie trybu routowania IP, który bierze pod uwagê klasy adresów IPv4;ip classless;3
+Komenda Cisco umo¿liwiaj¹ca przejœcie do trybu konfigurowania interfejsu FastEthernet nr 0 bezpoœrednio w chassis rutera;int fa0/0;3
+Wartoœæ liczbowa identyfikatora g³ównego obszaru (area) w domenie OSPF - tzw. backbone area;0;3
+Liczba mo¿liwych klas CoS (IEEE 802.1p) w VLAN;8;4
+Numer typu komunikatu OSPF LSA s³u¿¹cy do rozg³aszania informacji o œcie¿kach w lokalnym obszarze (area);2;4
+Ogólna nazwa metody blokowania og³aszania wstecznego w celu eliminowania zapêtleñ rutowania distance vector;split horizon;4
+Nazwa komunikatu rozg³aszanego w ramach OSPF przekazuj¹cego informacjê o œcie¿ce;LSA - Link State Advertisement;4
+Komenda CCIOS definiuj¹ca tryb pracy portu Ethernet prze³¹cznika jako port pod³¹czony do stacji PC";switchport mode access;4
+Zakres adresów IPv4 w klasie B;128.0.0.0 - 191.255.255.255;4
+Minimalna kategoria kabla TP (Twisted Pair) dla Gigabit Ethernet;5e;4
+Przynajmniej trzy typy wtyków œwiat³owodowych;SC,LC,ST;4
+Alternatywa dla protoko³u HDLC;PPP;4
+Po której stronie ³¹cza V.35 serial nale¿y dostarczyæ zegar;DCE - Data Communications Equipment;4
+Nazwa kabla konsoli Cisco z dwoma wtykami RJ45 i przeplotem;RollOver;4
+Co wyra¿a wartoœæ pola Time To Live w nag³ówku datagramu IP;TTL - pozosta³a d³ugoœæ ¿ycia;4
+Maksymalna wartoœæ pola TTL w nag³ówku datagramu IP;255;4
+Maksymalna d³ugoœæ ramki IEEE 802.3 (w oktetach);1518;4
+Nazwa (identyfikator) rutera OSPF przekazuj¹cego informacjê o trasach poza domenê OSPF;ASBR;4
+W których warstwach modelu OSI operuje urz¹dzenie: ruter IP;1-3;4
+Przynajmniej 3 rodzaje topologii sieci komputerowej;liniowa, gwiazdy, magistrali;4
+Nazwa dowolnego protoko³u obs³uguj¹cego w warstwie 2 ³¹cze typu punkt-punkt (point-to-point);SLIP;4
+Nazwa dowolnego komunikatu PDU w protokole SNMP;GetRequest, SetRequest;4
+Komenda CCIOS powoduj¹ca w³¹czenie rutowania OSPF w ruterze Cisco;router ospf <nr>;4
+Przynajmniej dwa tryby funkcjonowania IP Protocol Independent Multicast;PIM sparse mode, PIM dense mode, PIM sparse-dense mode, PIM Bidirectional;5
+Przynajmniej dwa komunikaty protoko³u IGMP - Internet Group Management Protocol;membership query, membership report;5
+Komenda CCIOS umo¿liwiaj¹ca w³¹czenie routowania OSPF w routerze Cisco;router ospf <nr>(1..65536);5
+Liczba grup IP multicast mo¿liwa do utworzenia w ramach adresacji IPv4;2^28;5
+Zakres adresów grup IPv4 multicast;224.0.0.0-239.255.255.255;5
+Zakres adresów grup IPv6 multicast;FF::/112;5
+Alternatywa dla protoko³u IGMP stosowana w przypadku zarz¹dzania grupami IPv6 multicast;MLD;5
+Komenda CCIOS umo¿liwiaj¹ca sprawdzenie zawartoœci tablicy routowania;show ip route;5
+Wariant OSPF, który umo¿lwia multicast;MOSPF;5
+IGMP;Internet Group Management Protocol;5
+Rozwiñ skrót MLD + do czego s³u¿y;Multicast Listener Discovery - rutowanie ip multicast w IPv6;5
+Drzewa gdy istnieje RP (Tablica rutowania multicast);Shared/Source tree;5
+Rozwiñ skrót DVMRP ;Distance Vector Multicast Routing Protocol;5
+Co to DVMRP ;rutuje ip multicast, wykorzystuje IGMP, pracuje w dense mode;5
+MOSPF ;Multicast extensions to OSPF;5
+Po co MOSPF ;Rozszerzenie OSPF o multicast;5
+Protokó³ rutuj¹cy IP multicast - Interior;DVMRP, MOSPF;5
+Protokó³ rutuj¹cy IP multicast - Exterior;MBGP;5
+Globalna sieæ wirtualna IP multicast;mBone - wykorzystuje DVMRP;5
+Mechanizmy wspieraj¹ce procesy rutowania datagramów IP;Policy Based Routing, Route Maps, IP SLA (Service Level Agreement);5
+Sposoby asekurowania rutera innymi ruterami;HSRP (Hot Standby Routing Protocol), VRRP (Virtual Routing Redundancy Protocol);5
+Zapisz adres IPv6 6A2E:0:0:0:0:0:0:A25E w notacji skrótowej;6A2E::A25E;6
+D³ugoœæ (liczba bitów) identyfikatora SLA w IPv6;16 bitów;6
+Wartoœæ (w protokole IP) maksymalnego opóŸnienia dla dostarczenia pakietu IP do odbiorcy;Nieskoñczony, chyba, ¿e router wska¿e inaczej;6
+Podzia³ protoko³ów rutowania dynamicznego pod k¹tem technik wyznaczania tras i sk³adowanie informacji o nich;link state, distance vector;6
+Warstwy Internet Protocol Suite;1. link - dostêp do sieci 2. internet 3. transport 4. application;6
+D³ugoœæ (liczba bitów) identyfikatora systemu autonomicznego (AS) rutowania IP;16;6
+Adres IPv6 bêd¹cy odpowiednikiem adresu IPv4 1.255.0.254 w notacji IPv6-mapped-IPv4;::FFFF:1.255.0.254/96;6
+Nazwy dwóch klas obszarów definiowanych w protokole rutowania dynamicznego IS-IS;LVL1 intra area, LVL2 inter area;6
+Wartoœæ (liczbowo) maski IPv4 1.1.1.1/27;255.255.255.224;6
+Ogólna nazwa protoko³ów rutowania dynamicznego operuj¹cych jednoczeœnie w wielu systemach autonomicznych (AS);EGP - Exterior Gateway Protocol;6
+Komenda Cisco IOS definiuj¹ca/aktywuj¹ca do edycji dowolnie wybrany podinterfejs w ruterze Cisco;int fa0/0.1;6
+Standard IEEE okreœlaj¹cy tagowanie VLAN;802.1Q;6
+Nazwa sieci IP pod³¹czonej bezpoœrednio do rutera;Sieæ oœcienna (directly connected network);6
+Standardowy adres IPv4 wejœcia do tunelu 6to4 (przy tunelowaniu IPv6 w IPv4);192.88.99.1;6
+Ogólne okreœlenie protoko³ów rutowania dynamicznego wewn¹trz systemu autonomicznego;IGP - Interior Gateway Protocol;6
+Zakres unikatowych lokalnych nierutowalnych IPv6;fc00::/7;6
+Okreœlenie rodzaju adresów IP stosowane w NAT dla adresów w datagramach w sieci prywatnej (inside);local;6
+Rozwiniêcie akronimu ARP jako protoko³u sieciowego + do czego s³u¿y;Address Resolution Protocol, translacja IP zdalnej stacji na adres MAC w sieci ethernet;6
+Odpowiednik IPv4 adresu IPv6 0:0:0:0:0:0:0:1;127.0.0.1 - localhost;6
+Wartoœæ adresu autokonfiguracji IPv6 (nadawanego samoczynnie przez stacjê, np. przy braku dostêpu do DHCP);fe80::/10;6
+D³ugoœæ (liczba bitów) identyfikatora EUI (Extended Unique Identifier) w IPv6;64;6
+Maksymalna d³ugoœæ drogi dla datagramów przetwarzanej przez protokó³ rutowania dynamicznego IP RIP (iloœæ przeskoków);15;6
+Nazwa rutera OSPF ³¹cz¹cego dwa ró¿ne obszary (area) w domenie OSPF;ABR - Area Border Router;6
+Liczba bitów pola TTL w nag³ówku datagramu IPv4;8;6
+Komenda Cisco IOS umo¿liwiaj¹ca sprawdzenie zawartoœci tablicy rutowania dla IPv6 w ruterze Cisco;show ipv6 route;6
+Komenda kasuj¹ca pamiêæ NVRAM rutera;write erase;6
+NAT;Network Address Translation, translacja adresów w celu ukrycia sieci wyizolowanej, wykorzystuje ACL;6
+Tryby translacji w NAT;1<->1, 1<->*, *<->*;6
+Technika umo¿liwiaj¹ca w Cisco IOS stworzenie relacji jeden-do-wielu pomiêdzy adresami IP w NAT;overloading;6
+interfejsy, pomiêdzy którymi nastêpuje translacja w NAT;inside i outside;6
+Podzia³ adresów NAT ze wzglêdu na wystêpowanie;?Adres local – w sieci inside (prywatnej), Adres global - w sieci outside (publicznej);6
+Skoro konfiguracja NAT jedynie podmienia wartoœci adresów w datagramie, to co decyduje o postêpowaniu z datagramem?;zawartoœæ tablicy rutowania IP;6
+co to notacja EUI-64;Zamienia 48 bitowy MAC na 64 bitowy Interface ID: w œrodku wstaw 0xFFFE, a 7 bit odpocz¹tku ustaw na 1;6
+przyk³ad notacji EUI-64;FE99:47FF:FE75:CEE0/64 eui-64;6
+Czy interfejs mo¿e mieæ wiele adresów IPv6?;Tak, kilka ró¿nych link-local address, global address i inne.;6
+Co siê dzieje gdy adres IPv6 umrze;Przeterminowany przechodzi ze stanu PREFERRED do DEPRACATED (nie dla nowych int.), potem do INVALID - mo¿e byc u¿yty do innego interf.;6
+Jak siê tworzy IPv6 multicast;Prefix "FF" + 4b pola "flag" + 4b "scope field" do zasiêgu + 112b identyfikatora grupy multicast;6
+Jak wygl¹daj¹ maski dla interfejsów IPv6?;Nie ma ich, najm³odsze 64b to ID interfejsu;6
+Dodanie adresu IPv6 do interfejsu;#ipv6 address 1:2:1::2/64;6
+Dodanie adresu IPv6 w standardzie EUI-64 do interfejsu;ipv6 address 1111:1111:1111:1111::/64 eui-64;6
+Rozwiñ skrót EUI-64;64-Bit Extended Unique Identifier;6
+Mapowanie 6to4 IPv4 <-> IPv6;Adres IPv6 - 2002:xxxx:xxxx::/16 <-> xx.xx.xx.xx - adres IPv4, gdzie x s¹ heksadecymalne;6
+Mapowanie IPv4-mapped IPv6 (IPv4 compatible address);0:0:0:0:0:FFFF:x.x.x.x/96 lub 0:0:0:0:0:0:x.x.x.x/96, gdzie x.x.x.x jest decymalne (tak, s¹ ":" i ".");6
+Tunelowanie IPv6;mechanizm 6in4 - umieszczanie datagramów IPv6 w tunelach punkt-punkt tworzonych w sieciach IPv4 (nastêpuje enkapsulacja w datagramach IPv4);6
+Oznaczenia protoko³u tunelowania (6in4) w datagramach IP; 41;6
+Przyk³ad adresu URL dla sdresu IPv6;http://[<adres IPv6>]/ albo ?https://<[adres IPv6>]:443/;6
+Pingowanie IPv6 na Windows;ping -6 <adres>;6
+Co to NAT64?;Prowadzenie konwersji host-host (IPv6 <-> IPv4) (wariant stateless - brak overloading);6
+Wartoœæ Administrative Distance dla eBGP;20;7
+Wzór do obliczenia metryki kosztu ³¹cza w protokole OSPF;10^8 / bps;7
+Maksymalna liczba przeskoków przez rutery pomiêdzy s¹siadami BGP w ró¿nych AS (dla eBGP);1;7
+Maksymalna liczba przeskoków przez rutery pomiêdzy s¹siadami BGP w ró¿nych AS (dla iBGP);64;7
+Wartoœæ (liczbowo) maski IPv4 1.1.1.1/26;255.255.255.192;7
+Nazwa protoko³u kontroluj¹cego ruch multicast w sieciach IPv6;MLD - Multicast Listener Discovery;7
+Zakres indentyfikatorów AS BGP przeznaczony do diagnostyki i eksperymentów;65001-65535;7
+Okreœlenie w technologii NAT dla adresów IP w datagramach IP przekazywanych przez sieci outside;global;7
+Wartoœc adresu IPv6 i maski (w odpowiedniej notacji) okreœlaj¹ca wszystkie hosty w Internecie;::/0;7
+Komenda Cisco IOS umo¿liwiaj¹ca wy³¹czenie uogólniania tras przekazywanych w protoko³ach rutowania dynamicznego;no ip summary-address PROTOKÓ£ AS IP MASKA;7
+Nazwa procesu przekazywania wiedzy o trasach pomiêdzy ró¿nymi protoko³ami rutowania dynamicznego;Redystrybucja;7
+Co zawiera Extended Unique Identifier w adresie IPv6?;zawiera MAC uzupe³niony wartoœci¹ 0xFFFE poœrodku + 7 bit na jedynkê;7
+Zapisz dowolny adres IPv6 w notacji EUI-64;FF11:11FF:FE11:1111/64 eui-64;7
+Co to VRP + skrót;VLAN Trunking Protocol, slu¿y do przenoszenia informacj o definicjach sieci VLAN, trzy tryby dzia³ania switcha: Server, Client, Transparent;7
+Ruter iBGP maj¹cy prawo otrzymywania komunikatów o lokalnych trasach od rutera BGP Route Reflector (RR);RRC - Route reflector client;7
+komenda wypisuj¹ca route multicast (rutowanie);show ip mroute;7
+Rozwiñ skrót OSPF;Open Shortest Path First;7
+Rozwiñ skrót eBGP;Exterior Border Gateway Protocol;7
+Co to BGP?;Border Gateway Protocol, tworzy relacje miêdzy ruterami - wewnêtrzne (iBGP - w tym samym AS) oraz zewnêtrzne (eBGP - w ró¿nych AS);7
+Liczba bitów w identyfikatorze AS w BGP;16;7
+Administrative Distance dla eBGP i IBGP;Kolejno 20 i 200;7
+Wiadomoœci w BGP;OPEN, KEEPALIVE (potwierdzenie aktualnoœci), UPDATE, NOTIFICATION (obs³uga awarii);7
+Uruchomienie BGP w ruterze;#router bgp <16b numer> potem #bgp router-id <adres IPv4>;7
+Co to prefiks w BGP?;Zakres adresów IP okreœlony adresem sieci i mask¹;7
+Co to community w BGP?;S³u¿y do oznakowania prefixów wspóln¹ cech¹;7
+?Zabezpieczenie przeciwko petlom w eBGP;Dziêki AS-PATH (pe³na œcie¿ka z³o¿ona z identyfikatorów AS);7
+Zabezpieczenie przeciwko petlom w iBGP;Nie przekazuje informacji o trasach wewn¹trz AS, bo istnieje Full Mesh;7
+Zabezpieczenie przeciwko petlom w iBGP z Route Reflector;Istnieje jeden g³ówny router Route Reflector, i przechodz¹ przez niego wszystkie informacje od RR Client;7
+Jab dzia³a iBGP?;Dzia³a w jednym AS, nie trzeba konwertowaæ info o trasach miêdzy AS, AS przekazuj¹ sobie prefixy;7
+Dwie poznane techniki skalowania iBGP;AS Confederations, Route Reflector;7
+Technika skalowania iBGP zak³adaj¹ca tworzenie fikcyjnych AS wewn¹trz rzeczywistego AS w celu redukcji iloœci sesji BGP;AS Confederations;7
+
+
+Us³ugi Voice;VoIP, VoATM, VoFrameRelay;8
+D³ugoœæ celki ATM (bajty);53;8
+Nazwa interfejsu ATM tworzonego pomiêdzy dwoma prze³¹cznikami ATM;NNI;8
+Nazwa komunikowania ruterów iGRP zak³adaj¹ce tworzenie wewn¹trz AS po³¹czeñ (sesji) BGP "ka¿dy z ka¿dym";Full mesh - po to aby zapobiec pêtli przekazywania prefixów;8
+Unikatowy identyfikator po³¹czenia w technologii Frame Relay;DLCI;8
+Nazwa interfejsu ATM tworzonego pomiêdzy prze³¹cznikiem ATM a ruterem-bramk¹ z sieci ATM;UNI;8
+Nazwa techniki utrzymywania kilku alternatywnych tras BGP wychodz¹cych z danego AS;multihoming;8
+Nazwa techniki (w Cisco IOS) umo¿liwiaj¹cej wykorzystanie kontrolnych ACL do kontroli procesu rutowania dynamicznego;ROUTE-MAP;8
+D³ugoœæ pakietu UDP (coœ takiego) ;65535;8
+Co to jest gateway of last resort?;Brama domyœlna;8
+Adres CIDR dla SIECI IPv4 IP 100.100.100.1 255.255.0.0;100.100.0.0/16;8
+Rozwiñ skrót WAN;Wide Area Network;8
+Rozwiñ skrót ATM;Asynchronous Transfer Mode;8
+Rozwiñ skrót POTS i opisz;Plain Old Telephony System - proste po³¹czenia punkt-punkt, ?konwersja sygna³u cyfrowego na bazie modemów, modulacja w ca³ym paœmie;8
+Rozwiñ skrót PTSN i opisz;Public Switched Telephone Network - telefonia na bazie central, mo¿e udostêpniaæ kana³y cyfrowe. Standard DS0 (64 kbps) lub DS1 (agregacja 24 prze³¹czanych kana³ów DS0);8
+Rozwiñ skrót DS0/DS1;Digital Signal 0/1;8
+Rozwiñ skrót PBX i opisz;Private Branch Exchange - centralka abonencka POTS, mo¿e posiadaæ rozszerzenia VoIP;8
+Rozwiñ skrót i opisz FXS;Foreign eXchange Subscriber - dostarcza „sygna³” telefoniczny i zasilanie (np. gniazdo telefoniczne w œcianie);8
+Rozwiñ skrót i opisz FXO;Foreign eXchange Office – zawiera dialer (np. gniazdo w aparacie telefonicznym POTS);8
+Rozwiñ skrót i opisz DID;Direct Inward Dial, rozszerzenie interfejsów POTS – interpretacja przedrostków numerów telefonicznych, przekazuje po³¹czenia do nastêpnych centralek lokalnych;8
+Rozwiñ skrót i opisz ISDN;Integrated Services Digital Network - sieæ cyfrowych po³¹czeñ lokalnych dla indywidualnych u¿ytkowników, wyró¿niony kana³ do zestawiania po³¹czeñ w pozosta³ych kana³ach;8
+Standardy ISDN + opis;ISDN BRI (Basic Rate Interface), ISDN PRI (Primary Rate Interface);8
+Do czego Frame Relay;S³u¿y do komunikowania pomiêdzy LAN lub wejœciami do kolejnych sieci WAN;8
+Rozwiñ skrót PVC, SVC;Permanent Virtual Circuit, Switched Virtual Circuit;8
+Rozwiñ skrót DTE i DCE;Interfejsy, Data Terminal Equipment, Data Communications Equipment;8
+Wyjœcia z sieci Frame Relay;DTE;8
+Rozwiñ skrót PDU i opisz;Protocol Data Unit - jednostka informacji;8
+Ramka Frame Relay;Flag Field 1 8b, DLCI 10b (Data-Link Connection Identifier) - identyfikator kana³u, bity steruj¹ce 6 bitów, Dane 1 - 8188 bajtów? CRC/Suma kontrolna 16 bitów?, Flag Field 2 - identyfikator koñca, 8 bitów;8
+Frame Relay, a model ISO OSI:;Warstwa fizyczna: SDH (Synchronous Digital Hierarchy) W warstwie ³¹cza danych: adresacja Frame Relay;8
+Zalety Frame Ralay; Uproszczenie adresacji lokalnych wêz³ów sieci, Przekazywanie ramek bez oczekiwania na odbiór kompletnej ramkii, Traffic shaping;8
+W³¹czenie Frame Relay back-to-back;R1(config-if)#encapsulation frame-relay| no keepalive| frame-relay map ip <IP> <nr DLCI>;8
+W³¹czenie Frame Relay - switch;R1(config-if)#encapsulation frame-relay| no keepalive| frame-relay intf-type dce;
+Utworzenie i konfiguracja podinterfejsu typu point-to-point;int serial 0/0.5 point-to-point;8
+Chmura Frame Relay;Zbiór prze³¹czników przekazuj¹cych ruch pomiêdzy segmentami sieci Frame Relay;8
+Uk³ady po³¹czeñ wêz³ów wprowadzaj¹cych ruch do chmury Frame Relay;Zestaw po³¹czeñ point-to-point, Full-mesh - mo¿liwa jest symulacja rozg³aszania (np. IP muticast)?, Point-to-multipoint;8
+Point-to-multipoint;Jeden wêze³ (tzw. hub-on-spoke) poœredniczy w komunikacji pozosta³ych;8
+Traffic shaping;CIR (Committed Information Rate) – przepustowoœæ gwarantowana, MINCIR, EIR (Excess Information Rate) – max przepustowoœæ, powy¿ej ramki bêd¹ gubione, TC – chwila czasowa (podstawa rozliczania iloœci przekazanych danych), BC (Burst Committed) - iloœæ danych, któr¹ urz¹dzenie akceptuje w czasie TC, BE (Burst Excess) - iloœæ danych, które bierzemy po przekroczeniu BC;8
+
+
+Europejski odpowiednik standardu T-Carrier;E-Carrier;9
+Komenda Cisco aktywuj¹ca w routerze routowanie BGP dla AS o wartoœci 100;router bgp 100;9
+D³ugoœæ (w bitach) identyfikatora DLCI we Frame Relay;10 bitów?;9
+Nazwa komunikatu rozg³aszanego w OSPF przekazuj¹cego informacjê o œcie¿ce;LSA - Link State Advertisement;9
+Adres IPv4 hosta znajduj¹cego siê w sieci 200.200.200.5/32;200.200.200.5;9
+Rozwiniêcie akronimu SVC jako opisu po³¹czenia logicznego w technologii ATM;Switched Virtual Circuit;9
+Wewn¹trz jakiej jednostki logicznej agregowane s¹ wirtualne kana³y ATM;Virtual Path Connection (raczej Channel);9
+D³ugoœæ adresu AESA NSAP ATM;20 bajtów;9
+Parametry tras BGP, które mo¿na modyfikowaæ w ramach route-maps;WEIGHT, LOCAL_PREFERENCE i MED;9
+Nazwa rutera iBGP umo¿liwiaj¹cego podzielenie AS na czêœci w celu redukcji iloœci sesji BGP;Route Reflector;9
+Parametr okreœlaj¹cy przepustowoœæ gwarantowan¹ w danej chwili czasowej przez dostawcê - w technologii Frame Relay;CIR;9
+Wartoœæ (w protokole IP) maksymalnego opóŸnienia dla dostarczenia pakietu IP do odbiorcy;brak (Nie jest definiowane opóŸnienie maksymalne – ewentualny timeout dla us³ugi okreœlany jest w warstwach wy¿szych);9
+Liczba bitów w adresie IPv6;128;9
+Wariant protoko³u BGP operuj¹cy pomiêdzy AS;eBGP;9
+Nazwa dowolnego komunikatu PDU w protokole SNMP;GetRequest, GetNextRequest, ?SetRequest, GetResponse, Trap;9
+Rozwiniêcie skrótu SDH;Synchronous Digital Hierarchy;9
+Dwa typy celek ATM w zale¿noœci od typu interfejsu ATM;UNI, NNI;9
+Nazwa typu interfejsu umo¿liwiaj¹cego zarz¹dzanie modemem;Dialer;9
+Okreœlenie w technologii NAT adresów IP w datagramach IP w sieci typu outside;global;9
+Nazwa obszaru (area) wyizolowanego w rutowaniu dynamicznym OSPF;stub area;9
+Ruter iBGP maj¹cy prawo otrzymywania komunikatów o lokalnych trasach od rutera BGP Router Reflector;RR CLient;9
+Dwa identyfikatory w ATM, s³u¿¹ce do znajdywania œcie¿ki (adresu).;VCI i VPI;9
+Rozwiniêcia skrótu MPoA jako technologii stosowanej w ATM;Multiprotocol over ATM;9
+rodzaje warstw ATM Adaptation Layers;5 wersji: AAL Type 0, AAL Type 1, AAL Type 2, AAL Type 3/4, AAL Type 5;9
+przynajmniej dwa sposoby na (...) cable modem (...);;9
+Nazwa typu interfejsu umo¿liwiaj¹cego zarz¹dzanie modemem w Cisco IOS;Dialer;10
+Okreœlenie u¿ywane wobec obudowy prze³¹cznika segmentu CORE (gromadz¹cej wszelkie urz¹dzenia sk³adowe);Chassis;10
+Port przeznaczony do obs³ugi VLAN TRUNK w prze³¹cznikach Ethernet firmy HP;tagged;10
+Nazwa najbardziej istotnego atrybutu œcie¿ki BGP branego pod uwagê w ruterach Cisco;WEIGHT;10
+Nazwa systemu operacyjnego dla ruterów i prze³¹czników firmy Extreme Networks;ExtremeWare OS;10
+Nazwa (identyfikator) rutera OSPF przekazuj¹cego informacjê o trasach poza domenê OSPF;ASBR;10
+Liczba warstw w modelu warstowym sieci SAN (Storage Area Network);3 / raczej 5;10
+Interfejs telefonii analogowej, do którego pod³¹czamy intefejs FXO;FXS;10
+Wariant protoko³u BGP operuj¹cy pomiêdzy AS;eBGP;10
+Rozwiniêcie skrótu SDH jako technologii przekazywania danych w sieci WAN;Synchronous Digital Hierarchy;10
+Nazwa atrybutu BGP informuj¹cego o pochodzeniu informacji o prefiksie z iBGP, eBGP lub redystrybucji;ORIGIN;10
+Maksymalna wartoœæ identyfikatora Systemu Autonomicznego w BGP;65535;10
+Nazwy dwóch klas obszarów definiowanych w protokole rutowania dynamicznego IS-IS;inter area, intra area;10
+Okreœlenie techniki segmentacji sieci Fibre Channel przy pomocy prze³¹czników SAN Fabric;zoning;10
+Maksymalna d³ugoœæ danych w ramce PDU Frame Relay;8188 bajtów;10
+Atrybut œcie¿ki BGP definiowany dla konkretnego rutera i posiadaj¹cy najwy¿szy priorytet;WEIGHT;10
+D³ugoœæ nag³ówka celki ATM;5 bajtów;10
+Technika skalowania iBGP zak³adaj¹ca tworzenie fikcyjnych AS wewn¹trz rzeczywistego AS w celu redukcji iloœci sesji BGP;AS Confederations;10
+Komenda Cisco IOS sprawdzaj¹ca stan mapowañ DLCI i interfejsów w tablicy rutowania Frame Relay;show frame-relay map/show frame-relay pvc;10
+Atrybut BGP umo¿liwiaj¹cy ocenê w danym AS drogi z innego s¹siedniego AS;LOCAL_PREFERENCE;10
+Nazwa (okreœlenie) centralnego modu³u zarz¹dzaj¹cego prac¹ prze³¹czników Cisco z serii 4000, 5000, 6000 (segmentu CORE);Supervisor;10
+Atrybut œcie¿ki BGP zawieraj¹cy listê AS, przez które œcie¿ka przechodzi;AS_PATH;10
+Nazwa przynajmniej jednego systemu kodowania ramek LMI w technologii Frame Relay;cisco, ansi, q933a;10
+podaj 3 warstwy E-Carrier ;chyba  E1, E9, T1;10
+Nazwa dodatkowego modu³u stosowanego w celu zwiêkszenia wydajnoœci przê³¹czników segmentu CORE Cisco;Switch Fabric;10
+Parametry asocjacji TCP;Typ protoko³u, adres i port wêz³a lokalnego, adres i port wêz³a zdalnego;11
+Identyfikatory w ATM;VCI, VPI;11
+Wymieñ 3 rodzaje kategorii / prêdkoœci E-carrier;E2: multiplexing level 2: 8 Mbit/s, E3: multiplexing level 3: 34 Mbit/s,E4: multiplexing level 4: 140 Mbit/s;11
+Router MPLS wysy³aj¹cy datagramy;Upstream Router;12
+Sieæ VRF dzia³aj¹ca bez MPLS;VRF Lite;12
+Protoko³y u¿ywane do budowania VPN;PPTP, L2TP;12
+Cel u¿ycia GRE (general routing encapsulation);£¹czenie zdalnych sieci stosuj¹cych protoko³y inne ni¿ IP, przesy³anie ruchu IPv6 przez sieæ IPv4, przesy³anie ruchu szyfrowanego. (koñcówka wyk³adu ROUTE (II);12
+Proces uogólniania adresów sieci IP, do których z r(egu³y?) prowadzi ta sama œcie¿ka, stosowany w rutowaniu (..?);Route Summarization;12
+Komenda Cisco IOS umo¿liwiaj¹ca zdefiniowanie regu³ rutowania statycznego;ip route\;12
+Komenda Cisco IOS powoduj¹ca aktywacjê procesu (..) RIP w ruterze Cisco;router rip nazwa;12
+Komenda Cisco IOS definiuj¹ca/aktywuj¹ca do edycji dowolnie wybrany pod-interfejs w ruterze Cisco;int fa0/0.1;12
+Dwie g³ówne techniki poszukiwania tras w stosowanych protoko³ach rutowania dynamicznego IP;link-state, distance-vector;12
+Domyœlna wartoœæ Administrative Distance w tablicy rutowania dla statycznej regu³y rutowania;1;12
+Alternatywa dla protoko³u PPP, choæ nie dostarczaj¹ca autentyfikacji wêz³ów sieci;HDLC - High-Level Data Link Control;12
+Nazwa obszaru (area) wyizolowanego w rutowaniu dynamicznym OSPF;Stub area;12
+Liczba typów komunikatów LSA w protokole rutowania dynamicznego IP OSPF;6 g³ównych/11 w sumie;12
+Postaæ skrócona adresu IPv6 2:2:0:0:0:0:2:2;2:2::2:2;12
+Rozwiniêcie akronimu ARP jako protoko³u sieciowego + do czego s³u¿y;Address Resolution Protocol, translacja IP zdalnej stacji na adres MAC w sieci ethernet;12
+Odpowiednik IPv4 adresu ::/128 IPv6;0.0.0.0/32;12
+Rodzaj adresu, który w NAT s³u¿y do okreœlenia hosta w sieci publicznej (sieci outside);outside global;12
+Domyœlna wartoœæ metryki Administrative Distance dla protoko³u rutowania dynamicznego RIP;120;12
+Postaæ skrócona adresu IPv6: 6A3E:A25E:0:0:0:0:0:0;6A3E:A25E::;12
+Wariant protoko³u ICMP dostosowanego do obs³ugi IPv6;ICMPv6;12
+D³ugoœc identyfikatora NLA w adresie IPv6 (liczba bitów);24;12
+Komenda Cisco IOS powoduj¹ca uruchomienie rutowania IPv6 dla ruchu unicast;ipv6 unicast-routing;12
+Wariant protoko³u rutowania dynamicznego RIP kompatybilnego w IPv6;RIPng;12
+Konstrukcja definiowana w Cisco IOS przypisywana do s¹siada BGP i umo¿liwiaj¹ca manipulowanie atrybutami tras;route-map;12
+W których wartwach modelu ISO OSI operuje prze³¹cznik rutuj¹cy Ethernet;1 - 3 ;12
+Co oznacza okreœlenie Gateway of last resort w tablicy rutowania;Jest to domyœlna trasa rutowania. U¿ywana gdy jakiekolwiek inne nie bêd¹ pasowaæ;12
+IPv6 adresu 127:0:0:1 IPv4;::1/128;12
+Wariant protoko³u OSPF kompatybilny z IPv6;OSPFv3;12
+Nazwa komunikatu rozg³aszanego w ramach OSPF przekazuj¹cego informacje o œcie¿ce;LSA;12
+Adres IPv4 hosta znajduj¹cego siê w sieci 200.200.200.5/32;200.200.200.5;12
+Rodzaje ruterów OSPF wyró¿niane w ramach pracy tego protoko³u;ABR, Internal router, Backbone router, ASBR - Autonomous System Border Router;12
+Nazwa trzeciej warstwy Internet Protocol Suite (to nie to samo co OSI);transportowa;12
+D³ugoœæ (liczba bitów) identyfikatora SLA w IPv6;16;12
+Nazwa dowolnego komunikatu PDU w protokole SNMP;GetRequest, GetNextRequest, ?SetRequest, GetResponse, Trap;12
+Liczba bitów w adresie IPv6;128;12
+Nazwa najbardziej istotnego atrybutu œcie¿ki BGP branego pod uwagê w ruterach Cisco;WEIGHT;12
+Nazwa instytucji zajmuj¹cej siê zarz¹dzaniem Systemami Autonomicznymi i BGP w Europie;RIPE;12
+D³ugoœæ (liczba bitów) identyfikatora Systemu Autonomicznego (AS) rutowania IP;16;12
+Adres IPv6 bêd¹cy odpowiednikiem adresu IPv4: 1.254.0.254 w notacji IPv6-mapped-IPv4;0:0:0:0:FFFF:1.254.0.254/96;12
+Nazwy dwóch klas obszarów definiowanych w protokole routowania dynamicznego IS-IS;Level 1 intra-area, Level 2 inter-area;12
+Ogólna nazwa protoko³ów routowania dynamicznego operuj¹cych jednoczeœnie w wielu Systemach Autonomicznych (AS);EGP (Exterior gateway protocol);12
+Jak nazywamy sieæ IP pod³¹czon¹ bezpoœrednio do routera;Directly connected network (sieæ oœcienna);12
+Standardowy adres IPv4 wejœcia do tunelu 6to4 (przy tunelowaniu IPv6 w IPv4);192.88.99.1;12
+Zakres unikatowych lokalnych adresów nie routowalnych IPv6;fc00::/7;12
+Komenda Cisco IOS aktywuj¹ca w ruterze rutowanie BGP dla AS o wartoœci 100;router bgp 100;12
+Komenda Cisco IOS uruchamiaj¹ca funkcjê prze³¹cznika Frame Relay w ruterze Cisco;frame-relay switching;12
+Okreœlenie u¿ywane wobec obudowy prze³¹cznika segmentu CORE (gromadz¹cej wszelkie urz¹dzenia sk³adowe);Chassis;12
+Wartoœæ ipv4 i maski (w odpowiedniej notacji) okreœlaj¹ca wszystkie hosty w internecie;0.0.0.0/0;12
+Jak nazywamy kodowanie bazuj¹ce na przenosz¹cych informacjê zmianach stanu sygna³u ? – np. zmiana stanu z L>H oznacza 1, a z H>L oznacza 0 ?;Manchester;12
+Jak dzielimy œwiat³owody w zale¿noœci od mo¿liwoœci przesy³ania wielu sygna³ów równoczeœnie lub tylko sygna³u pojedynczego?;jednomodowe i wielomodowe;12
+Alternatywne nazwy procesu prefic aggregation (supernetting) prowadzonego podczas rutowania IP;route summarization albo route aggregation;12
+Parametry tras BGP, które mo¿na modyfikowaæ w ramach route maps;WEIGHT, LOCAL_PREFERENCE i MED;12
+Komenda Cisco IOS w³¹czaj¹ca funkcjê mostka Ethernet z jednoczesn¹ mo¿liwoœci¹ rutowania do niego;bridge <nr> route ip;12
+Wariant protoko³u BGP operuj¹cy pomiêdzy AS;eBGP;12
+Maksymalna wartoœæ identyfikatora Systemu Autonomicznego w BGP;65535;12
+Nazwa rutera iBGP umo¿liwiaj¹cego podzielenie AS na czêœci w celu redukcji iloœci jednoczesnych sesji BGP;Route Reflector;12
+Dwa warianty protoko³u BGP (operuj¹cy na zewn¹trz i wewn¹trz AS);eBGP i iBGP;12
+Okreœlenie dla obowi¹zkowych atrybutów œcie¿ki BGP;Powszechnie Obowi¹zkowe (Well-known Mandatory);12
+Komenda Cisco IOS definiuj¹ca s¹siada BGP o adresie 1.1.1.1 w AS 5;neighbor 1.1.1.1 remote-as 5;12
+Dwie poznane techniki skalowania iBGP;AS Confederations, Route Reflector;12
+Wariant rutowania BGP wy³¹cznie wewn¹trz jednego Systemu Autonomicznego;iBGP;12
+Rozwiniêcie akronimu MED jako atrybutu œcie¿ki w BGP;Multi Exit Discriminator;12
+Nazwa techniki definiowania kilku tras BGP z danego AS z dopuszczeniem wyboru pomiêdzy nimi;multihoming;12
+Nazwa atrybutu w komunikacie o trasie eBGP zawieraj¹cego listê AS, przez które trasa przechodzi;AS_PATH;12
+Nazwa grupy AS w BGP agregowanej w celu okreœlenia tych AS zbiorczo wybranymi atrybutami;Community;12
+Nazwa atrybutu trasy BGP przypisanego do ca³ego AS i okreœlaj¹ca jakoœæ po³¹czenia z innymi AS;LOCAL_PREFERENCE;12
+Atrybut trasy BGP, który okreœla preferowan¹ trasê gdy dwa AS maj¹ wiele po³¹czeñ i nie wiadomo które z nich wybraæ;MED (Multi Exit Discriminator);12
+Atrybut BGP umo¿liwiaj¹cy ocenê w danym AS drogi z innego s¹siedniego AS;LOCAL_PREFERENCE (do sprawdzenia);12
+Technika skalowania iBGP zak³adaj¹ca tworzenie fikcyjnych AS wewn¹trz rzeczywistego AS w celu redukcji iloœci sesji BGP;AS confederations\;12
+Przynajmniej dwa rodzaje komunikatów w sesji BGP;open, update, notification, keepalive;12
+Jak¹ ma d³ugoœæ i z jakich czêœci sk³ada siê adres typu Media Access Control;d³ugoœæ: 48 bitów Pierwsze 24 bity oznaczaj¹ producenta karty sieciowej, pozosta³e 24 bity s¹ unikatowym identyfikatorem danego egzemplarza karty;12
+Nazwa protoko³u kontroluj¹cego ruch multicast w sieciach IPv6;MLD (Multicast Listener Discovery);12
+Podzia³ technik rutowania IP pod k¹tem interpretowania (b¹dŸ nie) klas adresów IP;Classful: IGRP, RIP, Classless: RIPv2, OSPF, EIGRP;12
+Rozwiniêcie akronimu AAL dla ATM;ATM Adaptation Layer;12
+Maksymalna liczba bajtów danych przekazywana w celce ATM;48 B (+ 5 nag³owek = 53 B);12
+Nazwa sk³adowej adresu AESA NSAP identyfikuj¹cej fizyczny interfejs bêd¹cy wyjsciem z ATM;ESI;12
+Pole wystêpuj¹ce w nag³ówkach celu ATM UNI, lecz nie wystêpuj¹ce w nag³ówku celki ATM NNI;GFC;12
+Europejski odpowiednik standardu T-carrier;E-Carrier;12
+Przynajmniej dwa warianty techniki multiplexing;space-division, frequency-division, time-division (podobnie jak w falach radiowych);12
+D³ugoœc identyfikatora DLCI we Frame Relay (bity);10;12
+Rozwiniêcie akronimu SVC jako opisu po³¹czenia logicznego w technologii ATM;switched virtual circuit;12
+Wewn¹trz jakiej jednostki logicznej agregowane s¹ wirtualne kana³y ATM (ATM Virtual Channels);VPC;12
+D³ugoœc adresu AESA NSAP ATM;20 bajtów;12
+Nazwa sygna³u testuj¹cego ³¹cze T-carrier;BERT (Bit-Error Rate Test);12
+Parametr okreœlaj¹cy przepustowoœc gwarantowan¹ w danej chwili czasowej przez dostawcê w technologii Frame Relay;CIR;12
+Nazwa sk³adowej adresu AESA NSAP identyfikuj¹cej fizyczny interfejs bêd¹cy wyjœciem z ATM;ESI;12
+Rozwiniêcie skrótu SDH jako technologii przekazywania danych w sieci WAN;Synchronous Digital Hierarchy;12
+Nazwa atrybutu BGP informuj¹ca o pochodzeniu informacji o prefiksie z iBGP, eBGP lub redystrybucji;Origin;12
+Dwa typy celek ATM w zale¿noœci od typu interfejsu ATM;UNI,NNI;12
+Dowolny wybrany tryb adaptacji (Adaptive-shaping) przy informowaniu o przeci¹¿eniach w Frame Relay;FECN/BECN;12
+Wariant adresu AESA NSAP ATM stosowany domyœlnie w urz¹dzenia Cisco;ICD;12
+Rozwiniêcie akronimu PVC jako okreœlenia obwodu sieci ATM;Permanent virtual circiut;12
+Nazwa ramki przekazywanej miêdzy prze³¹cznikami w technologii Frame Relay;PDU;12
+D³ugoœæ celki ATM (bajty);53;12
+Nazwa intefejsu ATM tworzonego pomiêdzy dwoma prze³¹cznikami ATM;NNI;12
+Unikatowy identyfikator po³¹czenia w technologii Frame Relay (w warstwie 2 ISO OSI);DLCI;12
+Nazwa interfejsu ATM tworzonego pomiêdzy prze³¹cznikem ATM a routerem bramk¹ z sieci ATM;UNI;12
+D³ugoœæ identyfikatora DLCI we Frame Relay(bity);10;12
+Wewn¹trz jakiej jednostki logicznej agregowane s¹ wirtualne kana³y ATM (ATM Virtual Channel);VPC (Virtual Path Connection);12
+D³ugoœæ identyfikatora VCI (Virtual Channel Identifier) w celce ATM;16 bitów;12
+Nazwa przynajmniej jednego systemu kodowania ramek LMI w technologii Frame Relay;cisco, ansi, q933a;12
+Maksymalna d³ugoœæ danych w ramce PDU Frame Relay;8188 bajtów;12
+D³ugoœæ nag³ówki celki ATM;5 bajtów;12
+Komenda Cisco IOS sprawdzaj¹ca stan mapowañ DLCI i interfejsów w tablicy rutowania Frame Relay;show frame-relay map/show frame-relay pvc;12
+Skrót literowy okreœlaj¹cy us³ugê telefonii analogowej;POTS;12
+Interfejs telefonii analogowej do której pod³¹czamy interfejs FXO;FXS;12
+Rozwiniêcie akronimu CPE jako okreœlenia strony komunikacji w asymetrycznym lub symetrycznym DSL;customer premises equipment;12
+Przynajmniej dwa rodzaje uwierzytelniania w protokole PPP;PAP,CHAP;12
+Okreœlenie techniki segmentacji sieci Fibre Channel przy pomocy prze³¹czników SAN Fabric;Zoning;12
+Nazwa (okreœlenie) centralnego modu³u zarz¹dzania prac¹ prze³¹czników Cisco z serii 4000, 5000, 6000 (segmentu CORE);Supervisor;12
+Tryb pracy sieci SAN (Fibre Channel) oparty o fizyczn¹ topologiê pierœcienia;Pêtla z arbitra¿em;12
+Nazwa portu prze³¹cznika Fibre Channel u¿ywana do pod³¹cznia do niego portów z innych urz¹dzeñ (serwerów);Port F;12
+Nazwa dodatkowego modu³u stosowanego w celu zwiêkszenia wydajnoœci przê³¹czników segmentu CORE Cisco;Switch Fabric;12
+Nazwa (akronim) unikatowego identyfikatora urz¹dzenia w sieciach Fibre Channel;WWNN, lub WWPN jeœli urz¹dzenie ma parê portów FC;12
+Nazwa portu Fibre Channel prze³¹cznika SAN (FC Fabric) s³u¿¹cego do po³¹czenia z innymi prze³¹cznikami SAN;Port E;12
+D³ugoœæ adresu interfejsu fizycznego w ramkach FC-2 (Fibre Channel);24;12
+Okreœlenie karty zawieraj¹cej seriê interfejsów sieciowych w prze³¹cznikach Segmentu CORE;line card;12
+Nazwa urz¹dzenia centralnego o które oparta jest topologia gwiazdy w sieciach SAN (Fibre Channel);Switch Fabric;12
+Nazwa modu³u sprzêtowego w prze³¹cznikach Ethernet Cisco u¿ywanego do wykrywania zagro¿eñ w ruchu sieci;IDS (Intrusion Detection System);12
+Okreœlenie dla techniki agregowania ³¹czy w sieciach SAN (Storage Area Network) w celu zwiêkszenia przepustowoœci;Striping;12
+Liczba warstw w modelu warstwowym sieci SAN (Storeage Area Network);3 / a nie 5?;12
+Opisz wyposa¿enie kabla typu SFTP (S/FTP). Podaj tak¿e rozszerzenie skrótu.;S/FTP (dawniej SFTP) –ka¿da para przewodów otoczona jest osobnym ekranem z folii, ca³y kabel pokryty jest pancerzykiem../Shielded Foiled Twisted Pair;12
+W której warstwie OSI pracuje repaeater ?;fizycznej;12
+Standaryzowana jednostka wysokoœci urz¹dzenia w RACK:;Unit. 1U = 1.75cala = 44,45 mm;12
+Nazwa technologii umo¿liwiaj¹cej przesy³anie danych z u¿yciem przewodów sieci energetycznej;PLC - power line communication;12
+Urzadzenie pasywne montowane w szafie krosowniczej RACK umo¿liwiaj¹ce rêczne prze³aczanie wtyków RJ45;Patch panel;12
+Wariant kabla TP montowanego w miejscach nara¿onych na zak³ócenia elektromagnetyczne;SFTP;12
+Wartoœæ MTU dla ramek IEE 802.11 bez uwzglêdnienia WEP;2304 bajtów;12
+Okreœlenie trybu komunikowania w parach (czyli punkt punkt bez u¿ycia Access Point ) stosowanego w IEEE 802.11;Ad hoc - IBSS (Independent Basic Service Set);12
+Nazwa typu interfejsu umo¿liwiaj¹cego zarz¹dzanie modemem;Dialer;12
+Co oznacza akronim SSID ww technologii IEEE 802.11;service set identifier;12
+Odpowiednik funkcjonalnoœci CSMA/CD stosowany w standardzie IEEE 802.11;CSMA/CA (Carrier Sense Multiple Access / with Collision Avoidance);12
+Zakres prêdoœci transmisji (Mbps) dla standardu IEEE 802.11a;6-54Mb/s;12
+Rozwiniêcie akronimu TKIP w standardzie IEEE 802.11;Temporal Key Integrity Protocol;12
+Przynajmniej trzy nazwy szyfrów symetrycznych (tj. u¿ywaj¹cych klucza symetrycznego) stosowanych w technologiach sieciowych;AES DES IDEA;12
+Na czym polega pasywne skanowanie kana³ów w IEEE 802.11;nas³uchiwanie ruchu ramek beacon kierowanych do stacji z prze³¹czeniem skanowania na kolejne kana³y;12
+Maksymalna liczba aktywnych stacji typu slave w jednej pikosieci Bluetooth (IEE 802.15);7;12
+Moce urz¹dzeñ nadawczych kolejno w klasach 1,2,3 definiowanych w IEE 802.15 (Bluetooth);100 mW, 2,5 mW, 1 mW;12
+Nazwa protoko³u umo¿liwiaj¹cego nadbudowanie nad Bluetooth (IEEE 802.15) fragmentacji ramek i QoS;L2CAP;12
+Podaj wzór okreœlaj¹cy EIRP;EIRP = P - Tk + Gi gdzie EIRP i P (moc nadajnika) podane s¹ w dBm, Tk (t³umienie kabla) w dB a Gi (zysk anteny w stosunku do anteny izotropowej) w dB;12
+Nazwa technologii definiowanej standardem IEEE 802.16;WiMAX (Worldwide Interoperability for Microwave Access);12
+Rozmiar pola "numer sekwencji" w nag³ówku TCP;32 bity;12
+Rodzaje urz¹dzeñ ZigBee;ZigBee Coordinator, ZigBee Router, ZigBee End Device;12
+EGZAMIN;ZEROWY 2015;12
+Nazwa trybu IP PIM push mode rutowania dynamicznego IP Multicast;PIM dense mode;12
+Jak¹ informacjê zawiera pojedynczy wpis w tablicy rutowania IPv4 Multicast?;???? Jak ktoœ wie, niech odpowie w komentarzu;12
+Nazwa rutera IGMP czynnie kontroluj¹cego obecnoœæ zarejestrowanych wczeœniej odbiorców ruchu IP multicast;Querier;12
+Nazwa rutera centralnego (zarz¹dzaj¹cego procesem rutowania w ramach protoko³u ODR (On Demant Ruting);"ODR-HUB;12
+Przeznaczenie pola tzw. rozmiaru okna (Window size) w datagramie TCP;16-bitowe pole u¿ywane przez komputer docelowy w celu poinformowania komputera Ÿród³owego o tym, ile danych jest gotów przyj¹æ w jednym segmencie TCP.;12
+i;PIM push-mode;12
+Pe³na nazwa pola w datagramie IP umo¿liwiaj¹cego przenoszenie informacji na temat QoS;DSCP/ECN;12
+Przynajmniej 4 rodzaje obszarów (area) definiowanych wewn¹trz domeny OSFP i w ramach tego protoko³u;backbone, standard, stub, totally stubby areas;12
+Przeznaczenie technologii IP SLA (Sevice Level Agreement) u¿ytkowanej w systemach operacyjnych dla ruterów IP;monitorowanie infrastruktury wykorzystywanej w procesach rutowania IP oraz podejmowanie zaprogramowanych akcji po wykryciu okreœlonego jej stanu;12
+Rozwinicie akronimów IRB oraz CRB jako technologii mostkowania ruchu sieciowego w ruterach Cisco;Integrated Routing and Bridging, Concurrent Routing and Bridging;12
+Nazwa wyró¿nionego rutera IP multicast przechowuj¹cego informacj o grupach multicast w IP PIM sparse mode;Rendezvous Point;12
+Nazwa iterfejsu ATM tworzonego pomidzy dwoma prze³¹cznikami ATM (w przeciwiestwie do interfejsu pomidzy prze³¹cznikiem ATM i ruterem IP);NNI - Network-Network Interface;12
+Liczba bitów w adresie IPv4 klasy B, przyznaczonych do okreœlenia adresu hosta w sieci IP;16;12
+Nazwa techniki (w Cisco IOS) umo¿liwiaj¹cej wykorzystywanie list kontrolnych (ACL) do kontroli procesu rutowania dynamicznego;route-map;12
+Przynajmniej trzy nazwy szyfrów symetrycznych (tj. u¿ywaj¹cych klucza symetrycznego) stosowanych w technologiach sieciowych;AES DES IDEA;12
+Maksymalna liczba aktywnych stacji typu slave w jednej pikosieci Bluetooth (IEE 802.15);7;12
+Co oznacza akronim SSID ww technologii IEEE 802.11 (wystarczy³o rozwin¹æ skrót);service set identifier;12
+Interfejs telefonii analogowej do której pod³¹czamy interfejs FXO;FXS;12
+Alternatywa dla protoko³u IGMP stosowana w przypadku zarz¹dzania grupami IPv6 multicast;MLD;12
+Grupa datagramów wysy³anych i rozpatrywanych jednoczeœnie przez MPLS; ;12
+Router MPLS wysy³aj¹cy datagramy;Upstream Router;12
+Sieæ VRF dzia³aj¹ca bez MPLS;VRF Lite;12
+Protoko³y u¿ywane do budowania VPN;PPTP, L2TP;12
+Cel u¿ycia GRE (general routing encapsulation);£¹czenie zdalnych sieci stosuj¹cych protoko³y inne ni¿ IP, przesy³anie ruchu IPv6 przez sieæ IPv4, przesy³anie ruchu szyfrowanego. (koñcówka wyk³adu ROUTE (II);12
+Akronim dla synchronicznych sieci optycznych;SONET;12
