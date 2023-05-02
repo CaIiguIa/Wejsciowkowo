@@ -236,8 +236,6 @@ Zabezpieczenie przeciwko petlom w iBGP z Route Reflector;Istnieje jeden g³ówny r
 Jab dzia³a iBGP?;Dzia³a w jednym AS, nie trzeba konwertowaæ info o trasach miêdzy AS, AS przekazuj¹ sobie prefixy;7
 Dwie poznane techniki skalowania iBGP;AS Confederations, Route Reflector;7
 Technika skalowania iBGP zak³adaj¹ca tworzenie fikcyjnych AS wewn¹trz rzeczywistego AS w celu redukcji iloœci sesji BGP;AS Confederations;7
-
-
 Us³ugi Voice;VoIP, VoATM, VoFrameRelay;8
 Nazwa komunikowania ruterów iGRP zak³adaj¹ce tworzenie wewn¹trz AS po³¹czeñ (sesji) BGP "ka¿dy z ka¿dym";Full mesh - po to aby zapobiec pêtli przekazywania prefixów;8
 Unikatowy identyfikator po³¹czenia w technologii Frame Relay;DLCI;8
@@ -289,26 +287,45 @@ Rozwiñ skrót NSAP (w ATM) i opisz;Network Service Access Point, rodzaj adresacji
 Wartoœæ IDI (Initial Domain Identifier) dla urz¹dzeñ Cisco (NSAP ATM);0x0091;8
 Adresacja NSAP jak wygl¹da adres w Cisco;47 + 0x0091 + 0x81000000 + MAC ATM + MAC BRAMKI + SEL (nr. interfejsu);8
 Rozwiñ skrót AAL i opisz;ATM Adaptation Layer - zasady transmisji przez sieæ ATM dotyczace fragmentacji i defragmentacji treœci, obs³ugi b³êdów, kontroli przep³ywu;8
-Iloœæ typów AAL;5;8
+rodzaje warstw ATM Adaptation Layers;5 wersji: AAL Type 0, AAL Type 1, AAL Type 2, AAL Type 3/4, AAL Type 5 ||| ALbo klasy (to samo) X, A, B, C, D;8
 Rozwiñ skrót IMLI (w ATM) i opisz;Integrated Local Managment Interface - wspiera zarz¹dzanie trasami w ATM i przekazywanie informacji o adresach w ramach chmury ATM;8
 Rozwiñ skrót IMA i opisz;Inverse Multiplexing over ATM - Wykorzystanie kilku fizycznych po³¹czeñ transmituj¹cych celki ATM w celu zebrania ich w jedno logiczne ³¹cze przekazuj¹ce ruch ATM, Zwielokrotnienie kana³ów;8
 Konfiguracja ATM IMA;#interface ATM0/0 | #no ip address | #no atm ilmi-keepalive | #ima-group 0;8
 Stworzenie podinterfejsu ATM IMA; int ATM0/ima0.1 point-to-point;8
-D³ugoœæ adresów w ATM i Ethernet;Kolejno 20b i 6b;8
+D³ugoœæ adresów w ATM i Ethernet;Kolejno 20B i 6B;8
 Standardy adaptacji ATM <-> (Ethernet, IP);LANE (LAN Emulation), LANE 2.0, MPoA (Multi Protocol over ATM), IP over ATM;8
 Co to ATM LANE;Wymaga enkapsulacji AAL5 | LES (LAN Emulation Server) - odwzorowanie adresów MAC na ATM, transmisje pomiêdzy LEC | BUS (Broadcast and Unknown Server) LES, ale z broadcast | LEC (LAN Emulation Client) – klient, co najmniej jeden, konwertowanie ruchu Ethernet <-> ATM | LECS (LAN Emulation Configuration Server) - zarz¹dzanie, konfiguracja LES, BUS;8
 Konfiguracja LANE;ATM(config)#lane database nazwaLANE | #name nazwaLANE server-atm-address <adres>;8
 Przyk³ad adresu ATM;47009181000000001111112222-111122221111-00;8
 Opisz MPoA (ATM);Nadbudowa LANE, Serwer MPoA (MPS), Klient MPoA (MPC);8
-Rozwiñ skrót SONET i opisz;Synchronous Optical NETwork;8
-Rozwiñ skrót  i opisz;;8
-Rozwiñ skrót  i opisz;;8
-Rozwiñ skrót  i opisz;;8
-Rozwiñ skrót  i opisz;;8
-Rozwiñ skrót  i opisz;;8
-Rozwiñ skrót  i opisz;;8
-
-
+Rozwiñ skrót SONET i opisz;Synchronous Optical NETwork - Linia œwiat³owodowa, amerykañska;8
+Rozwiñ skrót SDH i opisz;Synchronous Digital Hierarchy - Linia œwiat³owodowa, europejska;8
+Rozwiñ skrót OC-x i opisz;Optical Carrier - optyczny typ SONET, x to mno¿nik prêdkoœci;8
+Alternatywy systemów ramek dla SONET i SDH;STS (Synchronous Transport Signal) dla SONET (na prund), STM (Synchronous Transport Multiplexing) dla SDH;8
+Co to Cable Modem;System do dystrybucji danych u¿ywaj¹cy okablowania dedykowanego dla telewizji (wysoka czêstotliwoœæ);8
+Standardy sieci dla Cable Modem;DOCSIS | DVB | IEEE 802.14;8
+Rozwiñ skrót CMTS i opisz;Cable Modem Termination System (albo headend) - rutery dostarczaj¹ce Cable Modem, otrzymuj¹ sygna³ telewizji kablowej (po kablu koncentrycznym/œwiat³owodowym) | upstream 5-42 MHz | TV+FM 54-550 MHz | downstream 550-750 MHz;8
+Typowy sprzêt do ³¹czy œwiat³owodowych;xPON (xPassive Optical Network) | HFC (Hybrid Fibre-Coaxial);8
+Co to Internet over Cable?;Ka¿dy modem pod³¹czony jest do kabla koncentrycznego poprzez "TAP" w topologii magistrali z centralk¹ rozdzielcz¹ (headend) w centrum (a on do internetu), tapy ustaione szeregowo, ka¿dy obs³uguje jeden modem | gdy wariant HFC, to miêdzy Tapami a headendem jest  fiber node;8
+Co to E-carrier/T-carrier;£¹cza point-to-point o wyoskiej przepustowoœci multipleksowaniem, bazuj¹ na œcis³ych szczelinach czasowych (timeslot), u¿ywane w kana³ach cyfrowych | kable full duplex | E- europa 256b | T- US 193b
+Konfiguracja E-carrier E1;Router(config)#controller e1 1/0;8
+Co to multiplexing;Agregowanie wielu sygna³ów cyfrowych lub analogowych w jednym wspó³dzielonym medium | multiplexer (MUX) – agreguje sygna³y we wspólnym medium | demultiplekser (DMX, DEMUX) – odtwarza pierwotne sygna³y;8
+Rodzaje multiplexowania;Space-division multiplexing (SDM) – istnieje wiele fizycznych linii w medium do transmisji poszczególnych sygna³ów | Frequency-division multiplexing (FDM) – sygna³y transmitowane s¹ na bazie ró¿nej czêstotliwoœci bazowej w medium | Time-division multiplexing (TDM) – sygna³y transmitowane s¹ przez medium naprzemiennie w œciœle okreœlonych przedzia³ach czasu | Code division multiplexing (CDM) - Treœæ kilku sygna³ów jest kodowana bitowo w jeden sygna³ zespolony;8
+Warianty urz¹dzeñ E-/T-carrier;Clear channel – dostarczaj¹c ³¹cze szeregowe do nadbudowy w kolejnej warstwie (drugiej) | Ze sprzêtowym mechanizmem ramkowania (ATM) – urz¹dzenia wype³niaj¹ ju¿ funkcjonalnoœæ warstwy drugiej;8
+Standardy E-/T-carrier;E - E(1|2|3|4|5) || F - DS(0|1|2|3|4|5);8
+Rozwiñ skrót DSL i opisz;Digital Subscriber Line - Modem DSL ³¹czy siê z urz¹dzeniem DSLAM (DSL Access Multiplexer). Przeprowadza on ³¹cza hurtowo do ATM lub innych | Zasiêg modemów: 3 - 6 km;8
+Rodzaje DSL;DSL, HDSL (High), SDSL (Single), ADSL (Asynchronous), VDSL (Very high);8
+Sk¹d pochodzi nazwa modem?;MOdulation-DEModulation;8
+Jak dzia³aj¹ modemy w Wan?;Transmisja danych poprzez sieæ analogow¹ | Data Pump - uk³ad s³u¿¹cy do modulacji i demodulacji sygna³ów analogowych;8
+Rozwiñ skrót SDSL i opisz;Symmetric Digital Subscriber Line - DSL, Pasmo dzielone równomiernie w obydwu kierunkach;8
+Rozwiñ skrót EFM i opisz;Ethernet in the First Mile (inaczej LRE - Long Reach Ethernet) - dos³ownie jedna z technologii sieciowych ethernet wykorzystana lokanie przez klienta;8
+Rozwiñ skrót EPON i opisz;Ethernet Passie Optical Network - zwi¹zany z EFM;8
+Typy satelitów sieci WAN;LEO - low orbit, GEO - geostacjonary;8
+Satelitarne sieci WAN;Dotrze wszêdzie, globalny zasiêg us³ug, host-satelita-host;8
+Transponder w sieciach satelitarnych;Jednostka radiokomunikacyjna w sztucznym satelicie ziemi;8
+Footprint w sieciach satelitarnych;Obszar pokrycia powierzchni ziemi wi¹zk¹;8
+Dwie techniki komunikacji pomiêdzy klientami naziemnymi, prowadzone w sieciowych systemach satelitarnych;Komutacja miêdzy satelitami, Komutacja naziemna;8
+Systemy satelitarne;Irydium, Globalstar, TELEDESIC, SKYBRIDGE, EUROSKYWAY;8
 Europejski odpowiednik standardu T-Carrier;E-Carrier;9
 Komenda Cisco aktywuj¹ca w routerze routowanie BGP dla AS o wartoœci 100;router bgp 100;9
 D³ugoœæ (w bitach) identyfikatora DLCI we Frame Relay;10 bitów?;9
@@ -332,7 +349,6 @@ Nazwa obszaru (area) wyizolowanego w rutowaniu dynamicznym OSPF;stub area;9
 Ruter iBGP maj¹cy prawo otrzymywania komunikatów o lokalnych trasach od rutera BGP Router Reflector;RR CLient;9
 Dwa identyfikatory w ATM, s³u¿¹ce do znajdywania œcie¿ki (adresu).;VCI i VPI;9
 Rozwiniêcia skrótu MPoA jako technologii stosowanej w ATM;Multiprotocol over ATM;9
-rodzaje warstw ATM Adaptation Layers;5 wersji: AAL Type 0, AAL Type 1, AAL Type 2, AAL Type 3/4, AAL Type 5;9
 przynajmniej dwa sposoby na (...) cable modem (...);;9
 Nazwa typu interfejsu umo¿liwiaj¹cego zarz¹dzanie modemem w Cisco IOS;Dialer;10
 Okreœlenie u¿ywane wobec obudowy prze³¹cznika segmentu CORE (gromadz¹cej wszelkie urz¹dzenia sk³adowe);Chassis;10
