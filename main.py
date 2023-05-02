@@ -25,7 +25,7 @@ subIndex = 0
 layout = [[sg.Button("Pokaż odpowiedź", key="-odp-", visible=False), sg.Button("Umiem", key="-wiem-", visible=False)],
           [sg.Text("Witaj, pomogę ci nauczyć się sieci!", key="-pytanie-", justification="center", font=('Helvetica', 13))],
           [sg.Sizer(25, 25)],
-          [sg.Multiline("", key="-txtodp-", justification="center", visible=False, font=('Helvetica', 13), size=(300, 3),background_color='#64778d', text_color='white')],
+          [sg.Multiline("", key="-txtodp-", justification="left", visible=False, font=('Helvetica', 13), size=(300, 3),background_color='#64778d', text_color='white')],
           [sg.Text("", key="-heh-", justification="center", visible=False)],
           [sg.Button("Następne pytanie", key="-nast-", visible=False)],
           [sg.Checkbox("Nauka ostatniej wejściówki", key="-nauka-"),

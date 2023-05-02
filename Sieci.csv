@@ -239,18 +239,20 @@ Technika skalowania iBGP zak³adaj¹ca tworzenie fikcyjnych AS wewn¹trz rzeczywist
 
 
 Us³ugi Voice;VoIP, VoATM, VoFrameRelay;8
-D³ugoœæ celki ATM (bajty);53;8
-Nazwa interfejsu ATM tworzonego pomiêdzy dwoma prze³¹cznikami ATM;NNI;8
 Nazwa komunikowania ruterów iGRP zak³adaj¹ce tworzenie wewn¹trz AS po³¹czeñ (sesji) BGP "ka¿dy z ka¿dym";Full mesh - po to aby zapobiec pêtli przekazywania prefixów;8
 Unikatowy identyfikator po³¹czenia w technologii Frame Relay;DLCI;8
-Nazwa interfejsu ATM tworzonego pomiêdzy prze³¹cznikiem ATM a ruterem-bramk¹ z sieci ATM;UNI;8
 Nazwa techniki utrzymywania kilku alternatywnych tras BGP wychodz¹cych z danego AS;multihoming;8
 Nazwa techniki (w Cisco IOS) umo¿liwiaj¹cej wykorzystanie kontrolnych ACL do kontroli procesu rutowania dynamicznego;ROUTE-MAP;8
 D³ugoœæ pakietu UDP (coœ takiego) ;65535;8
 Co to jest gateway of last resort?;Brama domyœlna;8
 Adres CIDR dla SIECI IPv4 IP 100.100.100.1 255.255.0.0;100.100.0.0/16;8
 Rozwiñ skrót WAN;Wide Area Network;8
-Rozwiñ skrót ATM;Asynchronous Transfer Mode;8
+Rozwiñ skrót ATM i opisz;Asynchronous Transfer Mode - topologia gwiazdy hierarchicznej oparta o prze³¹czniki celek (prze³¹cznice ATM) Celki nadchodz¹ce do prze³¹cznika ATM kierowane s¹ na w³aœciw¹ drogê (do kolejnego prze³¹cznika) na podstawie zawartych w nag³ówku informacji adresowych;8
+Co to celka w ATM?;Pakiet o sta³ej d³ugoœci 53 bajty, 5b nag³ówek, 48b dane (warianty:UNI, NNI), brak adresu docelowego, tylko adresy VCI, VPI;8
+Rozwiñ skrót VCC (w ATM) i opisz;Virtual Channel Connection - wirtualny kana³, logiczne po³¹czenie miêdzy stacjami w ATM;8
+Rozwiñ skrót VPC (w ATM) i opisz;Virtual Path Connection - wirtualn¹ œcie¿kê tworzony przez zestaw kana³ów o wspólnym wêŸle docelowym i Ÿród³owym;8
+Nazwa interfejsu ATM tworzonego pomiêdzy dwoma prze³¹cznikami ATM + rozwiñ skrót;NNI - Network-Network Interface;8
+Nazwa interfejsu ATM tworzonego pomiêdzy prze³¹cznikiem ATM a ruterem-bramk¹ z sieci ATM + rozwiñ skrót;UNI - User-Network Interface;8
 Rozwiñ skrót POTS i opisz;Plain Old Telephony System - proste po³¹czenia punkt-punkt, ?konwersja sygna³u cyfrowego na bazie modemów, modulacja w ca³ym paœmie;8
 Rozwiñ skrót PTSN i opisz;Public Switched Telephone Network - telefonia na bazie central, mo¿e udostêpniaæ kana³y cyfrowe. Standard DS0 (64 kbps) lub DS1 (agregacja 24 prze³¹czanych kana³ów DS0);8
 Rozwiñ skrót DS0/DS1;Digital Signal 0/1;8
@@ -261,7 +263,7 @@ Rozwiñ skrót i opisz DID;Direct Inward Dial, rozszerzenie interfejsów POTS – int
 Rozwiñ skrót i opisz ISDN;Integrated Services Digital Network - sieæ cyfrowych po³¹czeñ lokalnych dla indywidualnych u¿ytkowników, wyró¿niony kana³ do zestawiania po³¹czeñ w pozosta³ych kana³ach;8
 Standardy ISDN + opis;ISDN BRI (Basic Rate Interface), ISDN PRI (Primary Rate Interface);8
 Do czego Frame Relay;S³u¿y do komunikowania pomiêdzy LAN lub wejœciami do kolejnych sieci WAN;8
-Rozwiñ skrót PVC, SVC;Permanent Virtual Circuit, Switched Virtual Circuit;8
+Rozwiñ skrót PVC, SVC;Permanent Virtual Circuit - po³¹czenie trwa³e, zestawiane rêcznie w prze³¹cznicy ATM | Switched Virtual Circuit - po³¹czenie zestawiane automatycznie (dynamicznie) na podstawie protoko³u rutowania;8
 Rozwiñ skrót DTE i DCE;Interfejsy, Data Terminal Equipment, Data Communications Equipment;8
 Wyjœcia z sieci Frame Relay;DTE;8
 Rozwiñ skrót PDU i opisz;Protocol Data Unit - jednostka informacji;8
@@ -269,12 +271,42 @@ Ramka Frame Relay;Flag Field 1 8b, DLCI 10b (Data-Link Connection Identifier) - 
 Frame Relay, a model ISO OSI:;Warstwa fizyczna: SDH (Synchronous Digital Hierarchy) W warstwie ³¹cza danych: adresacja Frame Relay;8
 Zalety Frame Ralay; Uproszczenie adresacji lokalnych wêz³ów sieci, Przekazywanie ramek bez oczekiwania na odbiór kompletnej ramkii, Traffic shaping;8
 W³¹czenie Frame Relay back-to-back;R1(config-if)#encapsulation frame-relay| no keepalive| frame-relay map ip <IP> <nr DLCI>;8
-W³¹czenie Frame Relay - switch;R1(config-if)#encapsulation frame-relay| no keepalive| frame-relay intf-type dce;
+W³¹czenie Frame Relay - switch;R1(config-if)#encapsulation frame-relay| no keepalive| frame-relay intf-type dce;8
 Utworzenie i konfiguracja podinterfejsu typu point-to-point;int serial 0/0.5 point-to-point;8
 Chmura Frame Relay;Zbiór prze³¹czników przekazuj¹cych ruch pomiêdzy segmentami sieci Frame Relay;8
 Uk³ady po³¹czeñ wêz³ów wprowadzaj¹cych ruch do chmury Frame Relay;Zestaw po³¹czeñ point-to-point, Full-mesh - mo¿liwa jest symulacja rozg³aszania (np. IP muticast)?, Point-to-multipoint;8
 Point-to-multipoint;Jeden wêze³ (tzw. hub-on-spoke) poœredniczy w komunikacji pozosta³ych;8
 Traffic shaping;CIR (Committed Information Rate) – przepustowoœæ gwarantowana, MINCIR, EIR (Excess Information Rate) – max przepustowoœæ, powy¿ej ramki bêd¹ gubione, TC – chwila czasowa (podstawa rozliczania iloœci przekazanych danych), BC (Burst Committed) - iloœæ danych, któr¹ urz¹dzenie akceptuje w czasie TC, BE (Burst Excess) - iloœæ danych, które bierzemy po przekroczeniu BC;8
+Token bucket model;Uniwersalny mechanizm kontroli przep³ywu danych, obliczanie liczby interwa³ów zliczania danych przes³anych, W ka¿dym TC token bucket jest wype³niany tokenami do zu¿ycia;8
+Tryby adaptacji Frame Relay w razie przeci¹¿eñ;FECN, BECN;8
+W³¹czenie trybu adaptacji we Frame Ralay;(config)#map-class frame-relay klasaRuchu | #frame-relay adaptive-shaping <tryb>;8
+Rozwiñ skrót LMI i opisz;Link Management Interface - definiowanie standardów dla DLCI, zarz¹dzanie SVC (tymczasowe zestawienie miêdzy DTE);8
+W³¹czenie SVC we Freame Relay;Router(config-if)#frame-relay svc;8
+Konfigurowanie ATM PVC (Permanent Virtual Circuit) back-to-back (ruter-ruter);(config-if)#pvc 1/32;8
+Konfigurowanie prze³¹cznika ATM PVC (Permanent Virtual Circuit);(config)#interface atm 12/0/0 | (config-if)#atm pvc 0 50 interface atm 12/1/0 0 60;8
+Rozwiñ skrót NSAP (w ATM) i opisz;Network Service Access Point, rodzaj adresacji w ATM  dla prze³¹czników wyprowadzaj¹cych ruch z chmury ATP, ATP ARP konwertuje IP na NSAP;8
+3 warianty NSAP ATM + kody AFI (Authority and Format Identifier);DDC (39), IDC (47), E.164 (45);8
+Wartoœæ IDI (Initial Domain Identifier) dla urz¹dzeñ Cisco (NSAP ATM);0x0091;8
+Adresacja NSAP jak wygl¹da adres w Cisco;47 + 0x0091 + 0x81000000 + MAC ATM + MAC BRAMKI + SEL (nr. interfejsu);8
+Rozwiñ skrót AAL i opisz;ATM Adaptation Layer - zasady transmisji przez sieæ ATM dotyczace fragmentacji i defragmentacji treœci, obs³ugi b³êdów, kontroli przep³ywu;8
+Iloœæ typów AAL;5;8
+Rozwiñ skrót IMLI (w ATM) i opisz;Integrated Local Managment Interface - wspiera zarz¹dzanie trasami w ATM i przekazywanie informacji o adresach w ramach chmury ATM;8
+Rozwiñ skrót IMA i opisz;Inverse Multiplexing over ATM - Wykorzystanie kilku fizycznych po³¹czeñ transmituj¹cych celki ATM w celu zebrania ich w jedno logiczne ³¹cze przekazuj¹ce ruch ATM, Zwielokrotnienie kana³ów;8
+Konfiguracja ATM IMA;#interface ATM0/0 | #no ip address | #no atm ilmi-keepalive | #ima-group 0;8
+Stworzenie podinterfejsu ATM IMA; int ATM0/ima0.1 point-to-point;8
+D³ugoœæ adresów w ATM i Ethernet;Kolejno 20b i 6b;8
+Standardy adaptacji ATM <-> (Ethernet, IP);LANE (LAN Emulation), LANE 2.0, MPoA (Multi Protocol over ATM), IP over ATM;8
+Co to ATM LANE;Wymaga enkapsulacji AAL5 | LES (LAN Emulation Server) - odwzorowanie adresów MAC na ATM, transmisje pomiêdzy LEC | BUS (Broadcast and Unknown Server) LES, ale z broadcast | LEC (LAN Emulation Client) – klient, co najmniej jeden, konwertowanie ruchu Ethernet <-> ATM | LECS (LAN Emulation Configuration Server) - zarz¹dzanie, konfiguracja LES, BUS;8
+Konfiguracja LANE;ATM(config)#lane database nazwaLANE | #name nazwaLANE server-atm-address <adres>;8
+Przyk³ad adresu ATM;47009181000000001111112222-111122221111-00;8
+Opisz MPoA (ATM);Nadbudowa LANE, Serwer MPoA (MPS), Klient MPoA (MPC);8
+Rozwiñ skrót SONET i opisz;Synchronous Optical NETwork;8
+Rozwiñ skrót  i opisz;;8
+Rozwiñ skrót  i opisz;;8
+Rozwiñ skrót  i opisz;;8
+Rozwiñ skrót  i opisz;;8
+Rozwiñ skrót  i opisz;;8
+Rozwiñ skrót  i opisz;;8
 
 
 Europejski odpowiednik standardu T-Carrier;E-Carrier;9
