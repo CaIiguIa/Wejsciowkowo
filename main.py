@@ -3,12 +3,15 @@ import re
 from pickle import dump, load
 
 import PySimpleGUI as sg
+from win11toast import notify
 
 # TODO: nic sie nie dzieje jak koniec nauki
-# TODO: od nowa - wyświetlanie w aplikacji
+# TODO: skalowalność
 # TODO: od początku wykładów dodawaj pytania aby wczystko było - skróty itp.
 # Skończone wykłady: 5,6,7
-
+# TODO: do niektórych pytań dodajemy zdjęcia - nowa koluman w csv
+# TODO: uogólnienie do wielu przedmiotów
+# TODO: Bug: pierwsze pytanie po od nowa może być już umiane
 # TODO: nauka tylko skrótów
 # TODO: opakować te wszystkie if elsy przy przyciskach w metody bo syf się robi
 # TODO: Dzieli pytania na zestawy (np po 20) i wtedy uczy dopóki wszystkich nie umie --- nowy tryb pracy do tego
@@ -25,7 +28,7 @@ subIndex = 0
 layout = [[sg.Button("Pokaż odpowiedź", key="-odp-", visible=False), sg.Button("Umiem", key="-wiem-", visible=False)],
           [sg.Text("Witaj, pomogę ci nauczyć się sieci!", key="-pytanie-", justification="center", font=('Helvetica', 13))],
           [sg.Sizer(25, 25)],
-          [sg.Multiline("", key="-txtodp-", justification="left", visible=False, font=('Helvetica', 13), size=(300, 3),background_color='#64778d', text_color='white')],
+          [sg.Multiline("", key="-txtodp-", justification="left", visible=False, font=('Helvetica', 13), size=(300, 3), background_color='#64778d', text_color='white')],
           [sg.Text("", key="-heh-", justification="center", visible=False)],
           [sg.Button("Następne pytanie", key="-nast-", visible=False)],
           [sg.Checkbox("Nauka ostatniej wejściówki", key="-nauka-"),
@@ -36,7 +39,7 @@ layout = [[sg.Button("Pokaż odpowiedź", key="-odp-", visible=False), sg.Button
           [sg.Button("Zapisz postęp", key="-zapisz-", visible=False)]
           ]
 
-window = sg.Window("Sieci", layout, size=(1250, 300))
+window = sg.Window("Sieci", layout, size=(1250, 350))
 
 
 def wczytajPytania(odnowa, nauka, wejsciowki):
@@ -45,9 +48,9 @@ def wczytajPytania(odnowa, nauka, wejsciowki):
         l = wejsciowki.split(",")
         for k in l:
             k = k.replace(" ", "")
-            if re.fullmatch("[1-9][0-9]?", k):
+            if re.fullmatch("[1-9]([0-9]*)?", k):
                 wejsciowka.append(int(k))
-            elif re.fullmatch("[1-9][0-9]?-[1-9][0-9]?", k):
+            elif re.fullmatch("[1-9]([0-9]*)?-[1-9]([0-9]*)?", k):
                 numbers = [int(num) for num in k.split("-")]
                 # print(type(numbers[1]))
                 for i in range(min(numbers), max(numbers) + 1):
@@ -112,7 +115,7 @@ while True:
             index += 1
             # print(f"1{questions[:][3]}")
             # print(f"{subIndex / sum(map(lambda x: x == False, [row[3] for row in questions]))*100}%")
-            while index < len(questions) and questions[index][-1] :
+            while index < len(questions) and questions[index][-1]:
                 index += 1
 
                 # print(f"2{questions[3][:]}")
@@ -121,6 +124,7 @@ while True:
                 index = 0
                 random.shuffle(questions)
                 print("Od nowa!")
+                notify("Sieci", "Nauka od nowa!")
             window["-pytanie-"].update(questions[index][0])
             window["-odp-"].update("Pokaż odpowiedź")
             window["-txtodp-"].update("")
@@ -140,6 +144,7 @@ while True:
             index = 0
             random.shuffle(questions)
             print("Od nowa!")
+            notify("Sieci", "Nauka od nowa!")
         window["-pytanie-"].update(questions[index][0])
         window["-odp-"].update("Pokaż odpowiedź")
         window["-txtodp-"].update("")
