@@ -127,7 +127,7 @@ Przynajmniej piêæ typy wtyków œwiat³owodowych;ST, SC, LC, FC, MT-RJ;4
 Alternatywa dla protoko³u HDLC;PPP;4
 Po której stronie ³¹cza V.35 serial nale¿y dostarczyæ zegar;DCE - Data Communications Equipment;4
 Nazwa kabla konsoli Cisco z dwoma wtykami RJ45 i przeplotem;RollOver;4
-Co wyra¿a wartoœæ pola Time To Live w nag³ówku datagramu IP;TTL - pozosta³a d³ugoœæ ¿ycia;4
+Co wyra¿a wartoœæ pola Time To Live w nag³ówku datagramu IP;TTL - pozosta³a d³ugoœæ ¿ycia (liczba przeskoków);4
 Maksymalna wartoœæ pola TTL w nag³ówku datagramu IP;255;4
 Maksymalna d³ugoœæ ramki IEEE 802.3 (w oktetach);1518;4
 Nazwa (identyfikator) rutera OSPF przekazuj¹cego informacjê o trasach poza domenê OSPF;ASBR;4
@@ -175,7 +175,7 @@ Ogólne okreœlenie protoko³ów rutowania dynamicznego wewn¹trz systemu autonomiczn
 Zakres unikatowych lokalnych nierutowalnych IPv6;fc00::/7;6
 Okreœlenie rodzaju adresów IP stosowane w NAT dla adresów w datagramach w sieci prywatnej (inside);local;6
 Rozwiniêcie akronimu ARP jako protoko³u sieciowego + do czego s³u¿y;Address Resolution Protocol, translacja IP zdalnej stacji na adres MAC w sieci ethernet;6
-Odpowiednik IPv4 adresu IPv6 0:0:0:0:0:0:0:1;127.0.0.1 - localhost;6
+Odpowiednik IPv4 adresu IPv6 ::1/128;127.0.0.1 - localhost;6
 Wartoœæ adresu autokonfiguracji IPv6 (nadawanego samoczynnie przez stacjê, np. przy braku dostêpu do DHCP);fe80::/10;6
 D³ugoœæ (liczba bitów) identyfikatora EUI (Extended Unique Identifier) w IPv6;64;6
 Maksymalna d³ugoœæ drogi dla datagramów przetwarzanej przez protokó³ rutowania dynamicznego IP RIP (iloœæ przeskoków);15;6
@@ -217,7 +217,7 @@ Komenda Cisco IOS umo¿liwiaj¹ca wy³¹czenie uogólniania tras przekazywanych w pro
 Nazwa procesu przekazywania wiedzy o trasach pomiêdzy ró¿nymi protoko³ami rutowania dynamicznego;Redystrybucja;7
 Co zawiera Extended Unique Identifier w adresie IPv6?;zawiera MAC uzupe³niony wartoœci¹ 0xFFFE poœrodku + 7 bit na jedynkê;7
 Zapisz dowolny adres IPv6 w notacji EUI-64;FF11:11FF:FE11:1111/64 eui-64;7
-Co to VTP + skrót;VLAN Trunking Protocol, slu¿y do przenoszenia informacj o definicjach sieci VLAN, trzy tryby dzia³ania switcha: Server, Client, Transparent;7
+Co to VTP + skrót;VLAN Trunking Protocol, slu¿y do przenoszenia informacj o definicjach sieci VLAN;7
 Ruter iBGP maj¹cy prawo otrzymywania komunikatów o lokalnych trasach od rutera BGP Route Reflector (RR);RRC - Route reflector client;7
 komenda wypisuj¹ca route multicast (rutowanie);show ip mroute;7
 Rozwiñ skrót OSPF;Open Shortest Path First;7
@@ -313,7 +313,7 @@ Maksymalna d³ugoœæ danych w ramce PDU Frame Relay;8188 bajtów;10
 Wzór do obliczenia metryki kosztu ³¹cza w protokole OSPF;100Mbps/szybkoœæ interfejsu;10
 Nazwa (okreœlenie) centralnego modu³u zarz¹dzaj¹cego prac¹ prze³¹czników Cisco z serii 4000, 5000, 6000 (segmentu CORE);Supervisor;10
 podaj 3 warstwy E-Carrier ;E1, E2, E3, E4, E5;10
-Co to downstream i upstream?;Ruch sieciowy do poszczególnych modemów (downstream) oraz ruch sieciowy od poszczególnych modemów do headend (upstream);10
+Co to downstream i upstream? (w MPLS);Ruch sieciowy do poszczególnych modemów (downstream) oraz ruch sieciowy od poszczególnych modemów do headend (upstream);10
 Nazwa dodatkowego modu³u stosowanego w celu zwiêkszenia wydajnoœci przê³¹czników segmentu CORE Cisco;Switch Fabric;10
 Parametry asocjacji TCP;Typ protoko³u, adres i port wêz³a lokalnego oraz zdalnego;121
 Rozwiñ skrót TCP;Transmission Control Protocol;121
@@ -362,12 +362,11 @@ Nazwa technologii umo¿liwiaj¹cej przesy³anie danych z u¿yciem przewodów sieci en
 Urzadzenie pasywne montowane w szafie krosowniczej RACK umo¿liwiaj¹ce rêczne prze³aczanie wtyków RJ45;Patch panel;123
 Wariant kabla TP montowanego w miejscach nara¿onych na zak³ócenia elektromagnetyczne;SFTP;123
 Wartoœæ MTU dla ramek IEE 802.11 bez uwzglêdnienia WEP;2304 bajtów;123
-Okreœlenie trybu komunikowania w parach (czyli punkt punkt bez u¿ycia Access Point ) stosowanego w IEEE 802.11;IBSS (Independent Basic Service Set);123
+Okreœlenie trybu komunikowania w parach (czyli punkt punkt bez u¿ycia Access Point ) stosowanego w IEEE 802.11;ad hoc, czyli (Independent Basic Service Set);123
 Odpowiednik funkcjonalnoœci CSMA/CD stosowany w standardzie IEEE 802.11;CSMA/CA (Carrier Sense Multiple Access / with Collision Avoidance);123
 Zakres prêdoœci transmisji (Mbps) dla standardu IEEE 802.11a;6-54Mb/s;123
 Rozwiniêcie akronimu TKIP w standardzie IEEE 802.11;Temporal Key Integrity Protocol;123
 Przynajmniej trzy nazwy szyfrów symetrycznych (tj. u¿ywaj¹cych klucza symetrycznego) stosowanych w technologiach sieciowych;AES, DES, IDEA;123
-Na czym polega pasywne skanowanie kana³ów w IEEE 802.11;nas³uchiwanie ruchu ramek beacon kierowanych do stacji z prze³¹czeniem skanowania na kolejne kana³y;123
 Maksymalna liczba aktywnych stacji typu slave w jednej pikosieci Bluetooth (IEE 802.15);7;123
 Moce urz¹dzeñ nadawczych kolejno w klasach 1,2,3 definiowanych w IEE 802.15 (Bluetooth);100 mW, 2,5 mW, 1 mW;123
 Nazwa protoko³u umo¿liwiaj¹cego nadbudowanie nad Bluetooth (IEEE 802.15) fragmentacji ramek i QoS;L2CAP;123
@@ -378,12 +377,10 @@ Rodzaje urz¹dzeñ ZigBee;ZigBee Coordinator, ZigBee Router, ZigBee End Device;124
 Nazwa trybu IP PIM push-mode rutowania dynamicznego IP Multicast;PIM dense mode;124
 Nazwa rutera IGMP czynnie kontroluj¹cego obecnoœæ zarejestrowanych wczeœniej odbiorców ruchu IP multicast;Querier;124
 Nazwa rutera centralnego (zarz¹dzaj¹cego procesem rutowania w ramach protoko³u ODR (On Demant Ruting);ODR-HUB;124
-Przeznaczenie pola tzw. rozmiaru okna (Window size) w datagramie TCP;16-bitowe pole u¿ywane przez komputer docelowy w celu poinformowania komputera Ÿród³owego o tym, ile danych jest gotów przyj¹æ w jednym segmencie TCP.;124
-Pe³na nazwa pola w datagramie IP umo¿liwiaj¹cego przenoszenie informacji na temat QoS;DSCP - Differential Services Code Point;124
 Przynajmniej 4 rodzaje obszarów (area) definiowanych wewn¹trz domeny OSFP i w ramach tego protoko³u;backbone, standard, stub, totally stubby areas;124
 Przeznaczenie technologii IP SLA (Sevice Level Agreement) u¿ytkowanej w systemach operacyjnych dla ruterów IP;monitorowanie infrastruktury wykorzystywanej w procesach rutowania IP oraz podejmowanie zaprogramowanych akcji po wykryciu okreœlonego jej stanu;124
 Rozwinicie akronimów IRB oraz CRB jako technologii mostkowania ruchu sieciowego w ruterach Cisco;Integrated Routing and Bridging, Concurrent Routing and Bridging;124
-Nazwa wyró¿nionego rutera IP multicast przechowuj¹cego informacj o grupach multicast w IP PIM sparse mode;Rendezvous Point;124
+Nazwa wyró¿nionego rutera IP multicast przechowuj¹cego informacje o grupach multicast w IP PIM sparse mode;Rendezvous Point;124
 Liczba bitów w adresie IPv4 klasy B, przyznaczonych do okreœlenia adresu hosta w sieci IP;16;124
 D³ugoœæ (liczba bitów) identyfikatora Systemu Autonomicznego (AS) rutowania IP;16;124
 Cel u¿ycia GRE (general routing encapsulation);£¹czenie zdalnych sieci stosuj¹cych protoko³y inne ni¿ IP, przesy³anie ruchu IPv6 przez sieæ IPv4, przesy³anie ruchu szyfrowanego;124
@@ -391,3 +388,33 @@ Akronim dla synchronicznych sieci optycznych;SONET;124
 Konstrukcja definiowana w Cisco IOS przypisywana do s¹siada BGP i umo¿liwiaj¹ca manipulowanie atrybutami tras;route-map;124
 Rodzaje ruterów OSPF wyró¿niane w ramach pracy tego protoko³u;ABR, Internal router, Backbone router, ASBR;124
 Nazwa instytucji zajmuj¹cej siê zarz¹dzaniem Systemami Autonomicznymi i BGP w Europie;RIPE;124
+Na czym polega pasywne skanowanie kana³ów w IEEE 802.11;nas³uchiwanie ruchu ramek beacon kierowanych do stacji z prze³¹czeniem skanowania na kolejne kana³y;0
+Przeznaczenie IP SLA w routerach IP;Prowadzenie diagnostyki ruchu w sieci, dziêki niej mo¿na podj¹æ akcjê po wykryciu danego stanu (problemu);0
+Przeznaczenie pola tzw. rozmiaru okna (Window size) w datagramie TCP;16-bitowe pole u¿ywane przez komputer docelowy w celu poinformowania komputera Ÿród³owego o tym, ile danych jest gotów przyj¹æ w jednym segmencie TCP.;0
+Pe³na nazwa pola w datagramie IP umo¿liwiaj¹cego przenoszenie informacji na temat QoS (priorytet QoS);DSCP;0
+Klasy adresów IP;;0
+Zamiania CoS (precedence) na DSCP (ToS);;0
+Tryby dzia³ania VTP;Server, Client, Transparent;0
+Tryb VTP nie pozwalaj¹cy na tworzenie nowych VLAN;tansparent;0
+Wartoœæ napiêcia zasilania PoE IEEE 802.3ae;48 V DC;0
+W jakiej sytuacji sytuacji istotne jest ustawienie bramki domyœlnej komend¹ ip default-gateway;gdy np. przyk³ad router lub switch musi skierowaæ ruch do innych sieci, których nie ma w swojej tabeli routingu.;0
+Nazwa standardu portu STP do którego przechodzi ten port po pod³¹czeniu kabla;Listening;0
+Typ CoS dla telefonii IP (VoIP);5;0
+Okreœlenie oznaczaj¹ce stan zgodnoœci (zbie¿noœci) tablic rutowania w dwóch ruterach (nazwa polska i angielska);convergence, zbie¿noœæ;0
+Datagram do którego nale¿y ToS;Datagram IP;0
+Protoko³y routowania;OSPF, EIGRP, RIP, BGP;0
+Protoko³y wymiany informacji o trasach;ICMP - Internet Control Message Protocol;0
+Co zawiera informacje o trasach w sieci;Tablica rutowania;0
+Protoko³y auto-konfiguracji adresów IP;DHCP;0
+Technologia œwiat³owodowa, która umo¿liwia przesy³anie o wielu czêstotliwoœciach;WDM - Wavelength Division Multiplexing;0
+Jaka technologia daje nam VRF bez MPIS;VRF Lite;0
+Nazwa ramki sprawdzaj¹ca obecnoœæ po³¹czenia klientów w 801.11;Probe Request;0
+Nazwa pliku konfiguracyjnego w prze³¹czniku Ethernet, w którym zapisane s¹ przypisania portów do poszczególnych VLAN-ów (w Cisco);VLAN.DAT;0
+Nazwa urz¹dzenia do którego jest podpiête wiele ³¹cz point-to-point i poœredniczy w wymianie informacji pomiêdzy nimi;Bridge;0
+Nazwa ramek, za pomoc¹ których stacja AP (Access Point) sprawdza, jakie stacje obecnie s¹ do niej pod³¹czone; Probe Reqest, Probe Response;0
+Na czym polega konstrukcja Multilink PPP point to point w sieciach komputerowych?;S³u¿y do agregowania wielu równoleg³ych ³¹cz szeregowych w jedno logiczne;0
+Na czym polega konstrukcja PPP point to multipoint w sieciach komputerowych?;Multipoint HDLC - zak³ada siê wtedy istnienie terminala typu primary i wielu secondary. Komunikacja przebiega wy³¹cznie z udzia³em primary – secondary;0
+Dwa typy sieci opisane standardem IEEE 802.11?;ad hoc, Infrastructure;0
+Protokó³ transmisji ramek z potwierdzeniem w standardzie IEEE 802.11?;WPA2 | DCF/PCF;0
+Podaæ Administrative distance dla RIP, E/I EIGRP, OSPF?;Rip - 120, IEIGRP - 90, EEIGRP - 170, OSPF - 110;0
+Cecha urz¹dzania pozwalaj¹ca na wymianê modu³ów bez wy³¹czania zasilania?;hot swap;0

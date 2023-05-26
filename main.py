@@ -7,7 +7,6 @@ from win11toast import notify
 
 # TODO: nic sie nie dzieje jak koniec nauki
 # TODO: skalowalność
-# TODO: od początku wykładów dodawaj pytania aby wczystko było - skróty itp.
 # TODO: do niektórych pytań dodajemy zdjęcia - nowa koluman w csv
 # TODO: uogólnienie do wielu przedmiotów
 # TODO: Bug: pierwsze pytanie po od nowa może być już umiane
