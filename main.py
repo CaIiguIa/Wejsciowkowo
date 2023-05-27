@@ -46,9 +46,9 @@ def wczytajPytania(odnowa, nauka, wejsciowki):
         l = wejsciowki.split(",")
         for k in l:
             k = k.replace(" ", "")
-            if re.fullmatch("[1-9]([0-9]*)?", k):
+            if re.fullmatch("[0-9]", k):
                 wejsciowka.append(int(k))
-            elif re.fullmatch("[1-9]([0-9]*)?-[1-9]([0-9]*)?", k):
+            elif re.fullmatch("[0-9]+-[0-9]+", k):
                 numbers = [int(num) for num in k.split("-")]
                 # print(type(numbers[1]))
                 for i in range(min(numbers), max(numbers) + 1):

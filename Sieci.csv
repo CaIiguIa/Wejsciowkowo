@@ -82,13 +82,11 @@ Komenda CCIOS umo¿liwiaj¹ca zdefiniowanie rozpoznawalnej w sieci nazwy prze³¹czn
 Informacja do³¹czona na koñcu pakietu/datagramu analogiczna znaczeniowo do nag³ówka;Trailer;2
 Adres broadcast IPv4 dla sieci, w której znajduje siê host 120.134.12.10/16;120.134.255.255;2
 Nazwa protoko³u zdalnie konfiguruj¹cego adresy IP hostów w sieci;DHCP - Dynamic Host Configuration Protocol;2
-W jakim rodzaju pamiêci wewnêtrznej prze³¹cznika Ethernet Cisco trzymany jest trwale obraz jego systemu operacyjnego;flash? (a nie NVRAM?);2
 Komenda CCIOS umo¿liwiaj¹ca przypisanie listy kontrolnej (ACL) numer 5 do portu lub linii prze³¹cznika;ip access-group 5 in;2
 Topologia sieci Ethernet oparta o jeden koncentrator(prze³¹cznik);Gwiazdy;2
 Nazwa wtyku stosowanego do ³¹czenia portów Ethernet w prze³¹cznikach z u¿yciem kabla TP;RJ45(8p8c);2
 Nazwa siódmej warstwy ISO OSI;Aplikacji;2
 Komenda CCIOS umo¿liwiaj¹ca wyœwietlenie danych zgromadzonych w ramach protoko³u STP;show spanning-tree;2
-W jakim rodzaju pamiêci prze³¹czniki Ethernet Cisco zapisuj¹ swoj¹ konfiguracjê;flash ;2
 Adres sieci IPv4, w której znajduje siê host 130.130.130.10/8;130.0.0.0 ;2
 Maksymalna liczba hostów w sieci o masce 255.255.255.255;1 - sieæ jednohostowa;2
 Podaæ maksymaln¹ d³ugoœæ pakietu IP. ;64kB;2
@@ -418,3 +416,4 @@ Dwa typy sieci opisane standardem IEEE 802.11?;ad hoc, Infrastructure;0
 Protokó³ transmisji ramek z potwierdzeniem w standardzie IEEE 802.11?;WPA2 | DCF/PCF;0
 Podaæ Administrative distance dla RIP, E/I EIGRP, OSPF?;Rip - 120, IEIGRP - 90, EEIGRP - 170, OSPF - 110;0
 Cecha urz¹dzania pozwalaj¹ca na wymianê modu³ów bez wy³¹czania zasilania?;hot swap;0
+Flash a NVRAM;Flash zawiera obraz systemu routera, a NVRAM to konifiguracja startowa;0
