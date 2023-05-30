@@ -278,7 +278,7 @@ Nazwa atrybutu w komunikacie o trasie eBGP zawieraj¹cego listê AS, przez które t
 Adres IPv6 adresu auto konfiguracji IPv4 (gdy host nie dosta³ adresu rzez DHCP);fe80::/10;9
 Nazwa grupy AS w BGP zagregowanej w celu okreœlenia tych AS zbiorczo wybranymi atrybutami;Community;9
 Wariant OSPF dla IPv6;OSPFv3;9
-Wariant RIP dla IPv6;RIPng 9
+Wariant RIP dla IPv6;RIPng;9
 D³ugoœæ VCI w ATM;16 bitów;9
 D³ugoœæ VPI w UNI i NNI (w ATM);8b w UNI, 12b w NNI;9
 Co to RIP + skrót;Routing Information Protocol, Wewnêtrny (IGP) protokó³ rutowania dynamicznego, Administrative Distance: 120;9
@@ -347,7 +347,7 @@ Wariant adresu AESA NSAP ATM stosowany domyœlnie w urz¹dzenia Cisco;ICD;122
 Rozwiniêcie akronimu CPE jako okreœlenia strony komunikacji w asymetrycznym lub symetrycznym DSL;customer premises equipment;122
 Tryb pracy sieci SAN (Fibre Channel) oparty o fizyczn¹ topologiê pierœcienia;Pêtla z arbitra¿em;122
 Nazwa portu prze³¹cznika Fibre Channel u¿ywana do pod³¹cznia do niego portów z innych urz¹dzeñ (serwerów);Port F;122
-Nazwa (akronim) unikatowego identyfikatora urz¹dzenia w sieciach Fibre Channel;WWNN, lub WWPN jeœli urz¹dzenie ma parê portów FC;122
+Nazwa unikatowego identyfikatora urz¹dzenia w sieciach Fibre Channel;WWNN, lub WWPN jeœli urz¹dzenie ma parê portów FC;122
 Nazwa portu Fibre Channel prze³¹cznika SAN (FC Fabric) s³u¿¹cego do po³¹czenia z innymi prze³¹cznikami SAN;Port E;122
 D³ugoœæ adresu interfejsu fizycznego w ramkach FC-2 (Fibre Channel);24b;122
 Okreœlenie karty zawieraj¹cej seriê interfejsów sieciowych w prze³¹cznikach Segmentu CORE;line card;122
@@ -389,14 +389,14 @@ Nazwa instytucji zajmuj¹cej siê zarz¹dzaniem Systemami Autonomicznymi i BGP w Eu
 Na czym polega pasywne skanowanie kana³ów w IEEE 802.11;nas³uchiwanie ruchu ramek beacon kierowanych do stacji z prze³¹czeniem skanowania na kolejne kana³y;0
 Przeznaczenie IP SLA w routerach IP;Prowadzenie diagnostyki ruchu w sieci, dziêki niej mo¿na podj¹æ akcjê po wykryciu danego stanu (problemu);0
 Przeznaczenie pola tzw. rozmiaru okna (Window size) w datagramie TCP;16-bitowe pole u¿ywane przez komputer docelowy w celu poinformowania komputera Ÿród³owego o tym, ile danych jest gotów przyj¹æ w jednym segmencie TCP.;0
-Pe³na nazwa pola w datagramie IP umo¿liwiaj¹cego przenoszenie informacji na temat QoS (priorytet QoS);DSCP;0
+Pe³na nazwa pola w datagramie IP umo¿liwiaj¹cego przenoszenie informacji na temat QoS (priorytet QoS);DSCP - Differential Services Code Point;0
 Klasy adresów IP;;0
 Zamiania CoS (precedence) na DSCP (ToS);;0
 Tryby dzia³ania VTP;Server, Client, Transparent;0
 Tryb VTP nie pozwalaj¹cy na tworzenie nowych VLAN;tansparent;0
 Wartoœæ napiêcia zasilania PoE IEEE 802.3ae;48 V DC;0
-W jakiej sytuacji sytuacji istotne jest ustawienie bramki domyœlnej komend¹ ip default-gateway;gdy np. przyk³ad router lub switch musi skierowaæ ruch do innych sieci, których nie ma w swojej tabeli routingu.;0
-Nazwa standardu portu STP do którego przechodzi ten port po pod³¹czeniu kabla;Listening;0
+W jakiej sytuacji sytuacji istotne jest ustawienie bramki domyœlnej komend¹ ip default-gateway;gdy np. router lub switch musi skierowaæ ruch do innych sieci, których nie ma w swojej tabeli routingu.;0
+Nazwa stanu portu STP do którego przechodzi ten port po pod³¹czeniu kabla;Listening;0
 Typ CoS dla telefonii IP (VoIP);5;0
 Okreœlenie oznaczaj¹ce stan zgodnoœci (zbie¿noœci) tablic rutowania w dwóch ruterach (nazwa polska i angielska);convergence, zbie¿noœæ;0
 Datagram do którego nale¿y ToS;Datagram IP;0
@@ -410,10 +410,68 @@ Nazwa ramki sprawdzaj¹ca obecnoœæ po³¹czenia klientów w 801.11;Probe Request;0
 Nazwa pliku konfiguracyjnego w prze³¹czniku Ethernet, w którym zapisane s¹ przypisania portów do poszczególnych VLAN-ów (w Cisco);VLAN.DAT;0
 Nazwa urz¹dzenia do którego jest podpiête wiele ³¹cz point-to-point i poœredniczy w wymianie informacji pomiêdzy nimi;Bridge;0
 Nazwa ramek, za pomoc¹ których stacja AP (Access Point) sprawdza, jakie stacje obecnie s¹ do niej pod³¹czone; Probe Reqest, Probe Response;0
-Na czym polega konstrukcja Multilink PPP point to point w sieciach komputerowych?;S³u¿y do agregowania wielu równoleg³ych ³¹cz szeregowych w jedno logiczne;0
+Na czym polega konstrukcja Multilink PPP point to point w sieciach komputerowych?;S³u¿y do agregowania multiplexem wielu ³¹cz fizycznych/logicznych w jedno wirtualne;0
 Na czym polega konstrukcja PPP point to multipoint w sieciach komputerowych?;Multipoint HDLC - zak³ada siê wtedy istnienie terminala typu primary i wielu secondary. Komunikacja przebiega wy³¹cznie z udzia³em primary – secondary;0
 Dwa typy sieci opisane standardem IEEE 802.11?;ad hoc, Infrastructure;0
 Protokó³ transmisji ramek z potwierdzeniem w standardzie IEEE 802.11?;WPA2 | DCF/PCF;0
 Podaæ Administrative distance dla RIP, E/I EIGRP, OSPF?;Rip - 120, IEIGRP - 90, EEIGRP - 170, OSPF - 110;0
 Cecha urz¹dzania pozwalaj¹ca na wymianê modu³ów bez wy³¹czania zasilania?;hot swap;0
 Flash a NVRAM;Flash zawiera obraz systemu routera, a NVRAM to konifiguracja startowa;0
+Nazwa technika cyklicznego pobierania/przesy³ania pakietów z kilku rywalizuj¹cych kolejek w urz¹dzeniu sieciowym maj¹ca na celu sterowanie jakoœci¹ us³ug?;kolejkowanie | QoS | Assured Forwarding ???;0
+DSCP na ToS w datagramie IP; mno¿ymy przez 4;690
+Wysokoœæ prze³¹cznika Core to 60 cm (1 cal = 2,54 cm). Ile takich prze³¹czników pomieœci siê w szafie krosowniczej typu full-size (wysokiej);Full size ma ponad 1,8m, czyli zmieszcz¹ siê 3.;690
+Technologia pozwalaj¹ca na u¿ytkowanie wielu forwarding table w jednym fizycznym ruterze IP jednoczeœnie;VRF- virtual routing and forwarding table;690
+Nazwy symboliczne przynajmniej dwóch standardów transmisji Ethernet w oparciu o gigabitowe ³¹cza œwiat³owodowe;100BASE-FX 100BASE-LX;690
+Angielskie okreœlenie techniki rutowania dynamicznego "od celu do Ÿród³a" stosowanej w przypadku IP multicast;Reverse Path Forwarding;690
+Podaj znaczenie pola ,,identyfikator'' w nag³ówku datagramu IP, skoro i tak istnieje w nim pole ,,przesuniêcie fragmentacji'';Identyfikator to wartoœæ przypisana przed fragmentacj¹ a przesuniêcie wskazuje do którego miejsca pakietu nale¿y ten fragment.;690
+Czym ró¿ni siê OSPF Stub area od OSPF Totally stubby area;Totally Stub akceptuje pakiety Lsa 1,2, a Stub Lsa 1,2,3, not so stubbby 2 i 4;690
+Wymieñ rodzaje anten stosowanych w transmisji danych;dookólne, kierunkowe, szczelinowe, paraboliczne;690
+Co okreœlamy mianem ,,cichy router'' w protokole rutowania dynamicznego RIPv2;Router bez RIPv2, który podaje dalej informacje dla router'ów RIP;690
+Co to jest server blade;wielomodu³owy, wiele serverów w jednej obudowie, oszczêdnoœæ mocy;690
+Jak nazywamy chwilowy du¿y przep³yw danych w sieci komputerowej;burst;690
+4 popularne techniki multipleksowania sygna³u w medium transmisyjnym;TDM, FDM, WDM, CDM (time, frequency, wavalength i code);690
+Podaj wartoœæ IP precenence dla datagramu IP, gdy wartoœæ klasa QoS datagramu wynikaj¹ca z wartoœci jego pola DSCP wynosi af12 (Assured Forwarding 12);1;690
+Podaj mo¿liwy wymiary szerokoœci szyn RACK szaf krosowniczych dostêpnych na rynku;10, 19, 24 cale;690
+Jak¹ topologiê fizyczn¹ sieci komputerowej wytworzy uk³ad po³¹czeñ urz¹dzeñ aktywnych okreœlany mianem daisy-chain;pierœcieñ lub liniowa;690
+Co okreœlamy mianem message digest;algorytm szyfrowania md5;690
+Co zrobisz aby do obszaru (area) OSPFnie dostawa³y siê informacje Z innych area OSPF, ale mo¿na za poœrednictwem OSPF otrzymaæ wiedzê o sieciach w internecie?;Not so stubby area;690
+Jakim okreœleniem nazywamy fragmentacjê datagramów w sieci komputerowej, po której defragmentacja wystêpuje u odbiorcy a nie na drodze do niego?;non transparent;690
+Ile sesji iBGP nale¿y utworzyæ gdy  w iBGP uczestnicz¹ 4 rutery IP a topologia fizyczna po³¹czeñ to ruter: ruter: ruter: ruter;6 - full mesh;691
+Jak rozpoznasz miejsce uszkodzenia œwiat³owodu nie posiadaj¹cego opancerzenia do którego pod³¹czony jest tester?;œwiat³o bêdzie siê "wydostawaæ" w miejscu pêkniêcia;691
+Co jest celem procesu 'router solitication' stosowanej w ipv6 i wspó³pracuj¹cym z nim protoko³u NDP?;Znalezienie routerów podpiêtych na danym ³¹czu w neighbour discovery protocol;691
+Nazwy parametrów protoko³u STP w prze³¹cznikach Ethernet wp³ywaj¹cych kolejno na wybór aktywnej œcie¿ki do root bridge?;cost ,priority, port number;691
+Podaj zasadê dzia³ania ramkowania CRC w warstwie drugiej ISO/OSI;obliczanie sumy kontrolnej CRC u Ÿród³a i u celu w celu wykrycia b³êdów transmisji;691
+Dlaczego fragmenty datagramów IP przesy³anych jednoczeœnie miêdzy par¹ hostów IP dalej bêd¹ u odbiorcy prawid³owo sk³adane (nie ulegn¹ wymieszaniu)?;bo mamy w datagramie ipv4 coœ takiego jak identyfikator który odpowiada za fragmentacjê i przynale¿noœæ do dobrego datagramu;691
+Dlaczego w technice Assured forwarding QoS stosuje siê akurat cztery kody typu Class Selectors (CS1-CS4);zeby byly cztery kolejki po 3 klasy;691
+Dlaczego w technologii Ethernet wspieraj¹cej funkcjonalnoœæ CSMA/CD musi istnieæ limit d³ugoœci kabla?;W celu unikniêcia late collisions;691
+Które datagramy zostan¹ w pierwszej kolejnoœci usuwane przy stosowaniu polityki milk w load shadding?;Starsze;691
+Podaj skutki nieprawid³owego skonfigurowania wartoœci MSS (Maximum segment Size) u¿ytkowanej w protokole TCP;Gdy MSS bêdzie zbyt ma³y – niepotrzebnie roœnie narzut danych zwi¹zanych z obs³ug¹ fragmentacji.;691
+wymieñ typy funkcjonalnoœci warstwy drugiej ISO/OSI sieci wykorzystywane w protokole OSPF;Point-to-point point-to-multipoint;691
+Dlaczego  w technologii 10GB ethernet nie jest ju¿ implementowana funkcjonalnoœæ CSMA/CD;CSMA/CD nie posiada mechanizmu unikania kolizji w przeciwieñstwie do CSMA/CA;691
+Na jakie sk³adowe podzielone jest pasmo czêstotliwoœci Cable modem;Upstream / TV + FM / Downstream;691
+Na podstawie jakich konfigurowalnych parametrów obliczana jest d³ugoœæ chwili czasowej TC dla Token Bucket w technologii Traffic Shaping;CIR i BC;691
+Z jakiego powodu identyfikator BID ka¿dego urz¹dzenia pracuj¹cego w ramach protoko³u PVSTP musi w sobie zawieraæ VLAN ID;bo jest bridge dla ka¿dego vlanu osobno. PVSTP = per vlan stp;691
+W jakim celu prze³¹cznik Ethernet emituje do sieci ramki "loopback"?;Diagnostyka;691
+Dlaczego proces BGP w ruterze IP nale¿y uruchomiæ na bazie interfejsu loopback;izolacja od problemów ³¹cznoœci fizycznej, stan loopback jest trwa³y, niezale¿ny od stanów interfejsów w sieci;691
+Po czym zorientujesz siê, ¿e na hoœcie docelowym nie ma aplikacji, która mog³aby odebraæ datagram UDP, który wys³a³eœ? (nie masz dostepu do hosta docelowego);ICMP Port unreachable;691
+Co mów¹ ci s³owa: Tahoe, Slow Start, Reno w kontekscie sieci komputerowych?;Strategie TCP;691
+W jaki sposób w datagramie IPv6 mo¿na zawrzeæ informacjê o fragmentacji, skoro w jego nag³ówku nie ma pola identyfikuj¹cego przesuniêcie lub numer fragmentu;w extension headers (opcja fragmentation);691
+Przy u¿yciu jakich komunikatór bêdziesz wymieniaæ informacje pomiêdzy urz¹dzeniami ZigBee End Device i ZigBee Coordinator w swoim systemie;AT;692
+Jak sprawdzisz (bez urz¹dzeñ), czy œwiat³owód o znanej Ci d³ugoœci bêdzie siê nadawa³ do uruchomienia technologii 10GBase-SR;spektrometrem,  przeczytaæ opis na kablu, albo sie nadaje bo oba wielomodowy o tej samej d³. fali;692
+Dlaczego dwa routery w systemie eBGP musz¹ byæ po³¹czone bez poœrednictwa innych routerów IP;"TTL = 1;692
+Dlaczego przygotowuj¹c szyfrowany przekaz przez sieæ trzeba przestrzegaæ zasady redundancji? (nale¿y przedstawiæ tylko technikê ataku);Atak: ktoœ wys³a³ jakis losowy komunikat bez redundancji i np.: rolety w banku siê puszczaj¹, bo akurat trafi³;692
+Czym ró¿ni siê firewall stanowy [statefull] od bezstanowego? ;bezstanowy nie zapisuje stanu po³¹czeñ, które przez niego przechodz¹;692
+Co z datagramem IP adresowanym do hosta 2.2.1.1 zrobi nie-klasowy ruter IP Z regu³ami 2.2.0.0/16 via 1.1.1.1 i 0.0.0.0/0 via 1.1.1.2;Zrutuje do 1.1.1.1 - Longest prefix match;692
+Do czego s³u¿¹ tzw tokeny w tablicach rutowania stosowanych w tablicach MPLS?;dok¹d prze³¹czyæ datagram, jakie operacje na stosie MPLS datagramu wykonaæ;692
+Kiedy ze stacji roboczej pracuj¹cej z interfejsem Ethernet wysy³any jest datagram gratitous ARP?;W³¹czamy interfejs albo zmieniamy jego ip;692
+Czym ró¿ni siê limitowanie przepustowoœci w technice Leaky bucket od zwyk³ego ograniczenia przepustowoœci (zadanego np. w bps)?;leaky bucket ma ograniczon¹ pojemnoœæ, stale z niego wyp³ywaj¹ dane (tempo wyp³ywania z kube³ka jest sta³e);692
+Dlaczego stosuje siê tzw. strategie TCP przy nadawaniu strumienia danych w tym protokole;Zapobieganie przeci¹¿eniu;692
+Jak¹ wysokoœæ (w calach lub centrymetrach) posiada prze³¹cznik RACK o wymiarze 4U;7" lub 17,78 cm;692
+Podaj zaletê stosowania kodowania dwuró¿nicowego AMI (Alternate Mark Inversion) sygna³ów w sieciach komputerowych;synchronizacja nadawcy/odbiorcy, wykrywanie b³êdów;692
+Jak w nomenklaturze OSPF nazywamy ruter IP, który dokonuje redystrybucji wiedzy o sieciach z BGP do OSPF;ASBR;692
+Jak nazywamy urz¹dzenie operatora, do którego biegn¹ kable DSL od ruterów DSL poszczególnych abonentów (w nim nastêpuje konwersja do innego medium);DSLAM (DSL Access Multiplexer);692
+Angielskie okreœlenie czasu przeœcia danego datagramu do celu i spowrotem ;Round-trip-time;692
+Angielska nazwa regu³y postuluj¹cej wybór z ip forwarding table najbardziej precyzyjnej regu³y rutowania IP;longest prefix match;692
+Podaj przyk³ad protoko³u wobec którego stosowana jest technika RED load shedding;TCP;692
+Zbudowa³eœ system sterowania na bluetooth w kórym bluetooth master to Twój telefon. Ile ma maksymalnie bluetooth slave mo¿esz jednoczeœnie sterowaæ?;7;692
+Podaj liczbê grup IPv4 multicast mo¿liwych do rozró¿nienia w prze³¹czniku Ethernet po zakodowaniu numeru grupy w adresacji Ethernet MAC;2^23;692
