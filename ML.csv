@@ -1,5 +1,5 @@
 Co zmienia uczenie maszynowe w stosunki do tradycyjnego podejścia do rozwiązywania problemów;Uczenie algorytmu na podstawie danych zamiast pisania reguł ręcznie;;1
-Skrót CNN + co to;Convolutional Neural Network - przetwarzanie danych poprzez zmniejszanie rozmiaru (uogólnianie);;1
+Skrót CNN + co to;Convolutional Neural Network - przetwarzanie danych poprzez zmniejszanie rozmiaru (uogólnianie) | rozpoznawanie obrazów;;1
 Zastosowanie CNN;Przetwarzanie obrazów;;1
 Skrót RNN + co to;Recurrent Neural Network;;1
 Klasyfikacja/Regresja;Przypisywanie do grup/Szacowanie wartości;;1
@@ -197,10 +197,31 @@ Metody inicjalizacji wag (Glorot, He, LeCun);;metodyInicjalizacji.png;11
 Problem z ReLU;Umierające neurony - suma ważona wejść zawsze ujemna, bo w -niesk. relu idzie o -niesk. | naprawia to ELU;reluelu.png;11
 Jak poprawić stabilność gradientów uczenia?;funkcja ELU, metoda He | dodać warstwy keras.layers.BatchNormalization() przed lub po każdej warstwie ukrytej - centrowanie + normalizacja wejścia + skalowanie i przesunięcie wyniku;;11
 Co to uczenie transferowe?;Wykorzystanie wag modelu już nauczonego, dotyczącego podobnego problemu | raczej wykorzystujemy warstwy niższe;transfer.png;11
-Jak używać uczenia transferowgo?;;transferkod.png;11
+Jak używać uczenia transferowego?;;transferkod.png;11
 Nienadzorowane uczenie wstępne;;nienadzor.png;11
-Sposoby na przyspieszenie uczenia;Dobra strategia inicjalizacji wag połączeń | dobra funkcja aktywacji korzystanie z normalizacji wsadów | uczenie transferowe |  wykorzystanie algorytmu optymalizacji innego niø gradientowy;;11
-Algorytmy grandientowe z pędem + co to?;Ogólnie wartości gradientów przekładają sie na przyspieszenia zamiast prędkości | Nesterov, AdaGrad,  ;;11
-Użycie algorytmów gradientowych z pędem w SGD, Nesterov, Adam, Adagrad;keras.optimizers.SGD(momentum=0.9) | SGD(nesterov=True) | keras.optimizers.Adam();;11
+Sposoby na przyspieszenie uczenia;Dobra strategia inicjalizacji wag połączeń | dobra funkcja aktywacji korzystanie z normalizacji wsadów | uczenie transferowe |  wykorzystanie algorytmu optymalizacji innego niż gradientowy;;11
+Algorytmy gradientowe z pędem + co to?;Ogólnie wartości gradientów przekładają sie na przyspieszenia zamiast prędkości | Nesterov, AdaGrad,  ;;11
+Użycie algorytmów gradientowych z pędem w SGD, Nesterov, Adam, AdaGrad;keras.optimizers.SGD(momentum=0.9) | SGD(nesterov=True) | keras.optimizers.Adam();;11
 Wyłuskać parametry najlepszego modelu w sklearn.RandomizedSearchCV();search.get_best_hyperparameters(1)[0].values;;11
 Wyłuskać najlepszy model w sklearn.RandomizedSearchCV();search.get_best_models(num_models=1)[0];;11
+
+Struktura warstw konwolucyjnych;Macierze (2D), jak ma wiele filtrów to 3D - neurony danej mapy cech warstwy wyższej połączone są z odpowiednimi neuronami wszystkich map cech warstwy niższej;konwol.png;12
+Filtry w CNN;Każdy neuron ma swój kernel przez który przesiewa dane;;12
+Co to mapa cech w CNN;Jest zwracana przez warstwę konwolucyjną, której neurony mają ten sam filtr;;12
+Rodzaje wypełnienia w CNN;;padding.png;12
+Warstwa konwolucyjna w keras;conv = keras.layers.Conv2D(filters=<ilość filtrów>, kernel_size=<rozmiar jąder/filtrów>, strides=<krok przesunięcia jądra>, padding="<same/valid>", activation)
+Obliczanie ilości parametrów warstwy konwolucyjnej;(a × a <wymiary filtru> × 3 <bo RGB> + 1 <gdy padding=="same">) × b <ilość filtrów>;;12
+Obliczanie ilości neuronów warstwy konwolucyjnej;każda z b <ilość filtrów> map cech zawiera x × y <wymiary obrazka> neuronów, z których każdy musi obliczyć ważoną sumę a × a <wymiary filtru> × 3 <bo RGB> wejść;;12
+Masa map cech jednej instancji (danej w zbiorze treningowym);x × y <wymiary obrazka> × b <ilość filtrów> × 32 <int size> bitów;;12
+Co to warstwy zbierające w CNN + klasa w keras do max; tf.kr.layers.MaxPooling2D(pool_size=<rozmiar kwadratu w którym agregujemy wartości>) - mają na celu zmniejszenie obrazka w celu obniżenia nakładów obliczeniowych | nie mają wag | korzystają z funkcji agregujących jak średnia czy maksimum;;12
+Dobre praktyki architektur CNN ;CCP (Convolution-Convolution-Pooling), czyli 2 warstwy Convolution a potem warstwa Pooling;;12
+Do czego warstwa kr.layers.Dropout(rate=<float od 0 do 1>);odrzucanie neuronów, które mają wagi podobne do innych, ogólnie zapobieganie overfitting (przeuczenie) | rate mówi o tym ile neuronów odrzucić;;12
+Sławne sieci konwolucyjne;AlexNet, LeNet-5, GoogLeNet;;12
+Uczenie rezydualne;Sieci robią się głębsze ale mają mniej parametrów | jest to uczenie w którym w sieci istnieją połączenia skrótowe, dzięki nim szybsze uczenie;rezydualne.png;12
+Sławna sieć rezydualna;ResNet;;12
+Uczenie transferowe w praktyce;;transfer_praktyka.png;12
+Obramkowanie obiektów na obrazach w keras (CNN);;ramkowanie.png;12
+Co to segmentacja semantyczna?;każdy piksel jest kolorowany zgodnie z klasą obiektu, którego jest częścią;segmentacja_semantyczna.png;12
+Co to sieć w pełni konwolucyjna?;FCN - Fully Convolutional Network - Nie ma warstw gęstych, więc sieć może przetwarzać obrazy o dowolnych rozmiarach;;12
+Ewaluacja modelu w keras;model.evaluate(x_pred, y_true) -> <zwraca wartość funkcji straty i metryki uczenia>;;12
+Jak zmienić warstwę na nieuczalną;layer.trainable = False;;12
