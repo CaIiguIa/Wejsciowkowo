@@ -22,9 +22,10 @@ skip = False
 q = True
 q *= -1
 subIndex = 0
+file_to_learn = "ML.csv"
 
 layout = [[sg.Button("Pokaż odpowiedź", key="-odp-", visible=False), sg.Button("Umiem", key="-wiem-", visible=False)],
-          [sg.Text("Witaj, pomogę ci nauczyć się sieci!", key="-pytanie-", justification="center", font=('Helvetica', 13))],
+          [sg.Text("Witaj, pomogę ci nauczyć się pytanek!", key="-pytanie-", justification="center", font=('Helvetica', 13))],
           [sg.Sizer(25, 25)],
           [sg.Multiline("", key="-txtodp-", justification="left", visible=False, font=('Helvetica', 13), size=(300, 3), background_color='#64778d', text_color='white')],
           [sg.Text("", key="-heh-", justification="center", visible=False)],
@@ -37,7 +38,7 @@ layout = [[sg.Button("Pokaż odpowiedź", key="-odp-", visible=False), sg.Button
           [sg.Button("Zapisz postęp", key="-zapisz-", visible=False)]
           ]
 
-window = sg.Window("Sieci", layout, size=(1250, 350))
+window = sg.Window("Wejściówkowo", layout, size=(1250, 350))
 
 
 def wczytajPytania(odnowa, nauka, wejsciowki):
@@ -57,7 +58,7 @@ def wczytajPytania(odnowa, nauka, wejsciowki):
     questions = []
     if odnowa:
         try:
-            with open('Sieci.csv') as f:
+            with open(file_to_learn) as f:
                 for line in f:
                     l = line.split(";")
                     l.append(False)
@@ -69,7 +70,7 @@ def wczytajPytania(odnowa, nauka, wejsciowki):
         except:
             print(line)
     else:
-        with open('Sieci.pkl', 'rb') as f:
+        with open('Latest.pkl', 'rb') as f:
             questions = load(f)
     random.shuffle(questions)
     # for row in questions:
@@ -122,7 +123,7 @@ while True:
                 index = 0
                 random.shuffle(questions)
                 print("Od nowa!")
-                notify("Sieci", "Nauka od nowa!")
+                notify("Wejściówkowo", "Nauka od nowa!")
             window["-pytanie-"].update(questions[index][0])
             window["-odp-"].update("Pokaż odpowiedź")
             window["-txtodp-"].update("")
@@ -142,7 +143,7 @@ while True:
             index = 0
             random.shuffle(questions)
             print("Od nowa!")
-            notify("Sieci", "Nauka od nowa!")
+            notify("Wejściówkowo", "Nauka od nowa!")
         window["-pytanie-"].update(questions[index][0])
         window["-odp-"].update("Pokaż odpowiedź")
         window["-txtodp-"].update("")
@@ -150,7 +151,7 @@ while True:
         window["-wiem-"].update(visible=False)
         q *= -1
     elif event == "-zapisz-":
-        with open("./Sieci.pkl", "wb") as f:
+        with open("./Latest.pkl", "wb") as f:
             dump(questions, f)
             break
 window.close()
