@@ -96,11 +96,28 @@ def show_answer():
         show_question()
 
 def mark_known():
-    global index, subIndex
-    questions[index][-1] = True
-    index += 1
-    subIndex += 1
+    global index, questions
+    del questions[index]
+    if index >= len(questions):
+        index = 0
+        random.shuffle(questions)
+
     show_question()
+
+#   questions[index][-1] = True
+# index += 1
+# subIndex += 1
+# # print(f"{subIndex / sum(map(lambda x: x==False, [row[3] for row in questions]))}%")
+# while index < len(questions) and questions[index][-1]:
+#     index += 1
+#     # print(f"3{questions[3][:]}")
+#     # print(f"{subIndex / sum(map(lambda x: x == False, [row[3] for row in questions]))*100}%")
+# if index == len(questions):
+#     index = 0
+#     random.shuffle(questions)
+#     print("Od nowa!")
+#     notify("Wejściówkowo", "Nauka od nowa!")
+
 
 def save_progress():
     with open("./Latest.pkl", "wb") as f:
