@@ -63,7 +63,7 @@ def start_learning():
     nauka = nauka_var.get()
     odnowa = odnowa_var.get()
     wejsciowki = wejsciowki_entry.get()
-    questions = wczytajPytania(odnowa, nauka, wejsciowki)
+    questions = wczytajPytania(odnowa, wejsciowki)
     setup_frame.pack_forget()
     learning_frame.pack(pady=10)
     show_question()
