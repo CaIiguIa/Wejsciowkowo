@@ -11,11 +11,9 @@ index = 0
 skip = False
 q = True
 q *= -1
-subIndex = 0
-# learning_frame = tk.Frame(root)
 file_to_learn = "Sieci.csv"
 
-def wczytajPytania(odnowa, nauka, wejsciowki):
+def wczytajPytania(odnowa, wejsciowki):
     wejsciowka = []
     if len(wejsciowki) > 0:
         l = wejsciowki.split(",")
@@ -80,10 +78,14 @@ def show_question():
         show_answer_button.config(text="Pokaż odpowiedź")
         q = -1
     else:
-        index = 0
-        random.shuffle(questions)
-        messagebox.showinfo("Wejściówkowo", "Nauka od nowa!")
-        show_question()
+        if len(questions) > 0:
+            index = 0
+            random.shuffle(questions)
+            messagebox.showinfo("Wejściówkowo", "Nauka od nowa!")
+            show_question()
+        else:
+            messagebox.showinfo("Wejściówkowo", "Umiesz wszystko! Fajrant!")
+            exit()
 
 def show_answer():
     global q, index
@@ -104,21 +106,6 @@ def mark_known():
 
     show_question()
 
-#   questions[index][-1] = True
-# index += 1
-# subIndex += 1
-# # print(f"{subIndex / sum(map(lambda x: x==False, [row[3] for row in questions]))}%")
-# while index < len(questions) and questions[index][-1]:
-#     index += 1
-#     # print(f"3{questions[3][:]}")
-#     # print(f"{subIndex / sum(map(lambda x: x == False, [row[3] for row in questions]))*100}%")
-# if index == len(questions):
-#     index = 0
-#     random.shuffle(questions)
-#     print("Od nowa!")
-#     notify("Wejściówkowo", "Nauka od nowa!")
-
-
 def save_progress():
     with open("./Latest.pkl", "wb") as f:
         dump(questions, f)
@@ -132,7 +119,7 @@ setup_frame = tk.Frame(root)
 setup_frame.pack(pady=10)
 
 nauka_var = tk.BooleanVar()
-odnowa_var = tk.BooleanVar()
+odnowa_var = tk.BooleanVar(value=True)
 
 nauka_checkbox = tk.Checkbutton(setup_frame, text="Nauka ostatniej wejściówki", variable=nauka_var)
 nauka_checkbox.pack(pady=5)
