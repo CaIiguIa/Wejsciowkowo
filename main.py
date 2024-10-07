@@ -1,18 +1,8 @@
 import random
 import re
 from pickle import dump, load
-
-import PySimpleGUI as sg
-from win11toast import notify
-
-# TODO: nic sie nie dzieje jak koniec nauki
-# TODO: skalowalność
-# TODO: do niektórych pytań dodajemy zdjęcia - nowa koluman w csv
-# TODO: uogólnienie do wielu przedmiotów
-# TODO: Bug: pierwsze pytanie po od nowa może być już umiane
-# TODO: nauka tylko skrótów
-# TODO: opakować te wszystkie if elsy przy przyciskach w metody bo syf się robi
-# TODO: Dzieli pytania na zestawy (np po 20) i wtedy uczy dopóki wszystkich nie umie --- nowy tryb pracy do tego
+import tkinter as tk
+from tkinter import messagebox, scrolledtext
 
 print("Let the learning begin!")
 
@@ -22,24 +12,8 @@ skip = False
 q = True
 q *= -1
 subIndex = 0
-file_to_learn = "ML.csv"
-
-layout = [[sg.Button("Pokaż odpowiedź", key="-odp-", visible=False), sg.Button("Umiem", key="-wiem-", visible=False)],
-          [sg.Text("Witaj, pomogę ci nauczyć się pytanek!", key="-pytanie-", justification="center", font=('Helvetica', 13))],
-          [sg.Sizer(25, 25)],
-          [sg.Multiline("", key="-txtodp-", justification="left", visible=False, font=('Helvetica', 13), size=(300, 3), background_color='#64778d', text_color='white')],
-          [sg.Text("", key="-heh-", justification="center", visible=False)],
-          [sg.Button("Następne pytanie", key="-nast-", visible=False)],
-          [sg.Checkbox("Nauka ostatniej wejściówki", key="-nauka-"),
-           sg.Checkbox("Zacznij od początku", key="-odnowa-")],
-          [sg.Text("Numery wyjściówek:", key="-txtwej-", justification="center", visible=True, font=('Helvetica', 13)),
-           sg.Input(key="-wejsciowki-", expand_x=True)],
-          [sg.Button("Taaak! Zaczynajmy!", key="-start-")],
-          [sg.Button("Zapisz postęp", key="-zapisz-", visible=False)]
-          ]
-
-window = sg.Window("Wejściówkowo", layout, size=(1250, 350))
-
+# learning_frame = tk.Frame(root)
+file_to_learn = "Sieci.csv"
 
 def wczytajPytania(odnowa, nauka, wejsciowki):
     wejsciowka = []
@@ -51,14 +25,13 @@ def wczytajPytania(odnowa, nauka, wejsciowki):
                 wejsciowka.append(int(k))
             elif re.fullmatch("[0-9]+-[0-9]+", k):
                 numbers = [int(num) for num in k.split("-")]
-                # print(type(numbers[1]))
                 for i in range(min(numbers), max(numbers) + 1):
                     wejsciowka.append(i)
     print(wejsciowka)
     questions = []
     if odnowa:
         try:
-            with open(file_to_learn) as f:
+            with open(file_to_learn, mode='r', encoding='utf-8') as f:
                 for line in f:
                     l = line.split(";")
                     l.append(False)
@@ -70,88 +43,109 @@ def wczytajPytania(odnowa, nauka, wejsciowki):
         except:
             print(line)
     else:
-        with open('Latest.pkl', 'rb') as f:
-            questions = load(f)
+        try:
+            with open('Latest.pkl', 'rb') as f:
+                questions = load(f)
+        except FileNotFoundError:
+            messagebox.showerror("Error", "Latest.pkl file not found. Starting from scratch.")
+            with open(file_to_learn, mode='r', encoding='utf-8') as f:
+                for line in f:
+                    l = line.split(";")
+                    l.append(False)
+                    if len(wejsciowki) > 0:
+                        if int(l[2]) in wejsciowka:
+                            questions.append(l)
+                    else:
+                        questions.append(l)
     random.shuffle(questions)
-    # for row in questions:
-    #     try:
-    #         print(row[3])
-    #     except:
-    #         print(row)
     return questions
 
+def start_learning():
+    global nauka, questions, index
+    nauka = nauka_var.get()
+    odnowa = odnowa_var.get()
+    wejsciowki = wejsciowki_entry.get()
+    questions = wczytajPytania(odnowa, nauka, wejsciowki)
+    setup_frame.pack_forget()
+    learning_frame.pack(pady=10)
+    show_question()
 
-while True:
-    event, values = window.read()
+def show_question():
+    global index, q
+    if index < len(questions):
+        question_label.config(text=questions[index][0])
+        answer_text.delete(1.0, tk.END)
+        answer_text.insert(tk.END, questions[index][1])
+        answer_text.pack_forget()
+        show_answer_button.config(text="Pokaż odpowiedź")
+        q = -1
+    else:
+        index = 0
+        random.shuffle(questions)
+        messagebox.showinfo("Wejściówkowo", "Nauka od nowa!")
+        show_question()
 
-    if event == sg.WIN_CLOSED:
-        break
-
-    if event == "-start-":
-        window["-nauka-"].update(visible=False)
-        nauka = window["-nauka-"].get()
-        odnowa = window["-odnowa-"].get()
-        window["-odp-"].update(visible=True)
-        window["-start-"].update(visible=False)
-        window["-heh-"].update(visible=True)
-        window["-zapisz-"].update(visible=True)
-        window["-odnowa-"].update(visible=False)
-        questions = wczytajPytania(odnowa, nauka, values["-wejsciowki-"])
-        window["-wejsciowki-"].update(visible=False)
-        window["-pytanie-"].update(questions[index][0])
-        window["-txtwej-"].update(visible=False)
-
-    elif event == "-odp-":
-        if q == -1:  # pokaż odpowiedz
-            window["-txtodp-"].update(questions[index][1])
-            window["-txtodp-"].update(visible=True)
-            window["-odp-"].update("Następne pytanie")
-            window["-heh-"].update(visible=False)
-            window["-wiem-"].update(visible=True)
-
-            q *= -1
-        else:  # nastepne pytanie
-            index += 1
-            # print(f"1{questions[:][3]}")
-            # print(f"{subIndex / sum(map(lambda x: x == False, [row[3] for row in questions]))*100}%")
-            while index < len(questions) and questions[index][-1]:
-                index += 1
-
-                # print(f"2{questions[3][:]}")
-                # print(f"{subIndex / sum(map(lambda x: x == False, [row[3] for row in questions]))*100}%")
-            if index == len(questions):
-                index = 0
-                random.shuffle(questions)
-                print("Od nowa!")
-                notify("Wejściówkowo", "Nauka od nowa!")
-            window["-pytanie-"].update(questions[index][0])
-            window["-odp-"].update("Pokaż odpowiedź")
-            window["-txtodp-"].update("")
-            window["-heh-"].update(visible=True)
-            window["-wiem-"].update(visible=False)
-            q *= -1
-    elif event == "-wiem-":
-        questions[index][-1] = True
-        index += 1
-        subIndex += 1
-        # print(f"{subIndex / sum(map(lambda x: x==False, [row[3] for row in questions]))}%")
-        while index < len(questions) and questions[index][-1]:
-            index += 1
-            # print(f"3{questions[3][:]}")
-            # print(f"{subIndex / sum(map(lambda x: x == False, [row[3] for row in questions]))*100}%")
-        if index == len(questions):
-            index = 0
-            random.shuffle(questions)
-            print("Od nowa!")
-            notify("Wejściówkowo", "Nauka od nowa!")
-        window["-pytanie-"].update(questions[index][0])
-        window["-odp-"].update("Pokaż odpowiedź")
-        window["-txtodp-"].update("")
-        window["-heh-"].update(visible=True)
-        window["-wiem-"].update(visible=False)
+def show_answer():
+    global q, index
+    if q == -1:
+        answer_text.pack()
+        show_answer_button.config(text="Następne pytanie")
         q *= -1
-    elif event == "-zapisz-":
-        with open("./Latest.pkl", "wb") as f:
-            dump(questions, f)
-            break
-window.close()
+    else:
+        index += 1
+        show_question()
+
+def mark_known():
+    global index, subIndex
+    questions[index][-1] = True
+    index += 1
+    subIndex += 1
+    show_question()
+
+def save_progress():
+    with open("./Latest.pkl", "wb") as f:
+        dump(questions, f)
+    root.quit()
+
+root = tk.Tk()
+root.title("Wejściówkowo")
+root.geometry("1250x350")
+
+setup_frame = tk.Frame(root)
+setup_frame.pack(pady=10)
+
+nauka_var = tk.BooleanVar()
+odnowa_var = tk.BooleanVar()
+
+nauka_checkbox = tk.Checkbutton(setup_frame, text="Nauka ostatniej wejściówki", variable=nauka_var)
+nauka_checkbox.pack(pady=5)
+
+odnowa_checkbox = tk.Checkbutton(setup_frame, text="Zacznij od początku", variable=odnowa_var)
+odnowa_checkbox.pack(pady=5)
+
+wejsciowki_label = tk.Label(setup_frame, text="Numery wyjściówek:", font=('Helvetica', 13), justify="center")
+wejsciowki_label.pack(pady=5)
+
+wejsciowki_entry = tk.Entry(setup_frame, width=50)
+wejsciowki_entry.pack(pady=5)
+
+start_button = tk.Button(setup_frame, text="Taaak! Zaczynajmy!", command=start_learning)
+start_button.pack(pady=5)
+
+learning_frame = tk.Frame(root)
+
+save_button = tk.Button(learning_frame, text="Zapisz postęp", command=save_progress)
+save_button.pack(pady=5)
+
+question_label = tk.Label(learning_frame, text="Witaj, pomogę ci nauczyć się pytanek!", font=('Helvetica', 13), justify="center")
+question_label.pack(pady=10)
+
+answer_text = scrolledtext.ScrolledText(learning_frame, font=('Helvetica', 13), height=3, width=100, bg='#64778d', fg='white')
+
+show_answer_button = tk.Button(learning_frame, text="Pokaż odpowiedź", command=show_answer)
+show_answer_button.pack(pady=5)
+
+known_button = tk.Button(learning_frame, text="Umiem", command=mark_known)
+known_button.pack(pady=5)
+
+root.mainloop()
