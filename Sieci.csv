@@ -1,3 +1,6 @@
+tak;tak;0
+nie;nie;0
+jaja;jaja;0
 Komenda Cisco Catalyst IOS przeprowadzająca konsolę z trybu nieuprzywilejowanego do trybu exec;enable;1
 Numery przewodów, które należy zamienić miejscami aby otrzymać kabel z przeplotem;1<->3, 2<->6;1
 Protokół drugiej warstwy pracujący w przełącznikach Ethernet i zabezpieczający sieć przed powstaniem pętli;STP - Spanning Tree Protocol;1
@@ -20,12 +23,11 @@ Adres IP Broadcast dla sieci IPv4: 10.0.0.0 przy masce 255.128.0.0;10.127.255.25
 Angielski odpowiednik terminu: Szerokość pasma;bandwidth;1
 Przykład systemu kodowania serii bitów zapewniającego samo-synchronizację transmisji;Kodowanie Manchester;1
 Tryb transmisji umożliwiający ruch tylko w jednym kierunku;simplex;1
-Minimalna długość ramki Ethernet IEEE 802.3 (w bajtach);64 bajty + 8 preambuły i SFD;1
+Minimalna długość ramki Ethernet IEEE 802.3 (w bajtach);64 bajty + (7 batjów preambuły i 1 bajt SFD, niewliczane);1
 Dwie techniki transmisji strumienia bitów rozróżniane z uwagi na obecność (lub nie) przekazu informacji zegarującej;Komunikacja synchroniczna i asynchroniczna ///// ??????????????????????????????????;1
 Rozwinięcie akronimu MTU jako cechy określającej możliwości techniczne technologii transmisji sieciowej;Maximum Transmission Unit;1
 Adres segmentu sieci IPv4, do której należy host o adresie IPv4: 10.10.10.10 przy masce 255.255.192.0;10.10.0.0;1
 Maksymalna długość kabla TP Cat5 (skrętki) pomiędzy przełącznikami w technologii Ethernet;100 metrów;1
-Nazwa pola/liczby identyfikującej format danych przenoszonych w ramce Ethernet II;Ethertype;1
 Adres IP broadcast dla sieci IPv4: 10.10.0.0 przy masce 255.255.0.0;10.10.255.255;1
 Rodzaje portów zapasowych w stanie discarding określane przez protokół RSTP w przełącznikach Ethernet (IEEE 802.1w);Alternate port,  backup port;1
 Jednostka, w której określona jest szerokość pasma dla danego medium transmisyjnego;bps (bits per second);1
@@ -37,7 +39,7 @@ Klasa adresu IPv4:200.200.200.1;Klasa C;2
 Komenda Cisco Catalyst iOS przeprowadzająca przełącznik do trybu konfiguracji vlan numer 3;interface vlan 3;2
 Technologia Ethernet umożliwiająca tunelowanie wielu VLAN TRUNK w jednym łączu;802.1QinQ;2
 Rodzaj światłowodu umożliwiającego przesyłanie  jednocześnie tylko jednej wiązki światła danej częstotliwości;jednomodowy;2
-Adres IP broadcast dla sieci IPv4: 10.10.0.0/16        ;10.10.255.255;2
+Adres IP broadcast dla sieci IPv4: 10.10.0.0/16;10.10.255.255;2
 Maksymalna długość ramki IEEE 802.1Q;1522B ;2
 Komenda Cisco Catalyst definiująca tryb pracy przełącznika jako trunk IEEE 802.1Q;Switch(config-if)#switchport mode trunk;2
 Tryb transmisji, umożliwiający ruch tylko w jednym kierunku;Simplex;2
@@ -45,7 +47,6 @@ Minimalna długość ramki Ethernet IEEE 802.3 (w bajtach);64  + 8 preambuły i 
 Protokół umożliwiający konwersję adresu IP zdalnej stacji na jej adres MAC w Ethernet;ARP;2
 Nazwa drugiej warstwy ISO OSI;łącza danych;2
 Maksymalna długość kabla TP Cat 5 (skrętki) pomiędzy przełącznikami w technologii Ethernet;100m;2
-Nazwa pola/liczby identyfikującej format danych przenoszonych w ramce Ethernet II;ethertype;2
 Długość adresu MAC dla Ethernet (w bajtach);6;2
 Adres IP Broadcast dla sieci IPv4 10.10.0.0/16;10.10.255.255;2
 Tryb transmisji w medium dopuszczającym obydwa kierunki przepływu danych;Duplex;2

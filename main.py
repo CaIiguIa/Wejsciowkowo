@@ -13,7 +13,7 @@ q = True
 q *= -1
 file_to_learn = "Sieci.csv"
 
-def wczytajPytania(odnowa, wejsciowki):
+def wczytajPytania(odnowa, nauka, wejsciowki):
     wejsciowka = []
     if len(wejsciowki) > 0:
         l = wejsciowki.split(",")
@@ -63,7 +63,7 @@ def start_learning():
     nauka = nauka_var.get()
     odnowa = odnowa_var.get()
     wejsciowki = wejsciowki_entry.get()
-    questions = wczytajPytania(odnowa, wejsciowki)
+    questions = wczytajPytania(odnowa, nauka, wejsciowki)
     setup_frame.pack_forget()
     learning_frame.pack(pady=10)
     show_question()
@@ -100,9 +100,6 @@ def show_answer():
 def mark_known():
     global index, questions
     del questions[index]
-    if index >= len(questions):
-        index = 0
-        random.shuffle(questions)
 
     show_question()
 
