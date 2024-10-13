@@ -4,6 +4,10 @@ from pickle import dump, load
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
 
+# Better Windows DPI scaling
+from ctypes import windll
+windll.shcore.SetProcessDpiAwareness(1)
+
 print("Let the learning begin!")
 
 nauka = True

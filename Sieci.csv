@@ -98,16 +98,16 @@ Dwa podstawowe rodzaje sieci VLAN;tagged, port-based (untagged);3
 Zbiór wszystkich hostów z sieci 200.200.0.0/16 zapisany w notacji stosowanej przy definiowaniu ACL w Cisco IOS;200.200.0.1    0.0.255.254;3
 Proces polegający na upakowaniu datagramu w innych datagramach - przenoszony w niższej warstwie ISO OSI;enkapsulacja;3
 Zakres identyfikatorów standardowych list dostępu (ACL) w Cisco IOS;1-99;3
-Tryb funkcjonowania łącza HDLC angażujący jest jeden terminal primary i jeden lub więcej terminali secondary;unbalanced;3
+Tryb funkcjonowania łącza HDLC angażujący jest jeden terminal primary i jeden lub więcej terminali secondary;unbalanced (HDLC - High-Level Data Link Control);3
 Skrót literowy określający listy kontroli dostępu w routerach i przełącznikach Cisco;ACL - Access Control List;3
 Nazwa portu Private VLAN umożliwiającego wyłącznie komunikowanie z portem Promiscuous;Isolated Port;3
 Rodzaje list kontrolnych (ACL) w Cisco IOS;Standardowe \ Rozszerzone \ Nazwane;3
-Nazwa komunikatu ICMP wysyłanego do nadawcy dużej liczby datagramów IP w celu chwilowego wstrzymania ich nadawania;Source Quench;3
-Przynajmniej dwa zmodyfikowane warianty STP stosowane w przełącznikach Ethernet;RSTP, MSTP;3
-Rozszerzenie Cisco protokołu iGRP;EiGRP;3
+Nazwa komunikatu ICMP wysyłanego do nadawcy dużej liczby datagramów IP w celu chwilowego wstrzymania ich nadawania;Source Quench (odbiorca nie nadąża za obróbką datagramów);3
+Przynajmniej dwa zmodyfikowane warianty STP stosowane w przełącznikach Ethernet;RSTP (Rapid), MSTP (Multiple);3
+Rozszerzenie Cisco protokołu iGRP;EiGRP (Enhanced Interior Gateway Routing Protocol);3
 Typ rutowania IP, w którym nastąpi rozgłoszenie datagramu IP do ściśle określonej puli zarejestrowanych odbiorców;Multicast;3
 Wartość metryki Administrative Distance w tablicy rutowania IP wyznaczana dla sieci bezpośrednio podłączonych;0;3
- Nazwa rutera wyprowadzającego ruch z domeny OSPF do innego Systemu Autonomicznego (AS);ASBR - Autonomous System Border Router;3
+Nazwa rutera wyprowadzającego ruch z domeny OSPF do innego Systemu Autonomicznego (AS);ASBR - Autonomous System Border Router;3
 Komenda Cisco IOS umożliwiająca sprawdzenie zawartości tablicy rutowania w ruterze Cisco;show ip route;3
 Wartość Administrative Distance w tablicy rutowania routera Cisco dla iBGP;200;3
 Nazwa obszru (area) w rutowaniu dynamicznym IP OSPF, który nie otrzymuje informacji spoza domeny OSPF;Stub area;3
