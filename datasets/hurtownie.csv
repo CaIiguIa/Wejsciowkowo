@@ -1,0 +1,82 @@
+Co to hurtownia danych?;system, który pozyskuje dane z systemów źródłowych, przekształca je i ładuje do wielowymiarowych struktur, a następnie dostarcza zapytania i analizy wspierające podejmowanie decyzji;1
+Cechy gwiazdy;redundancja danych / denormalizacja, kosztowne tworzenie struktur;1
+Cechy płatka;mniejsza redundancja, kosztowne tworzenie zapytania, tak jakby gwiazda, ale znormalizowana - z ""ramion"" gwiazdy wystają nowe gałęzie;1
+Wymień struktury przechowywania informacji;gwiazda, płatek;1
+Co to fakt;tabela opisująca dany przedmiot;1
+Co to wymiar;tabela zawierająca zbiór możliwych CECH przedmiotu, słownik;1
+co to kostka;coś jak hurtownia danych, ale bardziej nastawione na analizę danych. Pozwala na analizowanie względem wielu wymiarów na raz;1
+co to miara;wartość liczbowa, która jest przedmiotem analizy w procesach raportowania i analiz OLAP;1
+Materialized view;widok w bazie danych, którego wartości są przechowywane jako osobna tabela;1
+tabele tymczasowe;przechowują dane tylko na czas transakcji / sesji;1
+EDWH;Enterprise Data Warehouse - hurtownia danych na poziomie całej organizacji, przechowuje dane z różnych źródeł. Centralizacja, skalowalność, integracja, analityka;1
+ETL;Extract, Transform, Load - pobieranie danych z różnych źródeł, transformacja, i załadowanie do bazy docelowej;2
+ELT;Extract, Load, Transform - transformacja danych następuje po wczytaniu (z różnych źródeł) i załadowaniu do bazy docelowej;2
+Podejścia do ETL/ELT;Narzędzia (SQL Server Data Tools itp.) albo skrypty sql + import/export;2
+Śledzenie zmian w procesie ETL/ELT;aktualizacje danych / śledzenie zmian jako osobna tabela (change tracking SQL Server) / wersjonowanie danych;2
+Co to import big bang?;Wszystkie dane przenoszone do nowego systemu jednocześnie w jednym etapie podczas jednego procesu;2
+Co to import przyrostowy?;Przenoszenie tylko danych, które uległy zmianie od ostatniego importu;2
+Kroki w modelowaniu danych;Koncepcja biznesowa -> Modelowanie logiczne struktury danych -> Stworzenie querki -> Wykonanie querki;3
+Typy wymiarów pod względem aktualizacji  - wersja rozszerzona;Stałe / Wolnozmienne / Szybkozmienne /// Stałe się nie zmieniają / Wolnozmienne <w innym pytaniu> / Szybkozmienne - wiele do wielu, tabele z mini-wymiarem;3
+Podtypy Wymiarów wolnozmiennych - wersja rozszerzona;0 - zachowaj - nie edytuj błędów / 1 - nadpisz / 2 - dodaj wiersz + kolumna z datą ważności / 3 - dodaj atrybut ze starą wartością / 4 - historyczne (stary wiersz do tabeli historycznej);3
+Typy wymiarów pod względem aktualizacji  - wersja podstawowa;0 - fixed - nie aktualizujemy / 1 - changing - zmiana atrybutów, bez historii / 2 - Historical - z historią ;3
+Co to derived column;Kolumna której wartość jest obliczana na podstawie innych kolumn;3
+OLAP, ROLAP, MOLAP, HOLAP; Online Analytical Processing, Relational, Multidimensional, Hybrid;4
+Co to OLAP?;Narzędzie do analizowania wielowymiarowych danych. Eksploracja danych, generowanie raportów;4
+Operacje OLAP;Roll up / Drill up / Slice / Dice / Pivot / Drill-across;4
+Roll-up (Drill-up);Przechodzenie do wyższego poziomu agregacji w hierarchii wymiarów. Ogólny widok na dane (przejście statystyk dziennych -> roczne);4
+Drill-down;Przechodzenie do niższego poziomu szczegółowości danych. Zagłębienie się w dane (przejście statystyk rocznych -> dzienne);4
+Slice;Wybranie wymiaru i ""krojenie"" kostki (filtrowanie po poszczególnych wartościach tej kolumny);4
+Dice;Slice, ale na wielu wymiarach - Wybranie wymiarów i ""krojenie"" kostki (filtrowanie po poszczególnych wartościach tych kolumn);4
+Pivot;Przestawienie wartości (osi), żeby mieć inne spojrzenie na dane;4
+Drill-across;Porównanie danych z różnych kostek OLAP, które posiadają wspólne wymiary;4
+Co to MDX?;Multidimensional Expressions - język zapytań w analizie danych w OLAP;4
+Składnia MDX;SELECT <set> ON <axis>, ... FROM <cube> WHERE <condition>\nset - zbiór wartości, (funkcje: children, members, parent, head, tail, hierarchize)\naxis - columns, rows\n;4
+Querka która załadowuje bazę z backupu;USE [master]\nRESTORE DATABASE [AdventureWorks2019]\nFROM DISK = N'C:\Program Files\...Backup\AdventureWorks2019.bak’\nWITH FILE = 1, NOUNLOAD, STATS = 5\nGO;5
+Typy przestrzeni plików / tablespace;Systemowe, tymczasowe, read-only;6
+Co to tablespace / przestrzeń plików;Logiczna przestrzeń w bazie danych, mapuje dane na fizyczne pliki na dysku;6
+Do czego jest systemowy tablespace?;Do przechowania danych wewnętrznych bazy - metadane np. dotyczące struktury bazy ;6
+Do czego Do czego jest tymczasowy tablespace?;Do operacji tymczasowych, np. do sortowania dużych wyników, tworzenie indeksów ;6
+Do czego jest read-only tablespace?;Przestrzenie tylko do odczytu - dane archiwalne i historyczne;6
+Jak poprawiać wydajność hurtowni danych?; oddzielić dane od indeksów od BLOB, rozdzielenie plików tablespace na różne dyski, wykorzystanie pamięci in-memory, partycje;6
+Która definicja najlepiej opisuje atrybut?;  pojedyncze zdarzenie będące podstawą analiz (np. sprzedaż)\nV pojedyncza cecha opisująca obiekt\n  zbiór cech opisujących obiekt pozwalająca powiązać go z innymi pojęciami modelu\n  wartość liczbowa przyporządkowana do danych cech/zdarzeń obiektu;0
+Lookup - blok;  służy do tworzenia wymiarów\nV wprzypadku nie wykrycia klucza fizycznego umożliwia określenie alternatywnej ścieżki\n   przetwarza dane paczkami\nV wyszukuje dane na podstawie klucza;0
+Przykładowe systemy używane przy budowie Hurtowni Danych;V Oracle Exadata, IBM Netezza\n  SAPBusiness Object, ClickView\n  Apache SOLR do przechowywania danych\nV Apache SOLR do indeksacji danych\nV Pentaho Data Integration;0
+ODS po co stosujemy?;  przechowuje definicje metadanych używane w raportach końcowych\nV aby nie obniżać wydajności hurtowni danych\nV aby nie obniżać wydajności systemów transakcyjnych\nV aby przyśpieszyć tworzenia raportów;0
+ Po co używa się zmaterializowanych widoków?;  Zawsze zawierają świeże/aktualne dane\n  Są automatycznie czyszczone po każdej operacji ETL\nV Umożliwiają utworzenie indeksów\nV Umożliwiają szybsze tworzenie agregatów niż widoki oparte na kilku tabelach\nV Posiadają wersje ściągniętych danych.;0
+Które zapytanie/zapytania pobiorą/pobierze informacje na temat sprzedaży z ostatniego 2013; select [Measures].[Amount] ON 0, TAIL([Date].[CalendarYear].members,1) ON 1 FROM [MySales]\nV select [Measures].[Ammount] on COLUMNS FROM [MySales] WHERE [Date].[CalendarYear].&[2013]\n  select [Measures].[Ammount] on COLUMNS FROM [MySales] WHERE [Date].[CalendarYear].[All].LastChild;0
+Wskaż zadanie nie należące do warstwy ETL;  Korekta błędnych danych\n  Integracja danych\n  Kontrola i czyszczenie danych\nV Agregacja danych;0
+Czym charakteryzuje się HOLAP; dane dotyczące agregatów nie są trzymane fizycznie na dysku\nV danych dotyczących agregatów trzymana jest fizycznie w bazie danych\n  zreguły umożliwia przeglądanie danych z pomocą zapytań SQL\nV zreguły umożliwia eksploracja danych jest przy użyciu zapytań MDX;0
+Tablespace/Przestrzeń tabel;V Optymalizuje dostęp do danych poprzez umiejscowienie na kilku dyskach\nV Tablespace może być tylko do odczytu\n  Dobrą praktyką jest utworzenie jednej wspólnej przestrzeni tabel na indeksy i tabele\nV Aby tabela była podzielona na kilka plików fizycznych na różnych dyskach - musi być partycjonowana;0
+Która definicja najlepiej opisuje Wymiar?;  pojedyncza cecha opisująca obiekt\n  pojedyncze zdarzenie będące podstawą analiz (np. sprzedaż)\nV zbiór cech opisujących obiekt pozwalająca powiązać go z innymi pojęciami modelu\n  wartość liczbowa przyporządkowana do danych cech/zdarzeń obiektu;0
+W przypadku MOLAP;V główna eksploracja danych jest przy użyciu zapytań MDX\n  główna eksploracja danych jest przy użyciu zapytań SQL\n  większość danych dotyczących agregatów trzymana jest fizycznie w bazie danych\n  zreguły dane dotyczące agregatów nie są trzymane fizycznie na dysku;0
+Wskaż nieprawdziwą cechę Monolitycznego Modelu Hurtowni Danych;  szybkie efekty biznesowe\nV wysoki koszt realizacji\n  łatwość administracji\nV spójna architektura;0
+Wymiary - stosowane typy wskaż poprawne;  Typ 6- dane nie ulegają zmianie\nV Typ 6- zapisujemy dane w tabeli historycznej\n  Typ 0- zmiany zapisujemy w tabeli historycznej\nV Typ 0- dane nie ulegają zmianie;0
+Optymalizator;V kolejność tabel może wpływać na plan wykonywania zapytania\nV optymalizator kosztowy bazuje na statystykach\n  jeśli jest utworzony indeks to zawsze zostanie on użyty przy wykonywaniu zapytania SQL\nV zawsze możemy wybrać rodzaj optymalizatora z poziomu Hintów\n;0
+Które definicje Hurtowni Danych (HD) są poprawne;V WHDteoretycznie zapisana informacja nigdy nie ulega zmianie\n  HDzawierają informacje tylko na temat bieżącego stanu\nV HDskłada się m.in z systemu raportowego, ETL i bazy danych\n  HDtotylko baza danych o dużym wolumenie\nV HDtorodzaj systemu zarządzania danymi, który wspiera decyzje biznesowe;0
+Które zdanie jest prawdziwe;V Napodstawie klucza biznesowego jest tworzony klucz fizyczny (np. poprzez funkcję haszującą)\n  Klucz biznesowy jest kluczem logicznym, nigdy nie jest stosowany w bazie danych\n  Klucz biznesowy zawsze składa się z jednego atrybutu (np. PESEL)\n  WHurtowniach Danych, klucz biznesowy jest zazwyczaj Primary Key tabeli wymiaru;0
+Cube po co stosujemy?;V Może być użyty do tworzenia raportów ad-hoc\n  Aby zaoszczędzić miejsce na dysku\n  Aby uprościć i przyśpieszyć proces ładowania danych do Hurtowni Danych\nV Aby przyśpieszyć tworzenie raportów;0
+Które sformułowania są poprawne w odniesieniu do baz typu OLAP?;  tak określane są bazy transakcyjne\nV są ukierunkowane na szybki odczyt danych\n  są ukierunkowane na szybki zapis i aktualizacje danych\n  są ukierunkowane na szybkie przetwarzanie transakcji, aktualizacja danych\nV tym pojęciem określamy bazy analityczne;0
+Wydajne procesy ładujące dane do Hurtowni Danych noszą nazwę?;  LET- Load, Extract, Transform\nV ELT- Extract, Load, Transform\nV ETL- Extract, Transform, Load\n  TEL- Transform, Extract, Load;0
+Co oznacza operacja Pivot na kostce;V zamiana wierszy z kolumnami w raporcie\n  przecięcie, pokazanie zestawienia w formie tabelarycznej\n  grupowanie na podstawie jednego z wymiarów\n  podział kostki na mniejsze;0
+ETL to?;V Proces czyszczenia danych z błędów\nV Proces zapewniania spójności danych\nV Extract, Transform, Load\nV Proces pobierania danych z systemów źródłowych\n  Proces wyliczania statystyk;0
+ODS to?;V Warstwa pośrednia do której ładowane są dane z innych systemów\n  Warstwa na której realizowana jest transformacja danych\n  Warstwa z metadanymi\n  Warstwa raportowa;0
+Data Flow Task - do czego służy blok?;  Umożliwia wykonanie zapytania SQL\nV Umożliwia tworzenie flow z zapisem danych\nV Uporządkowuje tworzenie procesów ETL;0
+Które definicje Hurtowni Danych (HD) są poprawne;  HDzawiera m.in. dane nieustrukturyzowane\nV HDzawiera m.in. dane ustrukturyzowane\n  HDopiera się głównie o jeden typ bazy danych\n  HDmusi zawierać relacyjną bazę danych;0
+Slowly Changing Dimension:;  Przetwarza dane paczkami\n  Reaguje na trzy podstawowe typy Fixed, Changing, Historical\n  Wprzypadku nie wykrycia klucza fizycznego umożliwia określenie alternatywnej ścieżki\nV Zapewnia unikalność w przypadku kiedy w recordsecie mamy te same wartości kluczy biznesowych;0
+Które zapytanie/zapytania są/jest poprawne;V select [Measures].[Ammount] on COLUMNS FROM [MySales] WHERE [Date].[Calendar Year].&[2013]\n  select [Measures].[Amount], [Measures].[SalesUK] on COLUMNS FROM [MySales] WHERE[Date].[Calendar Year].&[2013]\n  select [Measures].[Ammount] on COLUMNS FROM [MySales] WHERE [Date].[CalendarYear;0
+Z Hurtowniami Danych są związane następujące struktury?;  relacyjne\nV gwiazdy\nV konstelacje\n  płatek;0
+Które sformułowania są poprawne?;  Wymiary posiadają wartości liczbowe\nV Tabela faktów przechowuje klucze obce do tabel wymiarów\nV Fakty posiadają atrybuty\nV Wymiary przechowywane są w osobnych tabelach;0
+Wskaż zadanie nie należące do warstwy ETL;  Kontrola i czyszczenie danych\nv Agregacja danych\n  Korekta błędnych danych\n  Integracja danych;0
+Które zdania są poprawne?;v struktura gwiazdy charakteryzuje się dużą redundancją danych\n  struktury relacyjne są stosowane w celu zapewnienia szybkiego odczytu\nv struktura gwiazdozbioru charakteryzuje się większą redundancją danych niż struktura relacyjna\n  struktura płatku daje szybszy dostęp do zagregowanych danych niż struktura gwiazdy;0
+tóre sformułowania są poprawne w odniesieniu do baz typu OLTP?;  są ukierunkowane na szybki odczyt danych\n  tak określane są bazy analityczne\nv tak określane są bazy transakcyjne\nv są ukierunkowane na szybki zapis i aktualizacje danych\nv są ukierunkowane na szybkie przetwarzanie transakcji, aktualizacja danych;0
+APPLIANCE to system;v Oracle Exadata jest przykładem takiego systemu\n  Software- grupa różnych platform (Baza Danych, ETL, System Raportowy, …)\nv Łączący Hardware i Software\n  Pentaho jest przykładem takiego systemu;0
+Które sformułowania są poprawne?;v OLAP muszą być zoptymalizowane na odczyt\nv OLAP służą do analizy danych, wymagającej wielokrotnych odczytów dużych zbiorów danych\nv OLTP muszą zapewnić bezpieczeństwo transakcji przy wielu użytkownikach jednocześnie konkurujących o dostęp do tych samych danych\n  OLTP muszą zapewnić spójność danych przy systemach rozproszonych i skalowaniu poziomym;0
+Hurtownia Danych może składać się z następujących warstw?;  ODS-warstwa z metadanymi\nv Warstwa danych analitycznych\nv Data Mart- warstwa raportowa\nv Procesy ETL- odpowiedzialne m.in. za ładowanie danych;0
+Co oznacza operacja Slice na kostce;  podział kostki na mniejsze\nv przecięcie, pokazanie zestawienia w formie tabelaryczne\n  zamiana wierszy z kolumnami w raporcie\n  grupowanie na podstawie jednego z wymiarów;0
+W przypadku ROLAP;  główna eksploracja danych jest przy użyciu zapytań MDX\n  większość danych dotyczących agregatów trzymana jest fizycznie w bazie danych\nv główna eksploracja danych jest przy użyciu zapytań SQL\nv z reguły dane dotyczące agregatów nie są trzymane fizycznie na dysku;0
+Które zapytania/zapytanie są/jest poprawne;  select [Measures].[Ammount] on COLUMNS FROM [MySales] WHERE [Date].[Calendar Year].[All].Members\nv select [Measures].[Ammount] on COLUMNS FROM [MySales] WHERE [Date].[Calendar Year].&[2013]\nv select [Measures].[Amount] , [Measures].[SalesUK] on COLUMNS FROM [MySales] WHERE[Date].[Calendar Year].&[2013];0
+Surrogate Key - co to jest?;  Klucz logiczny\n  Klucz logiczny oparty o kilka tabel\nv Klucz fizyczny\n  Klucz fizyczny oparty o kilka tabel;0
+Która definicja najlepiej opisuje Miarę?;v wartość liczbowa przyporządkowana do danych/cech zdarzeń obiektu\n  pojedyncze zdarzenie będące podstawą analiz (np. sprzedaż)\n  zbiór cech opisujących obiekt pozwalająca powiązać go z innymi pojęciami modelu\n  pojedyncza cecha opisująca obiekt;0
+Które zdanie jest prawdziwe;  Klucz fizyczny jest zawsze liczbą\nv WHurtowniach Danych, klucz fizyczny jest zazwyczaj Primary Key tabeli Wymiaru\nv Klucz fizyczny zazwyczaj umożliwia szybsze wyszukiwanie danych niż klucz biznesowy\nv Klucz fizyczny może być generowany z sekwencji;0
+Które definicja najlepiej opisuje Fakt?;  wartość liczbowa przyporządkowana do danych cech/zdarzeń obiektu\nV pojedyncze zdarzenie będące podstawą analiz (np. sprzedaż)\n  zbiór cech opisujących obiekt pozwalająca powiązać go z innymi pojęciami modelu\n  pojedyncza cecha opisująca obiekt;0
+Execute SQL Task - do czego służy blok ?;V Umożliwia wykonanie zapytania SQL\n  Umożliwia zapis danych do tabel\n  Tworzy tabele w bazie SQL\nV Umożliwia uruchamianie skryptu SQL;0
