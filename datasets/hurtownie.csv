@@ -4,7 +4,7 @@ Cechy płatka;mniejsza redundancja, kosztowne tworzenie zapytania, tak jakby gwi
 Wymień struktury przechowywania informacji;gwiazda, płatek;1
 Co to fakt;tabela opisująca dany przedmiot;1
 Co to wymiar;tabela zawierająca zbiór możliwych CECH przedmiotu, słownik;1
-co to kostka;coś jak hurtownia danych, ale bardziej nastawione na analizę danych. Pozwala na analizowanie względem wielu wymiarów na raz;1
+co to kostka;model danych używany do analizy wielowymiarowej (wiele wymiarów na raz);1
 co to miara;wartość liczbowa, która jest przedmiotem analizy w procesach raportowania i analiz OLAP;1
 Materialized view;widok w bazie danych, którego wartości są przechowywane jako osobna tabela;1
 tabele tymczasowe;przechowują dane tylko na czas transakcji / sesji;1
@@ -16,7 +16,7 @@ Podejścia do ETL/ELT;Narzędzia (SQL Server Data Tools itp.) albo skrypty sql +
 Co to import big bang?;Wszystkie dane przenoszone do nowego systemu jednocześnie w jednym etapie podczas jednego procesu;2
 Co to import przyrostowy?;Przenoszenie tylko danych, które uległy zmianie od ostatniego importu;2
 Kroki w modelowaniu danych;Koncepcja biznesowa -> Modelowanie logiczne struktury danych -> Stworzenie querki -> Wykonanie querki;3
-Typy wymiarów pod względem aktualizacji  - wersja rozszerzona;Stałe / Wolnozmienne / Szybkozmienne /// Stałe się nie zmieniają / Wolnozmienne <w innym pytaniu> / Szybkozmienne - wiele do wielu, tabele z mini-wymiarem;3
+Typy wymiarów pod względem aktualizacji  - wersja rozszerzona;Stałe / Wolnozmienne / Szybkozmienne /// Stałe się nie zmieniają / Wolnozmienne <w innym pytaniu> / Szybkozmienne - szybko się zmieniają ?wiele do wielu, tabele z mini-wymiarem;3
 Podtypy Wymiarów wolnozmiennych - wersja rozszerzona;0 - zachowaj - nie edytuj błędów / 1 - nadpisz / 2 - dodaj wiersz + kolumna z datą ważności / 3 - dodaj atrybut ze starą wartością / 4 - historyczne (stary wiersz do tabeli historycznej);3
 Typy wymiarów pod względem aktualizacji  - wersja podstawowa;0 - fixed - nie aktualizujemy / 1 - changing - zmiana atrybutów, bez historii / 2 - Historical - z historią ;3
 Co to derived column;Kolumna której wartość jest obliczana na podstawie innych kolumn;3
@@ -80,3 +80,13 @@ Która definicja najlepiej opisuje Miarę?;v wartość liczbowa przyporządkowan
 Które zdanie jest prawdziwe;  Klucz fizyczny jest zawsze liczbą\nv WHurtowniach Danych, klucz fizyczny jest zazwyczaj Primary Key tabeli Wymiaru\nv Klucz fizyczny zazwyczaj umożliwia szybsze wyszukiwanie danych niż klucz biznesowy\nv Klucz fizyczny może być generowany z sekwencji;0
 Które definicja najlepiej opisuje Fakt?;  wartość liczbowa przyporządkowana do danych cech/zdarzeń obiektu\nV pojedyncze zdarzenie będące podstawą analiz (np. sprzedaż)\n  zbiór cech opisujących obiekt pozwalająca powiązać go z innymi pojęciami modelu\n  pojedyncza cecha opisująca obiekt;0
 Execute SQL Task - do czego służy blok ?;V Umożliwia wykonanie zapytania SQL\n  Umożliwia zapis danych do tabel\n  Tworzy tabele w bazie SQL\nV Umożliwia uruchamianie skryptu SQL;0
+co to segment;logiczna jednostka do przechowywania danych w bazie danych, składa się z extendów. Segment przypisujemy do obiektu bazy danych (tabela/indeks) i rezerwuje na nie miejsce;6
+co to extend;jednostka/struktura alokacji pamięci w ramach obiektu bazy - mniejsza od segmentu. Składa się z kilku bloków;6
+co to blok;najmniejsza jednostka pamięci w bazie danych. Przechowuje rzeczywiste dane - np. wiersze w tabeli;6
+co to PCT FREE;% wolnego miejsca w bloku potrzebny aby można było wykonywać UPDATE danych;6
+co to PCT USED;minimalny % zajęcia pamięci bloku, żeby uznać go za zajęty (czyli nie wolno robić INSERT);6
+co to partycjonowanie;Partycjonowanie polega na podziale danych w tabeli na mniejsze części w celu poprawy wydajności i zarządzania dużymi zbiorami danych.;
+różne aspekty tabel w bazach;Przestrzeń na indeksy i tabele / partycjonowanie / widoku na kilku tabelach / widoku zmaterializowane;
+Indeksy w BD;B-drzewa używane do szybkiego przeszukiwania (O(log n));
+B-drzewo;B-drzewo to zrównoważona struktura indeksu o wyszukiwaniu O(log n), wstawiania i usuwania, gdzie dane są przechowywane w liściach, a węzły wewnętrzne utrzymują klucze w uporządkowanej formie, zapewniając wysoką wydajność przy dużej ilości danych;
+;;

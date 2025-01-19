@@ -1,0 +1,18 @@
+Co to wskaźnik w c++;"";1
+Co to programowanie obiektowe + klasa + różnice ze strukturą;;
+Czym się różni * i & w C++? ;;
+Do czego są pliki .h w C++;;
+Do czego funkcje inline;;
+Co to szablony/template'y?;;
+Czym się różnią kompozycja i dziedziczenie;Kompozycja=użycie obiektu jako atrybutu w innej klasie, dziedziczenie=rozszerzenie funkcjonalności pewnej klasy;
+Interfejs w C++;Klasa, wszystko ze słówkiem virtual, dosłownie interfejs;
+Funkcje polimorficzne w C++;Funkcja w klasie bazowej virtualna, a potem wywołanie poprzez wskaźnik;
+Funkcja czysto virtualna;gdy virtual i nie ma implementacji;
+klasa abstrakcyjna c++;gdy choć jedna funkcja czysto virtualna;
+Zasada substytucji liskov;;
+C++ kiedy obiekt tworzony na stosie/stercie;na stosie jak normalnie przez konstruktor, ale nie słówkiem new (Horse h(name)), na stercie (tworzony dynamicznie) gdy słówkiem new -> tworzy wskaźnik;
+Wirtualne destruktory;używa destruktora klasy bazowej gdy polimorfizm, zatem destruktor ma być czysto wirtualny;
+Po co copy constructor;Bo dane kryjące się pod wskaźnikami trzeba osobno, samodzielnie przekopiować, bez niego dane i tak się przekopiują wchodząc i wychodząc ze scope'a funkcji;
+Przekazywanie obiektów do funkcji przez referencje - po co?;po to, aby nie kopiować obiektu bo to nie wydajne, poza tym można na min wykonać operacje;
+przeciążanie funkcji/operatorów - BEZ słówka override;Stworzenie innej implementacji funkcji/operatora o tej samej nazwie, ale z innymi argumentami/wyjściem;
+variadic w C++;Gdy funkcja może przyjąć nieokreśloną ilość argumentów bool getB(bool a,...);
