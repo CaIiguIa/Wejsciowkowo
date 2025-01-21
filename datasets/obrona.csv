@@ -1,5 +1,5 @@
 Co to wskaźnik w c++;"";1
-Co to programowanie obiektowe, co to klasa + różnice ze strukturą;;1
+Co to programowanie obiektowe, co to klasa + różnice ze strukturą;paradygmat programowania oparty na koncepcji obiektów, które łączą dane (atrybuty) i funkcjonalność (metody).;1
 Czym się różni * i & w C++? ;;
 Do czego są pliki .h w C++;;
 Do czego funkcje inline;;
@@ -22,7 +22,7 @@ Klucz główny i obcy;główny - identyfikator wiersza w tabeli, not null, uniqu
 rekurencja, dlaczego zła i jak sobie radzić;funkcja wywołuje samą siebie, aby rozwiązać mniejsze podproblemy większego problemu ||| Zwiększone użycie pamięci (stos) mniejsza wydajność niż w podejściu iteracyjnym ||| zamieniać na wersję iteracyjną o ile się da, albo zapamiętywać wyniki, żeby chociaż wywołąnia się nie powtarzały;1
 mechanizm wyjątków c++;throw, try, catch - nic wielkiego...;1
 transakcje w DB + poziomy izolacji;na kartce;1
-paradygmaty programowania obiektowego (4);Abstrakcja, Enkapsulacja, Dziedziczenie, Polimorfizm |||| Abstrakcja - ukrywaniu szczegółów implementacji i eksponowaniu jedynie istotnych cech obiektu |||| Enkapsulacja - Polega na ukrywaniu danych obiektu i udostępnianiu ich wyłącznie za pomocą metod. ||| Dziedziczenie pozwala tworzyć nowe klasy na podstawie innych, dziedzicząc ich zachowania i właściwości |||| Polimorfizm - różne zachowania tej samej metody w zależności od obiektu;1
+paradygmaty programowania obiektowego (4);Abstrakcja, Enkapsulacja, Dziedziczenie, Polimorfizm |||| Abstrakcja - ukrywaniu szczegółów implementacji i eksponowaniu jedynie istotnych cech obiektu |||| Enkapsulacja - grupowanie danych i metod w obrębie jednostki. ||| Dziedziczenie pozwala tworzyć nowe klasy na podstawie innych, dziedzicząc ich zachowania i właściwości |||| Polimorfizm - różne zachowania tej samej metody w zależności od obiektu;1
 Opisać algorytmy dziel i rządź oraz zachłanne;Dziel i rządź: To technika projektowania algorytmów, która dzieli problem na mniejsze podproblemy, rozwiązuje je niezależnie, a następnie scala wyniki w rozwiązanie problemu głównego. ||| zachłanne To technika, w której decyzje są podejmowane krok po kroku, zawsze wybierając rozwiązanie optymalne w danym momencie (lokalnie optymalne), z nadzieją, że doprowadzi to do rozwiązania globalnie optymalnego.;1
 Opisać i podać złożoność dowolnego algorytmu sortowania szybkiego;QuickSort to efektywny algorytm sortowania oparty na metodzie dziel i rządź. Jego działanie polega na wybieraniu elementu zwanego pivotem i uporządkowaniu tablicy w taki sposób, że elementy mniejsze od pivota znajdują się po jego lewej stronie, a większe po prawej. Następnie proces jest rekurencyjnie powtarzany dla każdej części.;1
 jakie joiny w bazie danych;na kartce;1
