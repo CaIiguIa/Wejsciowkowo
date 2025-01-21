@@ -1,9 +1,9 @@
 Co to wskaźnik w c++;"";1
-Co to programowanie obiektowe + klasa + różnice ze strukturą;;
+Co to programowanie obiektowe, co to klasa + różnice ze strukturą;;
 Czym się różni * i & w C++? ;;
 Do czego są pliki .h w C++;;
 Do czego funkcje inline;;
-Co to szablony/template'y?;;
+Co to szablony/template'y?;Szablony (templates) w C++ to mechanizm umożliwiający tworzenie uniwersalnego kodu, który działa z różnymi typami danych.;
 Czym się różnią kompozycja i dziedziczenie;Kompozycja=użycie obiektu jako atrybutu w innej klasie, dziedziczenie=rozszerzenie funkcjonalności pewnej klasy;
 Interfejs w C++;Klasa, wszystko ze słówkiem virtual, dosłownie interfejs;
 Funkcje polimorficzne w C++;Funkcja w klasie bazowej virtualna, a potem wywołanie poprzez wskaźnik;
@@ -16,3 +16,5 @@ Po co copy constructor;Bo dane kryjące się pod wskaźnikami trzeba osobno, sam
 Przekazywanie obiektów do funkcji przez referencje - po co?;po to, aby nie kopiować obiektu bo to nie wydajne, poza tym można na min wykonać operacje;
 przeciążanie funkcji/operatorów - BEZ słówka override;Stworzenie innej implementacji funkcji/operatora o tej samej nazwie, ale z innymi argumentami/wyjściem;
 variadic w C++;Gdy funkcja może przyjąć nieokreśloną ilość argumentów bool getB(bool a,...);
+co to algorytm;Algorytm to skończony, uporządkowany ciąg kroków prowadzących do rozwiązania określonego problemu lub wykonania zadania. ;
+co to polimorfizm;możliwość używania tych samych interfejsów w różny sposób.;
