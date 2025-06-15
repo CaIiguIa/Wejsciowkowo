@@ -1,0 +1,30 @@
+pytanie;odpowiedź;numer_strony
+Walidacja vs Weryfikacja;Weryfikacja czy model działa zgodnie z założeniami. Walidacja czy model odwzorowuje rzeczywistość.;1
+Modele tłumu;Definicja: Symulacje zachowań grup ludzi. Mikro każda osoba to agent. Makro - tłum to masa/płyn. Przykład: Mikro lepszy do paniki, makro do ruchu na stadionie.  ), ale nie pokazuje paniki - nieodzwierciedlona rzeczywistość (walidacja );1
+Techniki walidacji;Porównanie z danymi empirycznymi. Opinia eksperta. Testy statystyczne. Przykład: Model ewakuacji pokazuje 30 sek, test realny - 5 minut błędna walidacja.;1
+Podejście bottom-up + wady/zalety;Definicja: Model budowany od poziomu agentów (lokalne reguły globalne efekty). ✔Realizm, emergencja ☑ Trudna kalibracja, koszt obliczeń. Przykład: Model miasta pokazuje samoczynne korki (super), ale działa wolno i wymaga wielu danych.;1
+Automat odwracalny;Definicja: Stan systemu można odtworzyć wstecz. ✔Zgodność z fizyką (np. zasada zachowania energii) ☑ Nie oddaje zjawisk losowych. Przykład: Model zderzeń cząstek, ale nie nadaje się do dymu (dyfuzja X).;1
+Klasyfikacja AK - który najlepszy;Definicja: Klasy Wolframa (I-IV): I-stabilne II- okresowe III - chaotyczne IV- złożone, z emergencją najczęściej używana w systemach złożonych.  Przykład: Game of Life (klasa IV) = bogata dynamika.;2
+Klasyfikacje automatów komórkowych;Wolfram klasy I-IV. Deterministyczne/stochastyczne. Homogeniczne / heterogeniczne. Synchroniczne / asynchroniczne. 1D/2D/3D. Przykład: Model epidemii może być stochastyczny i asynchroniczny - bardziej realistyczny.;2
+Odwracalne automaty komórkowe + konkretne przykłady modelu;Definicja: Automaty z jednoznacznym odwrotem czasowym.  Przykłady: HPP- siatka kwadratowa FHP - siatka sześciokątna, lepsze kolizje.  Przykład: HPP daje nierealistyczne trajektorie - kolizje jak krzyż.;2
+Techniki walidacji i weryfikacji;Weryfikacja: testy jednostkowe, poprawność kodu. Walidacja: porównanie z rzeczywistością, dane, ocena ekspercka. Przykład: Kod symulacji działa, ale wyniki są nierealne - tylko weryfikacja.;2
+Euler vs Lagrange;Euler: śledzi miejsce (co dzieje się w punkcie przestrzeni). Lagrange: śledzi jednostkę (np. człowieka). Przykład: Ruch tłumu - Euler przepływ ludzi, Lagrange każdy człowiek z osobna.;2
+AK a superpozycja;Definicja: Superpozycja = sumowanie efektów. AK są nieliniowe - brak superpozycji.  Przykład: W fizyce fale się dodają, w AK nie da się „dodać" zachowań agentów.;2
+Ewolucja metody w AK;Definicja: Zmiana reguł automatu w czasie symulacji (np. w odpowiedzi na dane).  Przykład: Reguły zakażeń się zmieniają po szczepieniach.;3
+Homogeniczne / synchroniczne AK;Homogeniczne: te same reguły dla wszystkich komórek. Synchroniczne: wszystkie zmieniają się jednocześnie. Częściej używane: synchroniczne + homogeniczne - łatwe do analizy. Przykład: Asynchroniczny model - trudny do przewidzenia, chaos.;3
+Mikro vs Makro symulacja tłumów;Mikro: indywidualni agenci, zróżnicowane zachowania. Makro: przepływ masy, uproszczenia. Przykład: Mikro lepsze do paniki, makro do lotniska.;3
+HPP/FHP / Boltzmann - różnice;HPP-kwadratowa siatka, proste, brak dyfuzji. FHP - sześciokątna siatka, bardziej realistyczna. Lattice Boltzmann - bardziej zaawansowany, ciągłe płyny. Przykład: FHP lepiej odwzorowuje kolizje gazów niż HPP.;3
+Define: cellular automata, 4 classes;Cellular Automata (AK): siatka komórek, które zmieniają stan wg lokalnych reguł.  4 klasy Wolframa: I-stały, II- cykliczny, III - chaotyczny, IV - złożony (emergencja);3
+Calibration, verification, validation;Kalibracja: dostrajanie parametrów modelu. Weryfikacja: czy model działa poprawnie. Walidacja: czy model odwzorowuje rzeczywistość.;3
+Descriptive vs Rule-based modeling;Descriptive: opisuje rzeczywistość, bez symulacji (np. diagramy). Rule-based: używa reguł, symuluje zachowanie (np. AK, ABM). Przykład: Descriptive - mapa ewakuacji, Rule-based - symulacja ludzi uciekających.;3
+Concept of agent in modeling;Definicja: Agent to autonomiczna jednostka decyzyjna w symulacji, mająca cele, percepcję i zachowania.  Przykład: Pies w modelu parku - unika ludzi, szuka właściciela.;3
+The paradigm of an agent;Definicja: Agent = jednostka z własną percepcją i działaniem.  Model oparty na interakcjach wielu takich jednostek.  Przykład: Model miasta - każdy samochód to agent z decyzjami.;4
+Synchronous, homogenous CA i inne rodzaje;Synchronous: wszystkie komórki zmieniają się naraz. Homogenous: ta sama reguła wszędzie. Inne: Asynchronous - zmiany losowo. Heterogeneous - różne reguły.;4
+Steps of modeling a complex system;1. Zdefiniuj problem. 2. Określ agentów / reguły. 3. Kalibracja. 4. Weryfikacja. 5. Walidacja. 6. Analiza wyników.;4
+Define descriptive modeling + jakie inne?;Definicja: Tworzenie statycznych opisów systemu - np. schematy, opisy słowne.  Inne: Rule-based. Agent-based. Data-driven.;4
+Classification of CA & most useful for agent systems;Klasyfikacje: Wolfram, deterministyczne/stochastyczne, 1D/2D/3D, synchroniczne itd. Najlepsze do agentów: Klasa IV - emergencja, złożoność;4
+Good model & continous agent model;Dobry model: realistyczny, prosty, weryfikowalny, skalowalny. Model ciągły agenta: agent porusza się płynnie. Precyzyjne zachowanie. Koszt obliczeniowy.;4
+Calibration vs Verification vs Validation;Kalibracja: strojenie parametrów. Weryfikacja: poprawność kodu. Walidacja: zgodność z rzeczywistością.;5
+Concept of agent in intelligent systems;Definicja: Agent = autonomiczna jednostka potrafiąca reagować na środowisko i dążyć do celu.  Przykład: Dron patrolujący teren i reagujący na zagrożenia.;5
+Methods for validation and verification;Weryfikacja: testy jednostkowe, debugowanie. Walidacja: dane empiryczne, eksperci, porównania statystyczne.;5
+Classifications of CA;Wolfram. Synchroniczne/asynchroniczne. Deterministyczne/stochastyczne. 1D/2D/3D. Homogeniczne/heterogeniczne.;5

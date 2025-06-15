@@ -1,30 +1,35 @@
 Co to wskaźnik w c++;"";1
 Co to programowanie obiektowe, co to klasa + różnice ze strukturą;paradygmat programowania oparty na koncepcji obiektów, które łączą dane (atrybuty) i funkcjonalność (metody).;1
-Czym się różni * i & w C++? ;;
-Do czego są pliki .h w C++;;
-Do czego funkcje inline;;
-Co to szablony/template'y?;Szablony (templates) w C++ to mechanizm umożliwiający tworzenie uniwersalnego kodu, który działa z różnymi typami danych.;
-Czym się różnią kompozycja i dziedziczenie;Kompozycja=użycie obiektu jako atrybutu w innej klasie, dziedziczenie=rozszerzenie funkcjonalności pewnej klasy;
-Interfejs w C++;Klasa, wszystko ze słówkiem virtual, dosłownie interfejs;
-Funkcje polimorficzne w C++;Funkcja w klasie bazowej virtualna, a potem wywołanie poprzez wskaźnik;
-Funkcja czysto virtualna;gdy virtual i nie ma implementacji;
-klasa abstrakcyjna c++;gdy choć jedna funkcja czysto virtualna;
-Zasada substytucji liskov;Odnosi się do polimorfizmu. Obiekt klasy pochodnej powinien być w stanie zastąpić obiekt klasy bazowej bez wpływu na poprawność działania programu.;
-C++ kiedy obiekt tworzony na stosie/stercie;na stosie jak normalnie przez konstruktor, ale nie słówkiem new (Horse h(name)), na stercie (tworzony dynamicznie) gdy słówkiem new -> tworzy wskaźnik;
-Wirtualne destruktory;używa destruktora klasy bazowej gdy polimorfizm, zatem destruktor ma być czysto wirtualny;
-Po co copy constructor;Bo dane kryjące się pod wskaźnikami trzeba osobno, samodzielnie przekopiować, bez niego dane i tak się przekopiują wchodząc i wychodząc ze scope'a funkcji;
-Przekazywanie obiektów do funkcji przez referencje - po co?;po to, aby nie kopiować obiektu bo to nie wydajne, poza tym można na min wykonać operacje;
-przeciążanie funkcji/operatorów - BEZ słówka override;Stworzenie innej implementacji funkcji/operatora o tej samej nazwie, ale z innymi argumentami/wyjściem;
-variadic w C++;Gdy funkcja może przyjąć nieokreśloną ilość argumentów bool getB(bool a,...);
+Czym się różni * i & w C++? ;;0
+Do czego są pliki .h w C++;;0
+Do czego funkcje inline;;0
+Co to szablony/template'y?;Szablony (templates) w C++ to mechanizm umożliwiający tworzenie uniwersalnego kodu, który działa z różnymi typami danych.;0
+Czym się różnią kompozycja i dziedziczenie;Kompozycja=użycie obiektu jako atrybutu w innej klasie, dziedziczenie=rozszerzenie funkcjonalności pewnej klasy;0
+Interfejs w C++;Klasa, wszystko ze słówkiem virtual, dosłownie interfejs;0
+Funkcje polimorficzne w C++;Funkcja w klasie bazowej virtualna, a potem wywołanie poprzez wskaźnik;0
+Funkcja czysto virtualna;gdy virtual i nie ma implementacji;0
+klasa abstrakcyjna c++;gdy choć jedna funkcja czysto virtualna;0
+Zasada substytucji liskov;Odnosi się do polimorfizmu. Obiekt klasy pochodnej powinien być w stanie zastąpić obiekt klasy bazowej bez wpływu na poprawność działania programu.;0
+C++ kiedy obiekt tworzony na stosie/stercie;na stosie jak normalnie przez konstruktor, ale nie słówkiem new (Horse h(name)), na stercie (tworzony dynamicznie) gdy słówkiem new -> tworzy wskaźnik;0
+Wirtualne destruktory;używa destruktora klasy bazowej gdy polimorfizm, zatem destruktor ma być czysto wirtualny;0
+Po co copy constructor;Bo dane kryjące się pod wskaźnikami trzeba osobno, samodzielnie przekopiować, bez niego dane i tak się przekopiują wchodząc i wychodząc ze scope'a funkcji;0
+Przekazywanie obiektów do funkcji przez referencje - po co?;po to, aby nie kopiować obiektu bo to nie wydajne, poza tym można na min wykonać operacje;0
+przeciążanie funkcji/operatorów - BEZ słówka override;Stworzenie innej implementacji funkcji/operatora o tej samej nazwie, ale z innymi argumentami/wyjściem;0
+variadic w C++;Gdy funkcja może przyjąć nieokreśloną ilość argumentów bool getB(bool a,...);0
 co to algorytm;Algorytm to skończony, uporządkowany ciąg kroków prowadzących do rozwiązania określonego problemu lub wykonania zadania. ;1
 co to polimorfizm;możliwość używania tych samych interfejsów w różny sposób. Zasada substytucji liskov - Obiekt klasy pochodnej powinien być w stanie zastąpić obiekt klasy bazowej bez wpływu na poprawność działania programu.;1
 Klucz główny i obcy;główny - identyfikator wiersza w tabeli, not null, unique, może być złożony z kilku kolumn |||| klucz obcy wskazuje na klucz główny innej tabeli;1
 rekurencja, dlaczego zła i jak sobie radzić;funkcja wywołuje samą siebie, aby rozwiązać mniejsze podproblemy większego problemu ||| Zwiększone użycie pamięci (stos) mniejsza wydajność niż w podejściu iteracyjnym ||| zamieniać na wersję iteracyjną o ile się da, albo zapamiętywać wyniki, żeby chociaż wywołąnia się nie powtarzały;1
 mechanizm wyjątków c++;throw, try, catch - nic wielkiego...;1
-transakcje w DB + poziomy izolacji;na kartce;1
+transakcje w DB + poziomy izolacji;read commited // read uncommited // repeatable read // serializable;1
 paradygmaty programowania obiektowego (4);Abstrakcja, Enkapsulacja, Dziedziczenie, Polimorfizm |||| Abstrakcja - ukrywaniu szczegółów implementacji i eksponowaniu jedynie istotnych cech obiektu |||| Enkapsulacja - grupowanie danych i metod w obrębie jednostki. ||| Dziedziczenie pozwala tworzyć nowe klasy na podstawie innych, dziedzicząc ich zachowania i właściwości |||| Polimorfizm - różne zachowania tej samej metody w zależności od obiektu;1
 Opisać algorytmy dziel i rządź oraz zachłanne;Dziel i rządź: To technika projektowania algorytmów, która dzieli problem na mniejsze podproblemy, rozwiązuje je niezależnie, a następnie scala wyniki w rozwiązanie problemu głównego. ||| zachłanne To technika, w której decyzje są podejmowane krok po kroku, zawsze wybierając rozwiązanie optymalne w danym momencie (lokalnie optymalne), z nadzieją, że doprowadzi to do rozwiązania globalnie optymalnego.;1
 Opisać i podać złożoność dowolnego algorytmu sortowania szybkiego;QuickSort to efektywny algorytm sortowania oparty na metodzie dziel i rządź. Jego działanie polega na wybieraniu elementu zwanego pivotem i uporządkowaniu tablicy w taki sposób, że elementy mniejsze od pivota znajdują się po jego lewej stronie, a większe po prawej. Następnie proces jest rekurencyjnie powtarzany dla każdej części.;1
 jakie joiny w bazie danych;na kartce;1
 co to skorelowane zapytanie sql;To podzapytanie, zależy od zapytania głównego (korzysta z jego atrybutów);1
 BCNF, 3NF....;patrz kartka;1
+Graf nieskieronawy, skierowany, mutigraf;;1
+co to klika, graf dwudzielny, drzewo;;1
+co to droga, cykl, droga elementarna, cukl hamiltona i cykl eulera;;1
+co to graf planarny / tw kuratowskiego;Graf nie jest planarny, jeśli zawiera podgraf homeomorficzny z K5 lub K3,3;1
+graf spójny, graf silnie spójny;;1

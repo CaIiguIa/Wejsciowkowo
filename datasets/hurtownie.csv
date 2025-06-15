@@ -41,7 +41,7 @@ Jak poprawiać wydajność hurtowni danych?; oddzielić dane od indeksów od BLO
 Która definicja najlepiej opisuje atrybut?;  pojedyncze zdarzenie będące podstawą analiz (np. sprzedaż)\nV pojedyncza cecha opisująca obiekt\n  zbiór cech opisujących obiekt pozwalająca powiązać go z innymi pojęciami modelu\n  wartość liczbowa przyporządkowana do danych cech/zdarzeń obiektu;0
 Lookup - blok;  służy do tworzenia wymiarów\nV wprzypadku nie wykrycia klucza fizycznego umożliwia określenie alternatywnej ścieżki\n   przetwarza dane paczkami\nV wyszukuje dane na podstawie klucza;0
 Przykładowe systemy używane przy budowie Hurtowni Danych;V Oracle Exadata, IBM Netezza\n  SAPBusiness Object, ClickView\n  Apache SOLR do przechowywania danych\nV Apache SOLR do indeksacji danych\nV Pentaho Data Integration;0
-ODS po co stosujemy?;  przechowuje definicje metadanych używane w raportach końcowych\nV aby nie obniżać wydajności hurtowni danych\nV aby nie obniżać wydajności systemów transakcyjnych\nV aby przyśpieszyć tworzenia raportów;0
+ODS po co stosujemy?;  Operational data store - przechowuje definicje metadanych używane w raportach końcowych\nV aby nie obniżać wydajności hurtowni danych\nV aby nie obniżać wydajności systemów transakcyjnych\nV aby przyśpieszyć tworzenia raportów;0
  Po co używa się zmaterializowanych widoków?;  Zawsze zawierają świeże/aktualne dane\n  Są automatycznie czyszczone po każdej operacji ETL\nV Umożliwiają utworzenie indeksów\nV Umożliwiają szybsze tworzenie agregatów niż widoki oparte na kilku tabelach\nV Posiadają wersje ściągniętych danych.;0
 Które zapytanie/zapytania pobiorą/pobierze informacje na temat sprzedaży z ostatniego 2013; select [Measures].[Amount] ON 0, TAIL([Date].[CalendarYear].members,1) ON 1 FROM [MySales]\nV select [Measures].[Ammount] on COLUMNS FROM [MySales] WHERE [Date].[CalendarYear].&[2013]\n  select [Measures].[Ammount] on COLUMNS FROM [MySales] WHERE [Date].[CalendarYear].[All].LastChild;0
 Wskaż zadanie nie należące do warstwy ETL;  Korekta błędnych danych\n  Integracja danych\n  Kontrola i czyszczenie danych\nV Agregacja danych;0
@@ -85,8 +85,8 @@ co to extend;jednostka/struktura alokacji pamięci w ramach obiektu bazy - mniej
 co to blok;najmniejsza jednostka pamięci w bazie danych. Przechowuje rzeczywiste dane - np. wiersze w tabeli;6
 co to PCT FREE;% wolnego miejsca w bloku potrzebny aby można było wykonywać UPDATE danych;6
 co to PCT USED;minimalny % zajęcia pamięci bloku, żeby uznać go za zajęty (czyli nie wolno robić INSERT);6
-co to partycjonowanie;Partycjonowanie polega na podziale danych w tabeli na mniejsze części w celu poprawy wydajności i zarządzania dużymi zbiorami danych.;
-różne aspekty tabel w bazach;Przestrzeń na indeksy i tabele / partycjonowanie / widoku na kilku tabelach / widoku zmaterializowane;
-Indeksy w BD;B-drzewa używane do szybkiego przeszukiwania (O(log n));
-B-drzewo;B-drzewo to zrównoważona struktura indeksu o wyszukiwaniu O(log n), wstawiania i usuwania, gdzie dane są przechowywane w liściach, a węzły wewnętrzne utrzymują klucze w uporządkowanej formie, zapewniając wysoką wydajność przy dużej ilości danych;
-;;
+co to partycjonowanie;Partycjonowanie polega na podziale danych w tabeli na mniejsze części w celu poprawy wydajności i zarządzania dużymi zbiorami danych.;6
+różne aspekty tabel w bazach;Przestrzeń na indeksy i tabele / partycjonowanie / widoku na kilku tabelach / widoku zmaterializowane;6
+Indeksy w BD;B-drzewa używane do szybkiego przeszukiwania (O(log n));6
+B-drzewo;B-drzewo to zrównoważona struktura indeksu o wyszukiwaniu O(log n), wstawiania i usuwania, gdzie dane są przechowywane w liściach, a węzły wewnętrzne utrzymują klucze w uporządkowanej formie, zapewniając wysoką wydajność przy dużej ilości danych;6
+aaaaaaaaaaaaaaaaaaaa;;6
