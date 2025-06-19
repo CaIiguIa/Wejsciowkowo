@@ -15,7 +15,7 @@ index = 0
 skip = False
 q = True
 q *= -1
-file_to_learn = "datasets/AgentSystems.csv"
+file_to_learn = "datasets/EstymacjaOprogramowania.csv"
 
 def wczytajPytania(odnowa, nauka, wejsciowki):
     wejsciowka = []
