@@ -1,0 +1,50 @@
+Proszę wyjaśnić znaczenie pojęcia TCO.;"TCO (Total Cost of Ownership) – całkowity koszt posiadania obejmujący koszty zakupu, wdrożenia, utrzymania i wycofania systemu; Odp: TCO to suma wszystkich kosztów związanych z cyklem życia rozwiązania IT.";1
+Proszę podać trzy przykłady metryki oprogramowania.;Metryki: liczba linii kodu, liczba defektów, pokrycie testami.;1
+Proszę podać definicję estymacji projektu.;"Def: Estymacja projektu to proces szacowania zasobów potrzebnych do jego realizacji; Odp: Określa koszty, czas i pracochłonność.";1
+Proszę opisać modelowy proces estymacji projektu.;Zbieranie wymagań, podział na zadania, dobór metody, wykonanie estymacji, weryfikacja.;1
+Proszę wymienić negatywne czynniki zawyżonego oszacowania.;Brak zaufania, marnowanie zasobów, niska efektywność.;1
+Proszę wymienić negatywne czynniki zaniżonego oszacowania.;Przekroczenie budżetu, opóźnienia, przeciążenie zespołu.;1
+Co zyskujemy poprawiając dokładność oszacowania w projekcie?;Realistyczny plan, kontrola budżetu, lepsza komunikacja z interesariuszami.;1
+Proszę wymienić główne błędy metod estymacji.;Złe dane wejściowe, zła metoda, brak weryfikacji.;1
+Proszę wymienić główne błędy społeczne estymacji.;Presja zespołu, nadmierny optymizm, brak doświadczenia.;1
+Proszę wymienić główne błędy organizacyjne estymacji.;Brak standaryzacji, brak danych historycznych, zła komunikacja.;1
+Proszę wyjaśnić pojęcie stożka niepewności.;"Def: Stożek niepewności to wykres pokazujący spadek niepewności oszacowania w czasie; Odp: Pomaga zrozumieć ryzyko planowania na wczesnym etapie.";2
+Proszę opisać zjawisko eksplozji wymagań. Jaki wpływ ma to zjawisko na dokładność oszacowań w projekcie?;"Eksplozja wymagań – ciągły wzrost liczby wymagań; Odp: Zmniejsza dokładność estymacji przez niestabilność zakresu.";2
+Proszę opisać proces planowania projektu.;Zdefiniowanie zakresu, podział zadań, harmonogram, przydział zasobów.;2
+Proszę wyjaśnić pojęcie WBS.;"Def: WBS (Work Breakdown Structure) to struktura podziału pracy; Odp: Ułatwia zarządzanie projektem przez hierarchizację zadań.";2
+Proszę wymienić i wyjaśnić różnice znanych typów WBS.;"Procesowa – wg faz, produktowa – wg komponentów; różnią się podejściem do dekompozycji.";2
+Proszę opis reguły stosowane podczas tworzenia WBS.;Reguły: spójność, pełność, wzajemne wykluczenie, zorientowanie na rezultat.;2
+Jak nazywamy liście drzewa WBS? Proszę opisać ich własności i zastosowanie w procesie planowania projektu.;"Liście to pakiety robocze; mają jednoznaczną odpowiedzialność, szacowany koszt i czas.";2
+Czym różni się aktywność od zadania.;Zadanie to jednostka pracy, aktywność to większy zbiór działań – logicznie powiązanych.;2
+Co to jest cykl życia projektu?;"Def: Cykl życia projektu to zbiór faz od inicjacji do zamknięcia; Odp: Pomaga zarządzać etapami projektu.";2
+Proszę wyjaśnić różnicę pomiędzy ewolucyjnym i przyrostowym cyklem życia projektu.;"Ewolucyjny – zmienny zakres, iteracyjne dostosowanie; Przyrostowy – stały zakres, kolejne wersje produktu.";2
+Proszę opisać spiralny cykl życia projektu.;Fazy: planowanie, analiza ryzyka, prototypowanie, testowanie – powtarzalne cykle.;3
+Proszę opisać kaskadowy cykl życia projektu.;Fazy: wymagania, projekt, implementacja, testy – sekwencyjne wykonanie.;3
+Proszę opisać iteracyjny cykl życia projektu.;Iteracyjny – realizacja poprzez powtarzalne cykle projektowania i testowania.;3
+Proszę opisać cykl życia projektu typu V.;V-model – rozwinięcie kaskadowego, testowanie powiązane z fazami rozwoju.;3
+Proszę wymienić i opisać kategorie zależności pomiędzy zadaniami.;Logiczne, czasowe, zasobowe – zależności między zadaniami wynikające z ich charakteru.;3
+Proszę wymienić rodzaje zależności następstwa pomiędzy zadaniami i podać po jednym przykładzie z projektu IT.;"FS (zakończenie–start), SS, FF, SF; przykład FS: testy po implementacji.";3
+Co to jest ścieżka krytyczna w projekcie? Jak się wyznacza ścieżkę krytyczną?;"Def: Ścieżka krytyczna – najdłuższy ciąg zależnych zadań; Odp: Wyznacza minimalny czas projektu.";3
+Proszę podać charakterystykę zadań na ścieżce krytycznej.;Zadania bez luzu czasowego, opóźnienie wpływa na cały projekt.;3
+Proszę podać i opisać metody skracania harmonogramu.;"Crashing – zwiększenie zasobów; Fast tracking – równoległe wykonywanie.";3
+Jakie zastosowanie mają metryki oparte o ilość linii kodu źródłowego?;"Metryki LOC (Lines of Code) mierzą ilość kodu; mogą służyć do estymacji pracochłonności i jakości. KLOC = tysiąc linii kodu, często używane w modelach jak COCOMO.";3
+Proszę wyjaśnić pojęcie logicznej linii kodu.;"Def: Logiczna linia kodu – instrukcja zakończona średnikiem; Odp: Lepsza niż fizyczna linia kodu.";4
+Proszę opisać klasyczną wersję szacowania przez analogię.;"Porównanie projektu z podobnym historycznym; przenoszenie danych estymacyjnych.";4
+Proszę wyjaśnić metodę szacowania z wykorzystaniem logiki rozmytej.;"Rozmycie wartości dla nieprecyzyjnych danych; wynik jako zakres prawdopodobieństwa.";4
+Proszę wyjaśnić metodę szacowania z wykorzystaniem składników standardowych.;"Biblioteka gotowych komponentów z ustaloną czasochłonnością; sumowanie ich czasów.";4
+Proszę wyjaśnić metodę szacowania z wykorzystaniem składników standardowych z percentylami.;Jak wyżej, ale dodatkowo uśrednienie wartości (percentyle) z historii.;4
+Proszę wyjaśnić metodę szacowania przez punktację historyjek.;Szacowanie czasochłonności user stories na podstawie punktów – np. Planning Poker.;4
+Proszę wyjaśnić metodę szacowania rozmiarami.;Szacowanie na podstawie liczby przypadków użycia, ekranów, raportów itp.;4
+Proszę wyjaśnić pojęcie produktywności w odniesieniu do metod szacowania przez analogię.;Produktywność to stosunek efektów pracy do użytych zasobów (np. LOC/h). W estymacji przez analogię porównuje się produktywność nowego projektu do danych historycznych.;4
+Proszę opisać metodę PERT. Dlaczego PERT opiera się na rozkładzie trójkątnym?;"Def: PERT – estymacja z trzema wartościami (optymistyczna, pesymistyczna, najbardziej prawdopodobna); Odp: Rozkład trójkątny lepiej odzwierciedla rzeczywistość.";4
+Jak obliczyć czas realizacji projektu dla zadanego z góry prawdopodobieństwa sukcesu?;"Z rozkładu PERT: czas = (O + 4M + P)/6; wariancja → obliczenia prawdopodobieństwa.";4
+Proszę opisać model podstawowy COCOMO (81).;"Def: Model podstawowy COCOMO (Constructive Cost Model) estymuje nakład pracy na podstawie rozmiaru projektu wyrażonego w KLOC; KLOC = tysiąc linii kodu (thousand lines of code); Odp: effort = a*(KLOC)^b, gdzie a i b zależą od typu projektu.";5
+Czym różni się model podstawowy od szczegółowego?;Szczegółowy uwzględnia więcej czynników kosztowych (np. zespół, środowisko).;5
+Proszę podać definicję metryki punktów funkcyjnych. Jakie celem ma analiza punktów funkcyjnych?;"Def: Punkt funkcyjny – jednostka miary funkcjonalności; Odp: Służy do szacowania na poziomie biznesowym.";5
+Proszę opisać proces estymacji za pomocą analizy punktów funkcyjnych.;Zliczenie elementów funkcjonalnych, ich wagi, przeliczenie na punkty, przeliczenie na czas.;5
+Proszę wymienić i opisać rodzaje punktów funkcyjnych.;Wejścia, wyjścia, pliki, interfejsy zewnętrzne, zapytania użytkownika – każdy z wagą.;5
+Proszę podać znane definicję jakości oprogramowania.;"ISO: jakość to zdolność do spełnienia wymagań; Odp: np. brak błędów, zgodność ze specyfikacją.";5
+Proszę podać definicję metryki częstości defektów wraz z przykładem.;"Def: Częstość defektów = defekty / LOC lub czas; Odp: np. 5 błędów / 1000 LOC.";5
+Proszę podać definicję metryki częstości defektów w testach maszynowych. Proszę wyjaśnić jak należy interpretować otrzymywane wartości tej metryki.;"Liczba defektów / liczba przypadków testowych; niska wartość = lepsza jakość.";5
+Proszę podać definicję metryki efektywności usuwania defektów. Proszę opisać przykładowe zastosowanie.;"Liczba usuniętych / liczba wykrytych defektów; Odp: ocena skuteczności testów.";5
+Proszę opisać statyczny model niezawodności oprogramowania.;Model zakłada stałe tempo awarii, służy do oceny niezawodności przed wdrożeniem.;5
