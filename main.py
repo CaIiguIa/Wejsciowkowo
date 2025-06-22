@@ -6,6 +6,7 @@ from tkinter import messagebox, scrolledtext
 
 # Better Windows DPI scaling
 from ctypes import windll
+
 windll.shcore.SetProcessDpiAwareness(1)
 
 print("Let the learning begin!")
@@ -16,6 +17,17 @@ skip = False
 q = True
 q *= -1
 file_to_learn = "datasets/EstymacjaOprogramowania.csv"
+
+# --- Zdefiniowanie kolorów dla ciemnego motywu ---
+BG_DARK = "#282c34"  # Ciemne tło
+FG_LIGHT = "#abb2bf"  # Jasny tekst
+BUTTON_BG_DARK = "#3e4451"  # Tło przycisków
+BUTTON_FG_LIGHT = "#abb2bf"  # Tekst przycisków
+ENTRY_BG_DARK = "#3e4451"  # Tło pól tekstowych
+ENTRY_FG_LIGHT = "#abb2bf"  # Tekst pól tekstowych
+SCROLLEDTEXT_BG_DARK = "#3e4451"  # Tło scrolledtext
+SCROLLEDTEXT_FG_LIGHT = "#abb2bf"  # Tekst scrolledtext
+
 
 def wczytajPytania(odnowa, nauka, wejsciowki):
     wejsciowka = []
@@ -118,41 +130,59 @@ root = tk.Tk()
 root.title("Wejściówkowo")
 root.geometry("1250x450")
 
-setup_frame = tk.Frame(root)
+root.config(bg=BG_DARK)
+
+setup_frame = tk.Frame(root, bg=BG_DARK)
 setup_frame.pack(pady=10)
 
 nauka_var = tk.BooleanVar()
 odnowa_var = tk.BooleanVar(value=True)
 
-nauka_checkbox = tk.Checkbutton(setup_frame, text="Nauka ostatniej wejściówki", variable=nauka_var)
+nauka_checkbox = tk.Checkbutton(setup_frame, text="Nauka ostatniej wejściówki", variable=nauka_var,
+                                bg=BG_DARK, fg=FG_LIGHT, selectcolor=BUTTON_BG_DARK,
+                                activebackground=BG_DARK, activeforeground=FG_LIGHT)
 nauka_checkbox.pack(pady=5)
 
-odnowa_checkbox = tk.Checkbutton(setup_frame, text="Zacznij od początku", variable=odnowa_var)
+odnowa_checkbox = tk.Checkbutton(setup_frame, text="Zacznij od początku", variable=odnowa_var,
+                                 bg=BG_DARK, fg=FG_LIGHT, selectcolor=BUTTON_BG_DARK,
+                                 activebackground=BG_DARK, activeforeground=FG_LIGHT)
 odnowa_checkbox.pack(pady=5)
 
-wejsciowki_label = tk.Label(setup_frame, text="Numery wyjściówek:", font=('Helvetica', 13), justify="center")
+wejsciowki_label = tk.Label(setup_frame, text="Numery wyjściówek:", font=('Helvetica', 13), justify="center",
+                            bg=BG_DARK, fg=FG_LIGHT)
 wejsciowki_label.pack(pady=5)
 
-wejsciowki_entry = tk.Entry(setup_frame, width=50)
+wejsciowki_entry = tk.Entry(setup_frame, width=50,
+                            bg=ENTRY_BG_DARK, fg=ENTRY_FG_LIGHT,
+                            insertbackground=FG_LIGHT)
 wejsciowki_entry.pack(pady=5)
 
-start_button = tk.Button(setup_frame, text="Taaak! Zaczynajmy!", command=start_learning)
+start_button = tk.Button(setup_frame, text="Taaak! Zaczynajmy!", command=start_learning,
+                         bg=BUTTON_BG_DARK, fg=BUTTON_FG_LIGHT, activebackground=BG_DARK, activeforeground=FG_LIGHT)
 start_button.pack(pady=5)
 
-learning_frame = tk.Frame(root)
+learning_frame = tk.Frame(root, bg=BG_DARK)
 
-save_button = tk.Button(learning_frame, text="Zapisz postęp", command=save_progress)
+save_button = tk.Button(learning_frame, text="Zapisz postęp", command=save_progress,
+                        bg=BUTTON_BG_DARK, fg=BUTTON_FG_LIGHT, activebackground=BG_DARK, activeforeground=FG_LIGHT)
 save_button.pack(pady=5)
 
-question_label = tk.Label(learning_frame, text="Witaj, pomogę ci nauczyć się pytanek!", font=('Helvetica', 13), justify="center")
+question_label = tk.Label(learning_frame, text="Witaj, pomogę ci nauczyć się pytanek!", font=('Helvetica', 13),
+                          justify="center",
+                          bg=BG_DARK, fg=FG_LIGHT)
 question_label.pack(pady=10)
 
-answer_text = scrolledtext.ScrolledText(learning_frame, font=('Helvetica', 13), height=15, width=150, bg='#64778d', fg='white')
+answer_text = scrolledtext.ScrolledText(learning_frame, font=('Helvetica', 13), height=15, width=150,
+                                        bg=SCROLLEDTEXT_BG_DARK, fg=SCROLLEDTEXT_FG_LIGHT,
+                                        insertbackground=SCROLLEDTEXT_FG_LIGHT)
 
-show_answer_button = tk.Button(learning_frame, text="Pokaż odpowiedź", command=show_answer)
+show_answer_button = tk.Button(learning_frame, text="Pokaż odpowiedź", command=show_answer,
+                               bg=BUTTON_BG_DARK, fg=BUTTON_FG_LIGHT, activebackground=BG_DARK,
+                               activeforeground=FG_LIGHT)
 show_answer_button.pack(pady=5)
 
-known_button = tk.Button(learning_frame, text="Umiem", command=mark_known)
+known_button = tk.Button(learning_frame, text="Umiem", command=mark_known,
+                         bg=BUTTON_BG_DARK, fg=BUTTON_FG_LIGHT, activebackground=BG_DARK, activeforeground=FG_LIGHT)
 known_button.pack(pady=5)
 
 root.mainloop()
