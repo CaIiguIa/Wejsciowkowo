@@ -147,7 +147,7 @@ save_button.pack(pady=5)
 question_label = tk.Label(learning_frame, text="Witaj, pomogę ci nauczyć się pytanek!", font=('Helvetica', 13), justify="center")
 question_label.pack(pady=10)
 
-answer_text = scrolledtext.ScrolledText(learning_frame, font=('Helvetica', 13), height=8, width=150, bg='#64778d', fg='white')
+answer_text = scrolledtext.ScrolledText(learning_frame, font=('Helvetica', 13), height=15, width=150, bg='#64778d', fg='white')
 
 show_answer_button = tk.Button(learning_frame, text="Pokaż odpowiedź", command=show_answer)
 show_answer_button.pack(pady=5)
